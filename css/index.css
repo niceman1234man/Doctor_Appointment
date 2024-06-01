@@ -1,0 +1,80 @@
+.side_bar {
+  width: 20%;
+
+  /* background-color: rgb(153, 51, 68); */
+
+  /* position: absolute; */
+}
+
+.side_bar ul {
+  list-style-type: none;
+}
+
+.side_bar ul li {
+  font-size: 150%;
+  margin-top: 5%;
+}
+
+.welcome {
+  float: right;
+  background: url(/images/b8.jpg) no-repeat center center;
+}
+
+.side_bar ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.doctor_first_section {
+  display: flex;
+}
+
+.topTitle {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 5vh;
+}
+
+.topTitle div {
+  font-size: 30px;
+}
+
+.dashbourd {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.statusUpcomingEvent {
+  /* background-color: aqua; */
+  margin-left: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+}
+
+.par1 {
+  width: 80%;
+  text-align: center;
+}
+
+td,
+th td {
+  padding: 0 80px 80px 80px;
+}
+
+.loginbtn,
+.btn {
+  margin: 2%;
+  width: 200px;
+  height: 40px;
+}
+
+.btn:hover {
+  background-color: rgb(33, 104, 236);
+}
+
+.loginbtn:hover {
+  background-color: rgb(98, 166, 226);
+}
