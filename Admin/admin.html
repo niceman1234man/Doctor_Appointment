@@ -10,17 +10,20 @@
     <div class="side-bar">
     <h1>Admin Slide</h1>
     <ul class="slid-bar-details">
-        <a href=""> <li>Dashboard</li></a>
-        <a href=""><li>Doctors</li></a>
-        <a href=""> <li>Schedule</li> </a>
-        <a href=""><li>Appointment</li></a>
-        <a href=""> <li>Patients</li></a>
+        
+        <a href=""> <li><img src="/img/icons/dashboard.svg" alt="">Dashboard</li></a>
+        <a href=""><li><img src="/img/icons/doctors.svg" alt="">Doctors</li></a>
+        <a href=""> <li><img src="/img/icons/schedule.svg" alt="">Schedule</li> </a>
+        <a href=""><li><img src="/img/icons/book.svg" alt="">Appointment</li></a>
+        <a href=""> <li><img src="/img/icons/patients.svg" alt="">Patients</li></a>
     </ul>
   </div>
 
   <div class="main-part">
-    <input type="search" placeholder="search Doctor Name or Email" id="search">
-    <button>search</button>
+<img src="/img/search.svg" alt="search">
+ <input type="search" placeholder="search Doctor Name or Email" id="search" >
+ 
+    <button id="search-button">search</button>
     <input type="date">
     <h2>Status</h2>
     <ul class="main-part-list">
@@ -30,7 +33,7 @@
         <li>Today's Session</li>
     </ul>
     <div class="main-part-detail">
-    <div>
+    <div class="main-part-appoint">
     <h3>Upcoming Appointments Until next Friday</h3>
        <p>Here is quick search for upcoming appointments until 7 days to the next friday you can accses @Appointment section </p>
     <table>
@@ -50,7 +53,7 @@
     </table>
     <button  class="show-button">Show all Appointments</button>
 </div>
-    <div>
+    <div class="main-part-session">
     <h3>Upcoming Sesssions Until next Friday</h3>
        <p>Here is quick search for upcoming appointments until 7 days to the next friday you can accses @Session section </p>
     <table>

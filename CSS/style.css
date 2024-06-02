@@ -6,9 +6,15 @@ body{
 .side-bar{
     width: 20%;
     margin-left: 2%;
-    border: 1px solid black;
+    border-right: 1px solid black;
     padding: 5%;
    
+}
+#search-button{
+    padding: 1%;
+    border-radius: 5px;
+    font-size:medium;
+    color: blue;
 }
 
 .slid-bar-details{
@@ -24,7 +30,7 @@ body{
 .main-part{
     width: 70%;
     padding: 1%;
-    border: 1px solid black;
+    border-right: 1px solid black;
 }
 .main-part-list{
 display: flex;
@@ -52,4 +58,13 @@ table{
 .show-button{
     width: 80%;
     background-color: blue;
+}
+.main-part-appoint{
+    width: 50%;
+}
+.main-part-session{
+    width: 50%;
+}
+h3{
+    color: blue;
 }
