@@ -7,22 +7,22 @@
 <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
-   <section class="doctor_first_section">
+   <section class="doctor_first_section" >
 <div class="side_bar">
 <ul> <li> <img src="/images/download.png">Test Doctor</li>
     <button class="loginbtn">log out</button>
     <hr>
-<li><a href="#"><img src="/images/dashbord.png">dashbourd</a></li>
-<li><a href="#"><img src="/images/apointment.png">My Apointment</a> </li>
+<li><a href="#dashbourd"><img src="/images/dashbord.png">dashbourd</a></li>
+<li><a href="#myApointment"><img src="/images/apointment.png">My Apointment</a> </li>
 <li> <a href="#"><img src="/images/session.png">My Sessions</a></li>
 <li><a href="#"><img src="/images/pationt.png">My Pationts</a></li>
 <li><a href="#"><img src="/images/seting.png">setting</a></li>
 <li></li></ul>
 </div>
-<div class="dashbourd">
+<div class="dashbourd" id="dashbourd">
     <div class="topTitle">
 <div >dachbourd</div>
-<div class="todaysDate">todays date<img src="/images/calendar.png"> </div>
+<div class="todaysDate">todays date<img src="/images/calendar.png" class="imgtod"> </div>
 
     </div>
     <div class="welcome">
@@ -37,8 +37,8 @@
 <div class="statusUpcomingEvent"> 
 <div class="status">
     <table>
-        <tr><th><td>All Doctors</td><td>All Patients</td></th></tr>
-        <tr><th><td>NewBooking</td><td>Today Sessions</td></th></tr>
+        <tr><th><td>All Doctors <img src="/images/allDoctors.png" class="statusimg"></td><td>All Patients <img src="/images/pationt.png" class="statusimg"></td></th></tr>
+        <tr><th><td>NewBooking <img src="/images/newbooking.png" class="statusimg"></td><td>Today Sessions <img src="/images/session.png" class="statusimg"></td></th></tr>
     </table>
 </div>
 <div class="upcoming_events">
@@ -46,10 +46,37 @@
      <table>
         <tr><th><td>Session Title</td><td>Sheduled Date</td><td>Time</td></th></tr>
     </table>
+    <button class="showSesions"> Show All Sessions</button>
 </div>
 </div>
 </div>
 <script src="/js/index.js"></script>
-   </section> 
+   </section>
+   <!-- MY APOINTMENT SECTION -->
+   <section class="myApointment" id="myApointment">
+    <div class="side_bar">
+        <ul> <li> <img src="/images/download.png">Test Doctor</li>
+            <button class="loginbtn">log out</button>
+            <hr>
+        <li><a href="#dashbourd"><img src="/images/dashbord.png">dashbourd</a></li>
+        <li><a href="#myApointment"><img src="/images/apointment.png">My Apointment</a> </li>
+        <li> <a href="#"><img src="/images/session.png">My Sessions</a></li>
+        <li><a href="#"><img src="/images/pationt.png">My Pationts</a></li>
+        <li><a href="#"><img src="/images/seting.png">setting</a></li>
+        <li></li></ul>
+        </div>
+        <div class="Appointments">
+
+    <div class="topTitle">
+        <div > <button class="backImg"><img src="/images/backbutton.png" class="backImg"></button> Appointment Manager</div>
+        <div class="todaysDate">todays date<img src="/images/calendar.png" class="imgtod"> </div>
+
+            </div>
+            <div  class="inputDate"> <h3>Date:</h3><input type="date"> <button class="filterbtn"><img src="/images/filterBtn.png" class="filteimg"> Filter</button></div>
+          <div class="apointTable">
+          <table> <th><td>Patient name	</td><td>Appointment number	</td><td>Session Title	</td><td>Session Date & Time</td><td>Appointment Date</td><td>Events</td></th></table>
+        </div>
+        </div>
+        </section>
 </body>
 </html>
