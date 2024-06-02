@@ -4,10 +4,10 @@ body{
     margin-top: 2%;
 }
 .side-bar{
-    width: 20%;
-    margin-left: 2%;
+    width: 15%;
+
     border-right: 1px solid black;
-    padding: 5%;
+
    
 }
 #search-button{
@@ -16,8 +16,13 @@ body{
     font-size:medium;
     color: blue;
     border-style: none;
+    width: 10%;
 }
-
+#search-button:hover{
+    background: blue;
+    color: white;
+    cursor: pointer;
+}
 .slid-bar-details{
     list-style-type: none;
     padding: 1%;
@@ -39,6 +44,11 @@ body{
     font-weight: bold;
     border-style: none;
 }
+.side-bar #logout-button:hover{
+    background: blue;
+    color: white;
+    cursor: pointer;
+}
 .main-part{
     width: 70%;
     padding: 1%;
@@ -57,6 +67,10 @@ font-size: larger;
     border: 1px solid black;
     border-radius: 5px;
     margin: 1%;
+}
+.slid-bar-details li:hover{
+    background: rgb(184, 143, 143);
+    color: white;
 }
 .main-part #search{
     width: 60%;
@@ -80,9 +94,14 @@ table{
 }
 .show-button{
     width: 90%;
-    background-color: blue;
+    background-color: rgb(144, 144, 219);
     border-style: none;
     border-radius: 5px;
+    cursor: pointer;
+}
+.show-button:hover{
+    background: blue;
+    color: white;
 }
 .main-part-appoint{
     width: 50%;
@@ -92,7 +111,4 @@ table{
 }
 h3{
     color: blue;
-}
-.slid-bar-details img{
-    margin-left: 3%;
 }
