@@ -45,6 +45,10 @@ header {
   margin-left: 30px;
 }
 
+.makebtn a {
+  text-decoration: none;
+}
+
 .navigation a:hover {
   color: #180d0d;
 }
@@ -72,7 +76,7 @@ header {
   font-size: 16px;
   line-height: 1.5;
   text-align: center;
-  color: rgb(92, 92, 165);
+  color: rgb(223, 223, 243);
 }
 
 .makebtn {
