@@ -71,6 +71,10 @@
   flex-wrap: wrap;
 }
 
+.statusDash {
+  margin: 3% 2%;
+}
+
 .statusUpcomingEvent {
   /* background-color: aqua; */
   margin-left: 0;
@@ -84,12 +88,14 @@
 
   /* text-align: center; */
   margin: 3%;
+  font-weight: 500;
   font-size: larger;
 }
 
-td,
-th td {
-  padding: 0 1% 80px 80px;
+th,
+td {
+  text-align: center;
+  font-size: large;
 }
 
 .loginbtn {
@@ -128,12 +134,12 @@ th td {
 }
 
 .statusimg {
-  width: 50%;
+  width: 20%;
 }
 
 .status table td {
   border: 2px;
-  background-color: rgb(168, 158, 140);
+  background-color: rgb(242, 234, 218);
 }
 
 .showSesions {
@@ -149,7 +155,7 @@ th td {
 
 .filterbtn {
   background-color: #d8ebfa;
-  width: 20%;
+  width: 10%;
   text-align: center;
   font-size: large;
   height: 50px;
@@ -193,7 +199,7 @@ th td {
 }
 
 .setindbtncontener {
-  margin: 8% 2%;
+  margin: 3% 2%;
   height: min-content;
 }
 
@@ -221,4 +227,27 @@ th td {
 .setingsmalfont {
   font-size: 15px;
   color: black;
+}
+
+.searPationtbtn {
+  margin: 1% 3%;
+  width: 40%;
+  height: 30px;
+  background-color: #2790f2;
+}
+
+.searPationtbtn:hover {
+  background-color: #0a76d8;
+}
+
+.searinputPationt {
+  width: 200%;
+  text-align: center;
+  font-size: large;
+  margin: 1% 3%;
+  height: 30px;
+}
+
+.btnsearchDivePation {
+  display: flex;
 }
