@@ -5,10 +5,7 @@ body{
 }
 .side-bar{
     width: 15%;
-
     border-right: 1px solid black;
-
-   
 }
 #search-button{
     padding: 1%;
@@ -71,13 +68,13 @@ font-size: larger;
 .slid-bar-details li:hover{
     background: rgb(184, 143, 143);
     color: white;
+    padding: 5px;
 }
 .main-part #search{
     width: 60%;
     padding: 1%;
     border-radius: 5px;
     text-align: center;
-    
 }
 .main-part-detail{
     display: flex;
@@ -111,4 +108,7 @@ table{
 }
 h3{
     color: blue;
+}
+#admin-img{
+    border-radius: 50%;
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+    <div class="side-bar">
+    <h1>Admin Slide</h1>
+   <p> <img src="/img/user.png" alt="administer img" id="admin-img">Administrator</p>
+   <button id="logout-button">Log out</button>
+    <ul class="slid-bar-details">
+        <a href="admin.html"> <li><img src="/img/icons/dashboard.svg" alt="">Dashboard</li></a>
+        <a href="Doctors.html"><li><img src="/img/icons/doctors.svg" alt="">Doctors</li></a>
+        <a href="Schedule.html"> <li><img src="/img/icons/schedule.svg" alt="">Schedule</li></a>
+        <a href="Appointment.html"><li><img src="/img/icons/book.svg" alt="">Appointment</li></a>
+        <a href="Patients.html"> <li><img src="/img/icons/patients.svg" alt="">Patients</li></a>
+    </ul>
+  </div>
+  <div class="main-part">
+<img src="/img/search.svg" alt="search" id="search-img">
+ <input type="search" placeholder="search Patient Name or Email" id="search" >
+    <button id="search-button">search</button>
+    <p id="today-date">Today's date <img src="/img/calendar.svg" alt=""></p>
+    
+    <p>All Patients(1)</p>
+    <table >
+        <tr><th> Name</th>
+            <th>NIC</th>
+            <th>Telephone</th>
+            <th>Email</th>
+            <th>Date of birth</th>
+            <th>Events</th></tr>
+    </table>
+</body>
+</html>
