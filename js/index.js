@@ -1,6 +1,9 @@
 function date() {
   const now = new Date();
-  const datetime = now.toLocaleString();
-  document.querySelector('.todaysDate').innerHTML += ` ${datetime}`;
+  const day = now.getDay();
+  const month = now.getMonth();
+  const year = now.getFullYear();
+
+  document.querySelector('.todaysDate').innerHTML += ` ${day}/${month}/${year}`;
 }
 date();
