@@ -31,14 +31,13 @@
 
 .welcome {
   padding-left: 5%;
-  float: right;
   background: url(/images/b8.jpg) no-repeat  center;
 }
 
 .statusDash a {
   padding: 0 10% 1% 0;
   text-decoration: none;
-  font-size: xx-large;
+  font-size: large;
   color: black;
 }
 
@@ -64,9 +63,8 @@
 }
 
 .dashbourd {
-  display: flex;
+  display: block;
   margin-left: 2%;
-  flex-wrap: wrap;
 }
 
 .statusDash {
@@ -93,9 +91,7 @@
 }
 
 .statusUpcomingEvent {
-  /* background-color: aqua; */
   margin-left: 0;
-  overflow: hidden;
   display: flex;
   justify-content: space-between;
 }
@@ -174,9 +170,6 @@
   color: white;
 }
 
-/* .doctor_first_section{
-  display: none;
-} */
 #myApointment {
   display: flex;
 }
@@ -275,4 +268,45 @@
 
 .set {
   font-size: x-large;
+}
+
+.setindbtncontener img {
+  width: 30px;
+  margin-right: 2%;
+}
+
+/* /////for popup */
+.accountSetting,
+.viewdetail,
+.confiDelet {
+  width: 50%;
+  font-size: x-large;
+  margin: 25%;
+  padding: 5%;
+}
+
+.inpSetAcount {
+  font-size: large;
+  margin: 2%;
+  height: 35px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.btnSetAcount,
+.btnDletAcount {
+  width: 20%;
+  height: 30px;
+  font-size: large;
+  background-color: #5aa6ee;
+  border-radius: 5px;
+}
+
+.btnSetAcount:hover,
+.btnDletAcount:hover {
+  background-color: #2790f2;
+}
+
+.viewdetail .inpSetAcount {
+  border: none;
 }
