@@ -54,6 +54,7 @@ body {
   font-weight: bold;
   border-style: none;
 }
+
 .side-bar #logout-button:visited {
   background: rgb(184, 171, 171);
   color: rgb(152, 47, 47);
@@ -117,12 +118,15 @@ table {
   width: 90%;
   margin-top: 1%;
 }
-th{
+
+th {
   border-bottom: 2px solid rgb(97, 97, 148);
 }
-tr{
+
+tr {
   text-align: center;
 }
+
 .show-button {
   width: 90%;
   background-color: rgb(42, 42, 184);
