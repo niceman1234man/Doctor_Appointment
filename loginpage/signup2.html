@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <title>Account Details</title>
+</head>
+
+<body>
+    <div class="back">
+        <center>
+            <div class="container">
+                <form action="" method="POST">
+
+                    <p class="header-text">Let's Continue</p>
+                    <p class="sub-text">It's Okay, Now Create Your User Account.</p>
+
+                    <form id="account-details-form">
+                        <label for="Email" class="form-label">Email: </label>
+                        <input type="email" name="email" class="input-text" placeholder="email" required>
+
+                        <label for="phonenumber" class="form-label">Phone Number: </label>
+                        <input type="text" name="phonenumber" class="input-text" placeholder="Phone Number" required>
+
+                        <label for="password" class="form-label">Password: </label>
+                        <input type="password" name="password" class="input-text" placeholder="Password" required>
+
+                        <label for="confirm-password" class="form-label">Confirm Password: </label>
+                        <input type="password" name="confirm-password" class="input-text" placeholder="confirm-password"
+                            required>
+
+                        <div class="button-group">
+                            <input type="reset" value="Reset" class="login-btn btn-primary-soft btn">
+                            <button type="button" class="login-btn btn-primary btn" id="back-button">Back</button>
+                            <input type="submit" value="Sign Up" class="login-btn btn-primary btn">
+
+                        </div>
+                    </form>
+            </div>
+        </center>
+    </div>
+    <script src="signup.js"></script>
+</body>
+
+</html>

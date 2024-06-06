@@ -3,7 +3,7 @@
 
   /* background-color: rgb(153, 51, 68); */
 
-  /* position: absolute; */
+  /* position: absolute;///////////// */
 }
 
 .side_bar ul {
@@ -181,7 +181,7 @@
 
 .inputDate label {
   width: 30%;
-  margin-left: 40%;
+  margin-left: 20%;
   font-size: x-large;
 }
 
@@ -281,8 +281,11 @@
 .confiDelet {
   width: 50%;
   font-size: x-large;
-  margin: 25%;
-  padding: 5%;
+
+  /* margin: 25%;
+  padding: 5%; */
+  top: -1000px;
+  position: absolute;
 }
 
 .inpSetAcount {
@@ -310,3 +313,14 @@
 .viewdetail .inpSetAcount {
   border: none;
 }
+
+/* //////////////////////////////////// haberger */
+
+/* @media screen and (min-width: 350px) {
+
+  .side_bar{
+    display: none;
+  }
+  .doctor_first_section,#myApointment{
+    display: block;
+  } */
