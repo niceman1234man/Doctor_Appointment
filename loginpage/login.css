@@ -6,8 +6,6 @@
   height: 680px;
 }
 
-
-
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
@@ -18,8 +16,6 @@ body {
   align-items: center;
   height: 100vh;
 }
-
-
 
 .wrapper {
   width: 100%;
@@ -152,6 +148,7 @@ body {
 
 .back {
   background-color: rgba(255, 255, 255, 0.9);
+
   /* Semi-transparent background */
   padding: 40px;
   border-radius: 10px;
@@ -192,7 +189,7 @@ h2 {
 }
 
 .input-text input:focus {
-  border-color: #8A4DFF;
+  border-color: #8a4dff;
   box-shadow: 0 0 5px rgba(138, 77, 255, 0.5);
 }
 
@@ -206,12 +203,18 @@ h2 {
   transition: all 0.3s ease;
 }
 
-.input-text input:focus+label,
-.input-text input:valid+label {
+.remeber_forget label {
+  display: flex;
+  align-items: center;
+  color: #555;
+}
+
+.input-text input:focus + label,
+.input-text input:valid + label {
   top: 5px;
   left: 15px;
   font-size: 12px;
-  color: #8A4DFF;
+  color: #8a4dff;
 }
 
 .icon {
@@ -229,24 +232,24 @@ h2 {
   margin: 20px 0;
 }
 
-.remeber_forget label {
-  display: flex;
-  align-items: center;
-  color: #555;
-}
-
 .remeber_forget input[type="checkbox"] {
   margin-right: 10px;
 }
 
 .remeber_forget a {
-  color: #8A4DFF;
+  color: #8a4dff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.Login_register a {
+  color: #8a4dff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .remeber_forget a:hover {
-  color: #6D5BBA;
+  color: #6d5bba;
 }
 
 .login-btn {
@@ -254,7 +257,7 @@ h2 {
   padding: 15px;
   border: none;
   border-radius: 5px;
-  background-color: #8A4DFF;
+  background-color: #8a4dff;
   color: #fff;
   font-size: 16px;
   cursor: pointer;
@@ -262,21 +265,15 @@ h2 {
 }
 
 .login-btn:hover {
-  background-color: #6D5BBA;
+  background-color: #6d5bba;
 }
 
 .Login_register {
   margin-top: 20px;
 }
 
-.Login_register a {
-  color: #8A4DFF;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
 .Login_register a:hover {
-  color: #6D5BBA;
+  color: #6d5bba;
 }
 
 .Login_register p {

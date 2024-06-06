@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
   const nextButton = document.getElementById('next-button');
   if (nextButton) {
@@ -17,19 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 function validateForm() {
-  var fname = document.getElementsByName("fname")[0].value;
-  var lname = document.getElementsByName("lname")[0].value;
-  var address = document.getElementsByName("address")[0].value;
-  var nic = document.getElementsByName("nic")[0].value;
-  var dob = document.getElementsByName("dob")[0].value;
+  const fname = document.getElementsByName('fname')[0].value;
+  const lname = document.getElementsByName('lname')[0].value;
+  const address = document.getElementsByName('address')[0].value;
+  const nic = document.getElementsByName('nic')[0].value;
+  const dob = document.getElementsByName('dob')[0].value;
 
-  if (fname === "" || lname === "" || address === "" || nic === "" || dob === "") {
-    alert("Please fill in all required fields!");
+  if (fname === '' || lname === '' || address === '' || nic === '' || dob === '') {
+    // alert('Please fill in all required fields!');
     return false;
-  } else {
-    // If all fields are filled, allow the user to proceed
-    // You can add additional logic here, such as submitting the form or navigating to the next page
-    alert("Form is valid! Proceeding to next step...");
-    return true;
   }
+  // If all fields are filled, allow the user to proceed
+  // You can add additional logic here, such as submitting the form or navigating to the next page
+  // alert('Form is valid! Proceeding to next step...');
+  return true;
 }
+validateForm();
