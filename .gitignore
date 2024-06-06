@@ -1,8 +1,11 @@
 # .gitignore
 node_modules/
 <<<<<<< HEAD
+<<<<<<< HEAD
 test.md
 =======
 
 
 >>>>>>> 28d8face6f376c9f9ce5b221caedae1f650f142d
+=======
+>>>>>>> 2845b4400d0f86d67f211f5f887ad896c79d339a
