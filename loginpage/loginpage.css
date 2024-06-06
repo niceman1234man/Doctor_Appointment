@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+}
+
+.main {
+  margin-bottom: 80px;
+  background-image: url('./image/loginback.jpg');
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 720px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+.h2 {
+  font-size: 2em;
+  color: #fff;
+  user-select: none;
+}
+
+.navigation {
+  position: relative;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 500;
+}
+
+.navigation a {
+  text-decoration: none;
+  justify-content: space-between;
+  margin-left: 30px;
+}
+
+.makebtn a {
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  color: #180d0d;
+}
+
+.navigation a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 110%;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+}
+
+.display-text {
+  margin-top: 60px;
+}
+
+.display-text p {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: rgb(4, 4, 16);
+
+}
+
+.makebtn {
+  background-color: rgb(136, 127, 255);
+  width: 25%;
+  padding: 1%;
+  height: 1200%;
+  border-radius: 5px;
+  border-style: none;
+}
+
+.makebtn:hover {
+  color: #180d0d;
+  cursor: pointer;
+}
