@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <title>Sign Up</title>
+</head>
+
+<body>
+    <div class="back">
+        <center>
+            <div class="container">
+                <form action="" method="POST">
+                    <p class="header-text">Let's Get Started</p>
+                    <p class="sub-text">Add Your Personal Details to Continue</p>
+
+                    <label for="name" class="form-label">Name: </label>
+                    <input type="text" name="fname" class="input-text" placeholder="First Name" required>
+                    <input type="text" name="lname" class="input-text" placeholder="Last Name" required>
+
+                    <label for="address" class="form-label">Address: </label>
+                    <input type="text" name="address" class="input-text" placeholder="Address" required>
+
+                    <label for="nic" class="form-label">NIC: </label>
+                    <input type="text" name="nic" class="input-text" placeholder="NIC Number" required>
+
+                    <label for="dob" class="form-label">Date of Birth: </label>
+                    <input type="date" name="dob" class="input-text" required>
+                    <div class="button-group">
+                        <input type="reset" value="Reset" class="login-btn btn-primary-soft btn">
+                        <button type="button" class="login-btn btn-primary btn" id="next-button"
+                            value="Next">Next</button>
+                    </div>
+                    <p class="sub-text">
+                        <b> Already have an account?
+                            <a href="login.php" class="hover-link1 non-style-link">Login</a>
+                    </p></b>
+                </form>
+            </div>
+        </center>
+    </div>
+    <script src="signup.js"></script>
+</body>
+
+</html>

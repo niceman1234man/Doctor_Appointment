@@ -281,6 +281,7 @@
 .confiDelet {
   width: 50%;
   font-size: x-large;
+
   /* margin: 25%;
   padding: 5%; */
   top: -1000px;
@@ -313,14 +314,13 @@
   border: none;
 }
 
-/* //////////////////////////////////// haberger*/
+/* //////////////////////////////////// haberger */
+
 /* @media screen and (min-width: 350px) {
-  
+
   .side_bar{
     display: none;
   }
   .doctor_first_section,#myApointment{
     display: block;
   } */
-  
-}
