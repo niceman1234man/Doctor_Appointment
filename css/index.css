@@ -283,13 +283,14 @@
   font-size: x-large;
   margin: 25%;
   padding: 10%;
-  top: -1500px;
+  right: -1500px;
   position: absolute;
+  cursor: pointer;
 }
 
 .inpSetAcount {
   font-size: large;
-  margin: 2%;
+  margin: 1%;
   height: 35px;
   width: 100%;
   border-radius: 5px;
@@ -313,7 +314,59 @@
   border: none;
 }
 
-/* //////////////////////////////////// haberger */
+.buton {
+  width: 5%;
+  top: 5%;
+  right: 2%;
+  color: red;
+  margin-left: 90%;
+  font-size: xx-large;
+  cursor: pointer;
+}
+
+.accountSetting.active {
+  background-color: gray;
+  padding-top: 2%;
+  width: 60%;
+  top: 20%;
+  left: 30%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(0.9);
+  transition:
+    top 200ms ease-in-out 20ms,
+    opacity 20ms ease-in-out 10ms,
+    transform 220ms ease-in-out 10ms;
+}
+
+.viewdetail.active {
+  width: 60%;
+  padding: 5%;
+  background-color: gray;
+  top: 5%;
+  left: 30%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition:
+    top 200ms ease-in-out 20ms,
+    opacity 202ms ease-in-out 100ms,
+    transform 220ms ease-in-out 10ms;
+}
+
+.confiDelet.active {
+  background-color: gray;
+  font-size: x-large;
+  width: 50%;
+  text-align: center;
+  padding: 2%;
+  top: 8%;
+  left: 40%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition:
+    top 200ms ease-in-out 20ms,
+    opacity 220ms ease-in-out 10ms,
+    transform 220ms ease-in-out 10ms;
+}
 
 /* @media screen and (min-width: 350px) {
 
@@ -322,38 +375,17 @@
   }
   .doctor_first_section,#myApointment{
     display: block;
-  } */
-.buton {
-  width: 2%;
-  color: red;
-  margin-left: 90%;
-  background-color: rgb(221, 215, 215);
-  cursor: pointer;
-}
+  }
+} */
 
-.accountSetting.active,
-.viewdetail.active,
-.confiDelet.active {
-  background-color: gray;
-  top: 30%;
-  left: 30%;
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(0.7);
-  transition:
-    top 0ms ease-in-out 20ms,
-    opacity 20ms ease-in-out 10ms,
-    transform 20ms ease-in-out 10ms;
-}
+/* #myApointment.hid{
+  background-color: rgba(0, 0, 0, 1);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 
-.accountSetting.remove,
-.viewdetail.remove,
-.confiDelet.remove {
-  position: absolute;
-  top: -1500px;
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-  transition:
-    top 0ms ease-in-out 200ms,
-    opacity 200ms ease-in-out 0ms,
-    transform 20ms ease-in-out 0ms;
-}
+} */
