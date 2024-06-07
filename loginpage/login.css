@@ -1,6 +1,6 @@
-.body {
+body {
   font-family: 'Arial', sans-serif;
-  background-image: url('image/login.jpg');
+  background-image: url('./image/login.jpg');
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -72,8 +72,8 @@ h2 {
   color: #555;
 }
 
-.input-text input:focus + label,
-.input-text input:valid + label {
+.input-text input:focus+label,
+.input-text input:valid+label {
   top: 5px;
   left: 15px;
   font-size: 12px;
