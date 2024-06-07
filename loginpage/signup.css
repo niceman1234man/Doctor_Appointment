@@ -35,6 +35,7 @@ form {
   font-weight: bold;
   margin-bottom: 5px;
   text-align: left;
+
 }
 
 .input-text {
@@ -42,6 +43,17 @@ form {
   padding: 10px;
   margin-bottom: 20px;
   box-sizing: border-box;
+=======
+  color: #0b0b0b;
+}
+
+.input-text {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+
 }
 
 .button-group {
@@ -74,3 +86,10 @@ form {
 .hover-link1:hover {
   text-decoration: underline;
 }
+
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+

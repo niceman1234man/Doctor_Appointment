@@ -1,59 +1,146 @@
-.back {
+
+.body {
+  font-family: 'Arial', sans-serif;
   background-image: url('image/login.jpg');
-  margin-bottom: 70px;
-  background-repeat: no-repeat;
   background-size: cover;
-  height: 680px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.back {
+  background-color: rgba(255, 255, 255, 0.9);
+
+  /* Semi-transparent background */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
 }
 
 .wrapper {
-  margin-top: 30px;
-  background-color: transparent;
-  border-radius: 8px;
-  height: 45%;
-  animation: transitionIn-Y-over 0.5s;
   width: 100%;
-  max-width: 600px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.sub-text {
-  font-size: 15px;
-  color: rgb(138, 138, 138);
+.form_box_login {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.form-label {
-  color: rgb(44, 44, 44);
-  text-align: left;
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
 }
 
 .input-text {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.input-text input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  box-sizing: border-box;
+  padding: 15px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
 }
 
-.hover-link1 {
-  font-weight: bold;
+.input-text input:focus {
+  border-color: #8a4dff;
+  box-shadow: 0 0 5px rgba(138, 77, 255, 0.5);
 }
 
-.hover-link1:hover {
-  opacity: 0.8;
-  transition: 0.5s;
+.input-text label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: #aaa;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.remeber_forget label {
+  display: flex;
+  align-items: center;
+  color: #555;
+}
+
+.input-text input:focus + label,
+.input-text input:valid + label {
+  top: 5px;
+  left: 15px;
+  font-size: 12px;
+  color: #8a4dff;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #aaa;
+}
+
+.remeber_forget {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.remeber_forget input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.remeber_forget a {
+  color: #8a4dff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.Login_register a {
+  color: #8a4dff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.remeber_forget a:hover {
+  color: #6d5bba;
 }
 
 .login-btn {
-  margin-top: 15px;
-  margin-bottom: 15px;
   width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #8a4dff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #6d5bba;
+}
+
+.Login_register {
+  margin-top: 20px;
+}
+
+.Login_register a:hover {
+  color: #6d5bba;
+}
+
+.Login_register p {
+  color: #555;
+
 }

@@ -25,4 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
       errorMessage.textContent = 'Please enter your email in lowercase.';
     }
   });
+
 });
+
+});
+

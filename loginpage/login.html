@@ -14,13 +14,23 @@
                 <div class="form_box_login">
                     <h2>LOGIN</h2>
                     <div class="input-text"></div>
+
                     <span class="icon"></span>
                     <input type="email" required>
+
+                    <form action="login.php" method="post"></form>
+                    <span class="icon"></span>
+                    <input type="email" id="email" name="email" required />
+
                     <label>Email</label>
                 </div>
                 <div class="input-text"></div>
                 <span class="icon"></span>
+
                 <input type="password" required>
+
+                <input type="password" id="password" name="password" required />
+
                 <label>Password</label>
 
                 <div class="remeber_forget"></div>
@@ -29,7 +39,11 @@
                 <a href="#">Forget password</a><br>
                 <button type="submit" class="login-btn btn-primary btn">Login</button><br>
                 <div class="Login_register">
+
                     <a href="signup.php" class="hover-link1 non-style-link">Sign Up</a>
+
+                    <!-- <a href="login.php" class="hover-link1 non-style-link">Sign Up</a> -->
+
                     <p>Don't have an account?<a href="#" class="sub-class"></a></p>
                 </div>
             </div>

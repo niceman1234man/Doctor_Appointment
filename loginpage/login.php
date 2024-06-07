@@ -1,5 +1,6 @@
 <?php
 
+
 session_start();
 
 $_SESSION["user"]="";
@@ -34,4 +35,8 @@ if($_POST){
 }
 
 ?>
+
+echo " this";
+ ?>
+
 
