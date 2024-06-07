@@ -72,3 +72,9 @@
 </body>
 
 </html>
+<?php 
+$result=mysqli_query($conn,"select * from patients");
+while($row=mysqli_fetch_array($result)){
+    
+}
+?>
