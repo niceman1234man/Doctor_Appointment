@@ -51,6 +51,8 @@ $telephone=$_POST["telephone"];
 $speciality=$_POST["speciality"];
 $password=$_POST["password"];
 $confirm=$_POST["confirm"];
+$sql="insert into     values('$name','$email','$nic','$telephone','$speciality','$password','$confirm')";
+mysqli_query($conn,$sql);
 
 }
 
