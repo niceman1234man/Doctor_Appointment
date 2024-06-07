@@ -279,12 +279,11 @@
 .accountSetting,
 .viewdetail,
 .confiDelet {
-  width: 50%;
+  width: 30%;
   font-size: x-large;
-
-  /* margin: 25%;
-  padding: 5%; */
-  top: -1000px;
+  margin: 25%;
+  padding: 10%;
+  top: -1500px;
   position: absolute;
 }
 
@@ -324,3 +323,37 @@
   .doctor_first_section,#myApointment{
     display: block;
   } */
+.buton {
+  width: 2%;
+  color: red;
+  margin-left: 90%;
+  background-color: rgb(221, 215, 215);
+  cursor: pointer;
+}
+
+.accountSetting.active,
+.viewdetail.active,
+.confiDelet.active {
+  background-color: gray;
+  top: 30%;
+  left: 30%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(0.7);
+  transition:
+    top 0ms ease-in-out 20ms,
+    opacity 20ms ease-in-out 10ms,
+    transform 20ms ease-in-out 10ms;
+}
+
+.accountSetting.remove,
+.viewdetail.remove,
+.confiDelet.remove {
+  position: absolute;
+  top: -1500px;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition:
+    top 0ms ease-in-out 200ms,
+    opacity 200ms ease-in-out 0ms,
+    transform 20ms ease-in-out 0ms;
+}
