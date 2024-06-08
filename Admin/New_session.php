@@ -9,7 +9,7 @@
 
 <body>
     <div class="add-new-doctors-pop-up ">
-        <form action="New_session.php" method="post">
+        <form action="Schedule.php" method="post">
             <div class="pop-up-header">
                 <h2>Add New Session</h2>
                 <p id="x-sign">&times;</p>
