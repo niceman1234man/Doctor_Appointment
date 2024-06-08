@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Pationt</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <section class="myApointment" id="myApointment">
+        <div class="side_bar">
+            <ul> <li> <img src="/images//img/user.png"class="sidbarUserImg">Test Doctor</li>
+                <button class="loginbtn">log out</button>
+                <hr>
+            <li><a href="DashBourd.html"><img src="/images//icons/dashboard.svg">Dashbourd</a></li>
+            <li><a href="apointment.html"><img src="/images/icons/apointment.svg">My Apointment</a> </li>
+            <li> <a href="session.html"><img src="/images/icons/session.svg">My Sessions</a></li>
+            <li><a href="mypationt.html"><img src="/images/icons/patients.svg">My Pationts</a></li>
+            <li><a href="setting.html"><img src="/images/icons/settings.svg">Setting</a></li>
+            <li></li></ul>
+            </div>
+            <div>
+            <div class="btnsearchDivePation" > <button class="backImg"><img src="/images/backbutton.png" class="backImg">back</button> <input type="search" placeholder="search pationt name or email" class="searinputPationt"> <button class="searPationtbtn">search</button><span class="todaysDate"><h3>todays date</h3> </span></div>
+                <h1>My Patients</h1>
+
+            <div  class="inputDate"><label for="Show Details About">Show Details About</label><select name="patioets" id="pationts">
+                    <option value="mypationt">My Patients Only</option>
+                    <option value="all patients">All Patients</option>
+                </select> <button class="filterbtn"><img src="/images/filterBtn.png" class="filteimg">Filter</button></div>
+            <div class="apointTable">
+                <table class="table" cellspacing="110"><tr><th> name	</th><th>NIC</th><th>Telephone	</th><th>Email</th><th>Date of Birth</th><th>Events</th></tr></table>
+              </div>
+            </div>
+            </section>
+            <script src="/js/index.js"></script>
+
+</body>
+</html>
