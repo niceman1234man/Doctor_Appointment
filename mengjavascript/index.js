@@ -26,9 +26,45 @@ function displayDelete() {
 function hidDelete() {
   document.querySelector('.confiDelet').classList.remove('active');
 }
+/// ///////////////
+function cancelApointment() {
+  document.querySelector('.cancelApoin').classList.add('active');
+}
+function hidCancelApointment() {
+  document.querySelector('.cancelApoin').classList.remove('active');
+}
+
+function displaySession() {
+  document.querySelector('.viewSession').classList.add('active');
+}
+function hidSession() {
+  document.querySelector('.viewSession').classList.remove('active');
+}
+function displayCancelSesion() {
+  document.querySelector('.cancelSession').classList.add('active');
+}
+function hidCancelSesion() {
+  document.querySelector('.cancelSession').classList.remove('active');
+}
+/// /////////////////////////
+function displayPationtDetail() {
+  document.querySelector('.viewPationt').classList.add('active');
+}
+function hidPationtDetail() {
+  document.querySelector('.viewPationt').classList.remove('active');
+}
+/// ///////////////
 displaySetting();
 hidSetting();
 displayDetail();
 hidDetail();
 displayDelete();
 hidDelete();
+cancelApointment();
+hidCancelApointment();
+displaySession();
+hidSession();
+displayCancelSesion();
+hidCancelSesion();
+displayPationtDetail();
+hidPationtDetail();
