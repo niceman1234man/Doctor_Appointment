@@ -1,5 +1,5 @@
 .back {
-  background-image: url('/loginpage/image/register.jpg');
+  background-image: url('./image/register.jpg');
   margin-bottom: 70px;
   background-repeat: no-repeat;
   background-size: cover;

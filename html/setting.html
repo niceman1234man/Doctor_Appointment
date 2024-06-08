@@ -26,16 +26,19 @@
             <div class="todaysDate"><h3>todays date</h3> </div>
            </div>
                 <div class="setindbtncontener">
-                <button class="setingbtn"><h1 class="seting"><img src="/images/icons/settings-iceblue.svg">Acount setting <h6 class="setingsmalfont">edit you acount detail and change you password</h6></h1> </button>
+                <button class="setingbtn" id="settingbtn" onclick="displaySetting()"><h1 class="seting"><img src="/images/icons/settings-iceblue.svg">Acount setting <h6 class="setingsmalfont">edit you acount detail and change you password</h6></h1> </button>
 
-                <button class="setingbtn"><h1 class="seting"><img src="/images/icons/view-iceblue.svg">View Account Details</h1><h6 class="setingsmalfont">view profesional information about you acount</h6> <br></button>
-                <button class="setingbtn"> <h1 class="setingdelet"><img src="/images/icons/delete-iceblue.svg" alt="">Delete Acount </h1><h6 class="setingsmalfont">will permanently delete your acount</h6></button>
+                <button class="setingbtn" id="detailbtn" onclick="displayDetail()"><h1 class="seting"><img src="/images/icons/view-iceblue.svg">View Account Details</h1><h6 class="setingsmalfont">view profesional information about you acount</h6> <br></button>
+                <button class="setingbtn" id="deletbtn" onclick="displayDelete()"> <h1 class="setingdelet"><img src="/images/icons/delete-iceblue.svg" alt="">Delete Acount </h1><h6 class="setingsmalfont">will permanently delete your acount</h6></button>
             </div>
             </div>
             </section>
             <!-- popUp section -->
             <section>
                 <div class="accountSetting">
+                    <div class="buton" onclick="hidSetting()">
+                    &times;
+                    </div>
                     <form action="#" method="post">
                     <label for=""><h1>Edit Doctor Details.
                     </h1>
@@ -82,6 +85,9 @@
                 </form>
                 </div>
                 <div class="viewdetail">
+                    <div class="buton" onclick="hidDetail()" >
+                        &times;
+                        </div>
                     <label for="View Details.">View Details.</label><br>
                     <label for="Name:.">Name</label><br>
                     <input type="text" required name="name"  class="inpSetAcount" readonly><br>
@@ -93,15 +99,18 @@
                     <input type="text" name="Telephone:"  class="inpSetAcount" readonly><br>
                     <label for=" Specialties."> Specialties.</label><br>
                     <input type="text" name="speciality:"  class="inpSetAcount" readonly><br>
-                    <button class="btnSetAcount">Ok</button><br>
+                    <button class="btnSetAcount" onclick="hidDetail()">Ok</button><br>
 
 
                 </div>
                 <div class="confiDelet">
+                    <div class="buton" onclick="hidDelete()">
+                        &times;
+                        </div>
                     <label for="Are you sure?">Are you sure?</label><br>
                     <label for="You want to delete this record(Test Doctor).">You want to delete this record(Test Doctor).</label><br>
                     <button class="btnDletAcount">Yes</button>
-                    <button class="btnDletAcount">No</button><br>
+                    <button class="btnDletAcount" onclick="hidDelete()">No</button><br>
 
                 </div>
              </section>

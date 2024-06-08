@@ -1,8 +1,9 @@
 {
-  "name": "doctor-apointment-yihun",
+  "name": "project-due-date-may-1-2024",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+
   "dependencies": {
     "abab": "^2.0.6",
     "abbrev": "^1.1.1",
@@ -600,7 +601,13 @@
     "yargs-parser": "^20.2.9",
     "yauzl": "^2.10.0",
     "zwitch": "^1.0.5"
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
@@ -611,19 +618,5 @@
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "^3.21.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/niceman1234man/Doctor_Appointment.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/niceman1234man/Doctor_Appointment/issues"
-  },
-  "homepage": "https://github.com/niceman1234man/Doctor_Appointment#readme"
+  }
 }
