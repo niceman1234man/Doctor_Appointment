@@ -4,32 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Setting</title>
-    <link rel="stylesheet" href="/css/index.css">
-</head>
+    <link rel="stylesheet" type="text/css" href="../mengcss/index.css">
+    </head>
 <body>
     <section class="myApointment" id="myApointment">
-        <div class="side_bar">
-            <ul> <li> <img src="/images//img/user.png"class="sidbarUserImg">Test Doctor</li>
-                <button class="loginbtn">log out</button>
-                <hr>
-            <li><a href="DashBourd.html"><img src="/images//icons/dashboard.svg">Dashbourd</a></li>
-            <li><a href="apointment.html"><img src="/images/icons/apointment.svg">My Apointment</a> </li>
-            <li> <a href="session.html"><img src="/images/icons/session.svg">My Sessions</a></li>
-            <li><a href="mypationt.html"><img src="/images/icons/patients.svg">My Pationts</a></li>
-            <li><a href="setting.html"><img src="/images/icons/settings.svg">Setting</a></li>
-            <li></li></ul>
-            </div>
+    <?php include ("sidBar.php")?>
+
+    
             <div class="Appointments">
     
         <div class="topTitle">
-            <div > <button class="backImg"><img src="/images/backbutton.png" class="backImg">back</button>  <span class="set">Settings</span> </div>
+            <div > <button class="backImg"><img src="../images/backbutton.png" class="backImg">back</button>  <span class="set">Settings</span> </div>
             <div class="todaysDate"><h3>todays date</h3> </div>
            </div>
                 <div class="setindbtncontener">
-                <button class="setingbtn" id="settingbtn" onclick="displaySetting()"><h1 class="seting"><img src="/images/icons/settings-iceblue.svg">Acount setting <h6 class="setingsmalfont">edit you acount detail and change you password</h6></h1> </button>
+                <button class="setingbtn" id="settingbtn" onclick="displaySetting()"><h1 class="seting"><img src="../images/icons/settings-iceblue.svg">Acount setting <h6 class="setingsmalfont">edit you acount detail and change you password</h6></h1> </button>
 
-                <button class="setingbtn" id="detailbtn" onclick="displayDetail()"><h1 class="seting"><img src="/images/icons/view-iceblue.svg">View Account Details</h1><h6 class="setingsmalfont">view profesional information about you acount</h6> <br></button>
-                <button class="setingbtn" id="deletbtn" onclick="displayDelete()"> <h1 class="setingdelet"><img src="/images/icons/delete-iceblue.svg" alt="">Delete Acount </h1><h6 class="setingsmalfont">will permanently delete your acount</h6></button>
+                <button class="setingbtn" id="detailbtn" onclick="displayDetail()"><h1 class="seting"><img src="../images/icons/view-iceblue.svg">View Account Details</h1><h6 class="setingsmalfont">view profesional information about you acount</h6> <br></button>
+                <button class="setingbtn" id="deletbtn" onclick="displayDelete()"> <h1 class="setingdelet"><img src="../images/icons/delete-iceblue.svg" alt="">Delete Acount </h1><h6 class="setingsmalfont">will permanently delete your acount</h6></button>
             </div>
             </div>
             </section>
@@ -58,24 +50,6 @@
                     <option value="acadamic and emergency medicin">acadamic and emergency medicin</option>
                     <option value="All ergology">All ergology</option>
                     <option value="anaesthetic">anaesthetic</option>
-                    <option value="biology and hemathology">biology and hemathology</option>
-                    <option value="cardiology">cardiology</option>
-                    <option value="child psychiatry">child psychiatry</option>
-                    <option value="clinical biology">clinical biology</option>
-                    <option value="clinical chemistry">clinical chemistry</option>
-                     <option value="clinical neurophysiological">clinical neurophysiological</option>
-                      <option value="clinical radiology">clinical radiology</option>
-                       <option value="dental oral and maxiollo-facial surgery">dental oral and maxiollo-facial surgery</option>
-                       <option value="dermato venrology">dermato venrology</option>
-                       <option value="dermato">dermato</option>
-                       <option value="endochrinology">endochrinology</option>
-                       <option value="gastro-enterologic sergery">gastro-enterologic sergery</option>
-                       <option value="gastroenterologic">gastroenterologic</option>
-                       <option value="General hermatology">General hermatology</option>
-                       <option value="general practice">general practice</option>
-                       <option value="general surgery">general surgery</option>
-                       <option value="geriatrics">geriatrics</option>
-                
                   </select><br>
                   <label for="Password">Password: </label><br>
                   <input type="password" required name="password" placeholder="your password here" class="inpSetAcount"><br>
@@ -114,7 +88,7 @@
 
                 </div>
              </section>
-            <script src="/js/index.js"></script>
+             <script src="../mengjavascript/index.js"></script>
 
 </body>
 </html>

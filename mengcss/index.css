@@ -1,5 +1,6 @@
 .side_bar {
   width: 20%;
+  margin-right: 5%;
 
   /* background-color: rgb(153, 51, 68); */
 
@@ -31,7 +32,7 @@
 
 .welcome {
   padding-left: 5%;
-  background: url(/images/b8.jpg) no-repeat  center;
+  background: url(../images/b8.jpg) no-repeat  center;
 }
 
 .statusDash a {
@@ -336,6 +337,7 @@
     top 200ms ease-in-out 20ms,
     opacity 20ms ease-in-out 10ms,
     transform 220ms ease-in-out 10ms;
+  box-shadow: 10px 10px 10px 300px rgb(139, 141, 141);
 }
 
 .viewdetail.active {
@@ -350,6 +352,7 @@
     top 200ms ease-in-out 20ms,
     opacity 202ms ease-in-out 100ms,
     transform 220ms ease-in-out 10ms;
+  box-shadow: 10px 10px 10px 300px rgb(139, 141, 141);
 }
 
 .confiDelet.active {
@@ -366,6 +369,7 @@
     top 200ms ease-in-out 20ms,
     opacity 220ms ease-in-out 10ms,
     transform 220ms ease-in-out 10ms;
+  box-shadow: 10px 10px 10px 300px rgb(139, 141, 141);
 }
 
 /* @media screen and (min-width: 350px) {

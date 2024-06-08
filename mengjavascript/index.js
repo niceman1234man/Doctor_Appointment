@@ -7,17 +7,6 @@ function date() {
   document.querySelector('.todaysDate').innerHTML += ` ${day}/${month}/${year}`;
 }
 date();
-// const disp1=displaySetting();
-// const disp2=displayDetail();
-// const disp3=displayDelete();
-// const backPage=document.getElementById('myApointment');
-// function  bluredBackPage(){
-//   backPage.style.left = '0';
-//   backPage.style.width = '100%';
-//   backPage.style.height = '100%';
-//   backPage.style.zIndex = '9999';
-//   backPage.style.backgroundColor = 'rgba(0, 0, 0, 1)';
-// }
 function displaySetting() {
   document.querySelector('.accountSetting').classList.add('active');
 }
@@ -37,9 +26,6 @@ function displayDelete() {
 function hidDelete() {
   document.querySelector('.confiDelet').classList.remove('active');
 }
-// while(disp1()||disp2()||disp3()){
-//   backPage();
-// }
 displaySetting();
 hidSetting();
 displayDetail();
