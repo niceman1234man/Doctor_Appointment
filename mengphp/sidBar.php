@@ -9,10 +9,9 @@
 </head>
 <body>
 <div class="side_bar">
-            <ul> <li> <img src="../images/img/user.png" class="sidbarUserImg">Test Doctor</li>
+            <ul> <li> <img src="../images/icons/user.png" class="sidbarUserImg">Test Doctor</li>
                 <button class="loginbtn">log out</button>
                 <hr>
-                <img src="../images/icons/accountsettings.svg" alt="">
             <li><a href="DashBourd.php"><img src="../images//icons/dashboard.svg">Dashbourd</a></li>
             <li><a href="apointment.php"><img src="../images/icons/apointment.svg">My Apointment</a> </li>
             <li> <a href="session.php"><img src="../images/icons/session.svg">My Sessions</a></li>

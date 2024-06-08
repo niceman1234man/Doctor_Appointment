@@ -12,11 +12,11 @@
     <section class="doctor_first_section">
     <?php include ("sidBar.php")?>
 
-        
+
         <div class="dashbourd" id="dashbourd">
             <!-- //////////////// -->
             <div class="topTitle">
-                <div> <button class="backImg"><img src="../images/backbutton.png" class="backImg">back</button><span
+                <div> <button class="backImg"><img src="../images/icons/back-iceblue.svg" class="backImg">back</button><span
                         class="set">Dashbourd</span> </div>
                 <div class="todaysDate">
                     <h3>todays date</h3>
@@ -43,20 +43,20 @@
                 <!-- ***************************** -->
                 <div class="upcoming_events">
                     <h1>your Up Coming Sessions untill Next Week</h1>
-                    <table cellspacing="80">
+                    <table cellspacing="20">
                         <tr>
                             <th>Session Title</th>
-                            <th>Sheduled Date
-                            <th>
-                            <th>Time</th>
+                            <th>Sheduled Date<th>
+                                <th>Time</th>
                         </tr>
+                        <tr><td>title1</td><td>schedule1</td> <td>time1</td></tr>
                     </table>
                     <button class="showSesions"> Show All Sessions</button>
                 </div>
             </div>
             <!-- ////////////// -->
 
-
+</div>
     </section>
     <!-- MY APOINTMENT SECTION -->
     <script src="../mengjavascript/index.js"></script>

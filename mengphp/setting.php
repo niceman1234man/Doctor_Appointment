@@ -14,8 +14,8 @@
             <div class="Appointments">
     
         <div class="topTitle">
-            <div > <button class="backImg"><img src="../images/backbutton.png" class="backImg">back</button>  <span class="set">Settings</span> </div>
-            <div class="todaysDate"><h3>todays date</h3> </div>
+            <div > <button class="backImg"><img src="../images/icons/back-iceblue.svg" class="backImg">back</button>  <span class="set">Settings</span> </div>
+            <div class="todaysDate"><h5>todays date</h5> </div>
            </div>
                 <div class="setindbtncontener">
                 <button class="setingbtn" id="settingbtn" onclick="displaySetting()"><h1 class="seting"><img src="../images/icons/settings-iceblue.svg">Acount setting <h6 class="setingsmalfont">edit you acount detail and change you password</h6></h1> </button>
