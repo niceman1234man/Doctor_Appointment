@@ -57,7 +57,7 @@ if($password==$confirm){
 
 }
 
-
+mysqli_close($conn);
 ?>
     </div>
 </body>
