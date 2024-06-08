@@ -42,16 +42,31 @@
                 <th>Max num Booked</th>
                 <th>Events</th>
             </tr>
-            <tr>
-                <td>Hllo world</td>
-                <td>Neba</td>
-                <td>01/02/2024</td>
-                <td>45</td>
-                <td>
-                    <button class="view-button"><img src="../img/view-gray.svg" alt="view">View</button>
-                    <button class="delete-button"><img src="../img/icons/delete-iceblue.svg" alt="delet">Cancel</button>
-                </td>
-            </tr>
+            <?php
+if (isset($_POST["submit"])) {
+    $title = $_POST["title"];
+    $date = $_POST["date"];
+    $time = $_POST["time"];
+    $nic = $_POST["nic"];
+    $speciality = $_POST["speciality"];
+
+    // Generate the table row
+    $row = "<tr>";
+    $row .= "<td>{$title}</td>";
+     $row .= "<td>{$speciality}</td>";
+    $row .= "<td>{$date}</td>";
+    $row .= "<td>{$time}</td>";
+    $row .= "<td>{$nic}</td>";
+    $row .= "<td>";
+    $row .= "<button class='view-button'><img src='../img/view-gray.svg' alt='view'>View</button>";
+    $row .= "<button class='delete-button'><img src='../img/icons/delete-iceblue.svg' alt='delete'>Cancel</button>";
+    $row .= "</td>";
+    $row .= "</tr>";
+
+    // Pass the generated row back to the client
+    echo $row;
+}
+?>
         </table>
         <?php
         include("New_session.php");
