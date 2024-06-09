@@ -43,29 +43,39 @@
                 <th>Events</th>
             </tr>
             <?php
-if (isset($_POST["submit"])) {
-    $title = $_POST["title"];
-    $date = $_POST["date"];
-    $time = $_POST["time"];
-    $nic = $_POST["nic"];
-    $speciality = $_POST["speciality"];
+// if (isset($_POST["submit"])) {
+//     $title = $_POST["title"];
+//     $date = $_POST["date"];
+//     $time = $_POST["time"];
+//     $num = $_POST["num"];
+//     $speciality = $_POST["speciality"];
 
-    // Generate the table row
-    $row = "<tr>";
-    $row .= "<td>{$title}</td>";
-     $row .= "<td>{$speciality}</td>";
-    $row .= "<td>{$date}</td>";
-    $row .= "<td>{$time}</td>";
-    $row .= "<td>{$nic}</td>";
-    $row .= "<td>";
-    $row .= "<button class='view-button'><img src='../img/view-gray.svg' alt='view'>View</button>";
-    $row .= "<button class='delete-button'><img src='../img/icons/delete-iceblue.svg' alt='delete'>Cancel</button>";
-    $row .= "</td>";
-    $row .= "</tr>";
+//     $sql="insert into   doctor  values(' $title','  $date',' $time',' $num','$speciality')";
+//     if($password==$confirm){
+//         mysqli_query($conn,$sql);
+//         echo "New Sesssion Setted!";
+//     }else{
+//         echo "please insert correct password!";
+//     }
 
-    // Pass the generated row back to the client
-    echo $row;
-}
+    
+
+//     // Generate the table row
+//     $row = "<tr>";
+//     $row .= "<td>{$title}</td>";
+//      $row .= "<td>{$speciality}</td>";
+//     $row .= "<td>{$date}</td>";
+//     $row .= "<td>{$time}</td>";
+//     $row .= "<td>{ $num}</td>";
+//     $row .= "<td>";
+//     $row .= "<button class='view-button'><img src='../img/view-gray.svg' alt='view'>View</button>";
+//     $row .= "<button class='delete-button'><img src='../img/icons/delete-iceblue.svg' alt='delete'>Cancel</button>";
+//     $row .= "</td>";
+//     $row .= "</tr>";
+
+//     // Pass the generated row back to the client
+//     echo $row;
+// }
 ?>
         </table>
         <?php
