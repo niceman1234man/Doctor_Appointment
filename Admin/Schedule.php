@@ -43,39 +43,31 @@
                 <th>Events</th>
             </tr>
             <?php
-// if (isset($_POST["submit"])) {
-//     $title = $_POST["title"];
-//     $date = $_POST["date"];
-//     $time = $_POST["time"];
-//     $num = $_POST["num"];
-//     $speciality = $_POST["speciality"];
-
-//     $sql="insert into   doctor  values(' $title','  $date',' $time',' $num','$speciality')";
-//     if($password==$confirm){
-//         mysqli_query($conn,$sql);
-//         echo "New Sesssion Setted!";
-//     }else{
-//         echo "please insert correct password!";
-//     }
-
-    
-
-//     // Generate the table row
-//     $row = "<tr>";
-//     $row .= "<td>{$title}</td>";
-//      $row .= "<td>{$speciality}</td>";
-//     $row .= "<td>{$date}</td>";
-//     $row .= "<td>{$time}</td>";
-//     $row .= "<td>{ $num}</td>";
-//     $row .= "<td>";
-//     $row .= "<button class='view-button'><img src='../img/view-gray.svg' alt='view'>View</button>";
-//     $row .= "<button class='delete-button'><img src='../img/icons/delete-iceblue.svg' alt='delete'>Cancel</button>";
-//     $row .= "</td>";
-//     $row .= "</tr>";
-
-//     // Pass the generated row back to the client
-//     echo $row;
-// }
+     include("connection.php");
+     $list2 = "select * from session";
+        $result = mysqli_query($conn, $list2);
+if(mysqli_num_rows($result) > 0) {
+    $data = '';
+    while($row = mysqli_fetch_assoc($result)) {
+        $title = $row["title"];
+        $spec = $row["dname"]; 
+        $mnum = $row["num"];
+        $d = $row["date"];
+        $t = $row["time"];
+      
+        $data .= '<tr>
+            <td>' . $title . '</td>
+            <td>' . $spec . '</td>
+            <td>' .  $d . " ".  $t .'</td>
+            <td>' . $mnum . '</td>
+            <td>
+                <button class="view-button"><img src="../img/icons/view-iceblue.svg" alt="">View</button>
+                <button><img src="../img/icons/delete-iceblue.svg" alt="">Remove</button>
+            </td>
+        </tr>';
+    }
+    echo $data;
+}
 ?>
         </table>
         <?php
@@ -108,7 +100,3 @@
 </body>
 
 </html>
-<?php
-
-
-?>
