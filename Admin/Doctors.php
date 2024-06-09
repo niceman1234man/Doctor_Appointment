@@ -45,6 +45,12 @@
                 </td>
             </tr>
         </table>
+        <?php 
+// $result=mysqli_query($conn,"select * from patients");
+// while($row=mysqli_fetch_array($result)){
+    
+
+?>
         <?php
         
         include("add_new_doctor.php");
@@ -72,9 +78,3 @@
 </body>
 
 </html>
-<?php 
-$result=mysqli_query($conn,"select * from patients");
-while($row=mysqli_fetch_array($result)){
-    
-}
-?>
