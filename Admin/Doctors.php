@@ -26,7 +26,12 @@
             <h2>Add new Doctor</h2>
             <button id="add-new-button">+ Add New</button>
         </div>
-        <p>All Doctors(1)</p>
+        <?php
+        include("connection.php");
+        $list1 = "select * from doctor";
+        $result = mysqli_query($conn, $list1);
+        ?>
+        <p>All Doctors (<?php echo mysqli_num_rows($result); ?>)</p>
         <table>
             <tr>
                 <th>Doctor Name</th>
@@ -34,16 +39,27 @@
                 <th>Specialities</th>
                 <th>Events</th>
             </tr>
-            <tr>
-                <td>Abebe</td>
-                <td>abe@gmail.com</td>
-                <td>surgical</td>
-                <td>
-                    <button><img src="../img/icons/edit-iceblue.svg" alt="">Edit</button>
-                    <button class="view-button"><img src="../img/icons/view-iceblue.svg" alt="">View</button>
-                    <button><img src="../img/icons/delete-iceblue.svg" alt="">Remove</button>
-                </td>
-            </tr>
+            <?php 
+if(mysqli_num_rows($result) > 0) {
+    $data = '';
+    while($row = mysqli_fetch_assoc($result)) {
+        $name = $row["name"];
+        $email = $row["email"];
+        $spec = $row["speciality"];
+        $data .= '<tr>
+            <td>' . $name . '</td>
+            <td>' . $email . '</td>
+            <td>' . $spec . '</td>
+            <td>
+                <button><img src="../img/icons/edit-iceblue.svg" alt="">Edit</button>
+                <button class="view-button"><img src="../img/icons/view-iceblue.svg" alt="">View</button>
+                <button><img src="../img/icons/delete-iceblue.svg" alt="">Remove</button>
+            </td>
+        </tr>';
+    }
+    echo $data;
+}
+?>
         </table>
         <?php 
 // $result=mysqli_query($conn,"select * from patients");
