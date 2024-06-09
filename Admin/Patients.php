@@ -29,14 +29,33 @@
                 <th>Date of birth</th>
                 <th>Events</th>
             </tr>
-            <tr>
-                <td>Aster</td>
-                <td>0002</td>
-                <td>0989764532</td>
-                <td>abu@gmail.com</td>
-                <td>09/09/2000</td>
-                <td><button id="view-patient-buttons"><img src="../img/icons/view-iceblue.svg" alt="">View</button></td>
-            </tr>
+            <?php
+     include("connection.php");
+     $list2 = "select * from session";
+        $result = mysqli_query($conn, $list2);
+if(mysqli_num_rows($result) > 0) {
+    $data = '';
+    while($row = mysqli_fetch_assoc($result)) {
+        $title = $row["title"];
+        $spec = $row["dname"];
+        $mnum = $row["num"];
+        $d = $row["date"];
+        $t = $row["time"];
+      
+        $data .= '<tr>
+            <td>' . $title . '</td>
+            <td>' . $spec . '</td>
+            <td>' .  $d . " ".  $t .'</td>
+            <td>' . $mnum . '</td>
+            <td>
+                <button class="view-button"><img src="../img/icons/view-iceblue.svg" alt="">View</button>
+                <button><img src="../img/icons/delete-iceblue.svg" alt="">Remove</button>
+            </td>
+        </tr>';
+    }
+    echo $data;
+}
+?>
         </table>
         <div class="patients-detail-pop-up">
             <div class="pop-up-header">
@@ -60,9 +79,3 @@
 </body>
 
 </html>
-<?php 
-$result=mysqli_query($conn,"select * from patients");
-while($row=mysqli_fetch_array($result)){
-    
-}
-?>
