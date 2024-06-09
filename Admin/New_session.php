@@ -8,8 +8,8 @@
 </head>
 
 <body>
-    <div class="add-new-doctors-pop-up ">
-        <form action="Schedule.php" method="post">
+    <div class="add-new-doctors-pop-up">
+        <form action="New_session.php" method="post">
             <div class="pop-up-header">
                 <h2>Add New Session</h2>
                 <p id="x-sign">&times;</p>
@@ -23,7 +23,7 @@
                 <option value="baby"> bela</option>
             </select><br>
             <label for="nic">Number of Patients/Appointment Numbers</label><br>
-            <input type="number" name="nic" id="nic" placeholder="The Finial Appointment Number"><br>
+            <input type="number" name="num" id="nic" placeholder="The Finial Appointment Number"><br>
             <label for="email">Session Date</label><br>
             <input type="date" name="date" id="email"><br>
             <label for="telephone">Schedule Time</label><br>
@@ -32,32 +32,22 @@
             <input type="reset" id="rest-button">
         </form>
     </div>
-
+    <?php
+include("connection.php");
+if(isset($_POST["submit"])){
+$title=$_POST["title"];
+$date=$_POST["date"];
+$num=$_POST["num"];
+$time=$_POST["time"];
+$speciality=$_POST["speciality"];
+$sql="insert into session  values('$title','$speciality','$num','$date','$time')";
+if(mysqli_query($conn,$sql)){
+    echo "New Session Added!";
+}else{
+    echo "please insert correct password!";
+}
+}
+?>
 </body>
 
 </html>
-<?php
-
-if(isset($_POST["submit"])){
-    
-$title=$_POST["title"];
-$date=$_POST["date"];
-$nic=$_POST["nic"];
-$time=$_POST["time"];
-// $speciality=$_POST["speciality"];
-
-// echo $title . "<br>";
-// echo $date . "<br>";
-// echo $nic . "<br>";
-// if (isset($_POST["speciality"])) {
-//     $speciality = $_POST["speciality"];
-//     // Process the selected speciality
-//     echo "Selected speciality: " . $speciality;
-// } else {
-//     echo "No speciality selected.";
-// }
-// echo $time . "<br>";
-
-}
-
-?>
