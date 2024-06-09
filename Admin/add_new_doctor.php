@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../CSS/doctor.css">
 </head>
 
 <body>
@@ -46,7 +47,7 @@ $telephone=$_POST["telephone"];
 $speciality=$_POST["speciality"];
 $password=$_POST["password"];
 $confirm=$_POST["confirm"];
-$sql="insert into   doctor  values('','$email','$nic','$telephone','$speciality','$password')";
+$sql="insert into   doctor  values('$name','$email','$nic','$telephone','$speciality','$password')";
 if($password==$confirm){
     mysqli_query($conn,$sql);
     echo "New Doctor Added!";
