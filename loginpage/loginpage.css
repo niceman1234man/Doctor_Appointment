@@ -29,6 +29,7 @@ header {
 .h2 {
   font-size: 2em;
   color: #fff;
+  user-select: none;
 }
 
 .navigation {

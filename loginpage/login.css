@@ -1,6 +1,6 @@
 body {
   font-family: 'Arial', sans-serif;
-  background-image: url('./image/login.jpg');
+  background-image: url('./image/signup.avif');
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -11,6 +11,7 @@ body {
 
 .back {
   background-color: rgba(255, 255, 255, 0.9);
+  background-color: transparent;
 
   /* Semi-transparent background */
   padding: 40px;
@@ -38,7 +39,11 @@ h2 {
 
 .input-text {
   position: relative;
+  margin: 0 auto;
   margin-bottom: 30px;
+  width: 100%;
+  padding: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .input-text input {
@@ -136,10 +141,11 @@ h2 {
 }
 
 .Login_register a:hover {
-  color: #6d5bba;
+  color: #050409;
+  text-decoration: none;
 }
 
 .Login_register p {
-  color: #555;
+  color: #f5f3f7;
   margin-top: 10px;
 }
