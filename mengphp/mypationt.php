@@ -27,6 +27,7 @@
                 </select> <button class="filterbtn">
                     <img src="../images/icons/filter-iceblue.svg" class="filteimg">Filter</button></div>
             <div class="apointTable">
+                <?php include("connection.php")?>
                 <table class="table" cellspacing="50"><tr><th> name	</th><th>NIC</th><th>Telephone	</th><th>Email</th><th>Date of Birth</th><th>Events</th></tr>
             <tr><td> Test Patient	</td><td>0000000000	</td><td>0120000000</td><td>patient@edoc.com	</td><td>2000-01-01	
             </td><td><button class="tablebtn" onclick="displayPationtDetail()"><img src="../images/icons/view-iceblue.svg" > view</button ></td></tr></table>
