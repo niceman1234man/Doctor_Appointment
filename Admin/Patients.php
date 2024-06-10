@@ -11,6 +11,9 @@
 
 <body>
     <?php
+    include("connection.php");
+    $list3 = "select * from patient";
+       $result = mysqli_query($conn, $list3);
     include("sidebar.php");
     ?>
     <div class="main-part">
@@ -19,7 +22,7 @@
         <button id="search-button">search</button>
         <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""></p>
 
-        <p>All Patients(1)</p>
+        <p>All Patients( <?php echo mysqli_num_rows($result)?>)</p>
         <table>
             <tr>
                 <th> Name</th>
@@ -30,26 +33,25 @@
                 <th>Events</th>
             </tr>
             <?php
-     include("connection.php");
-     $list2 = "select * from session";
-        $result = mysqli_query($conn, $list2);
+     
 if(mysqli_num_rows($result) > 0) {
     $data = '';
     while($row = mysqli_fetch_assoc($result)) {
-        $title = $row["title"];
-        $spec = $row["dname"];
-        $mnum = $row["num"];
-        $d = $row["date"];
-        $t = $row["time"];
+        $name = $row["name"];
+        $nic = $row["nic"];
+        $tel = $row["telephone"];
+        $email = $row["email"];
+        $date_of_birth = $row["date_of_birth"];
       
         $data .= '<tr>
-            <td>' . $title . '</td>
-            <td>' . $spec . '</td>
-            <td>' .  $d . " ".  $t .'</td>
-            <td>' . $mnum . '</td>
+            <td>' .  $name . '</td>
+            <td>' .   $nic  . '</td>
+            <td>' .  $tel .'</td>
+            <td>' . $email. '</td>
+             <td>' . $date_of_birth . '</td>
             <td>
                 <button class="view-button"><img src="../img/icons/view-iceblue.svg" alt="">View</button>
-                <button><img src="../img/icons/delete-iceblue.svg" alt="">Remove</button>
+                
             </td>
         </tr>';
     }
