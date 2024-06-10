@@ -45,7 +45,7 @@
                   <label for="nic">NIC </label><br>
                   <input type="text" name="NIC" placeholder="your nic here" maxlength="50" class="inpSetAcount"><br>
                   <label for="Telephone">Telephone:</label><br>
-                  <input type="text" name="Telephone:" placeholder="your Telephone here" maxlength="13"class="inpSetAcount"><br>
+                  <input type="text" name="Telephone" placeholder="your Telephone here" maxlength="13"class="inpSetAcount"><br>
                   <label for="Choose specialties">Choose specialties: (CurrentAccident and emergency medicine)</label><br>
                   <select name="specialties" id="speciality" class="inpSetAcount">
                     <option value="acadamic and emergency medicin">acadamic and emergency medicin</option>
@@ -53,10 +53,10 @@
                     <option value="anaesthetic">anaesthetic</option>
                   </select><br>
                   <label for="Password">Password: </label><br>
-                  <input type="password" required name="password" placeholder="your password here" maxlength="100" class="inpSetAcount"><br>
-                  <label for="Conform Password:">Conform Password:</label><br>
-                  <input type="password" name="ConformPassword:" placeholder="Conform Password here" maxlength="100" required class="inpSetAcount"><br>
-                  <input type="reset" value="Reset" class="btnSetAcount"> <input type="submit" value="Save" class="btnSetAcount"><br>
+                  <input type="password" required name="password" placeholder="your password here" maxlength="6" class="inpSetAcount"><br>
+                  <label for="Conform Password">Conform Password:</label><br>
+                  <input type="password" name="ConformPassword" placeholder="Conform Password here" maxlength="6" required class="inpSetAcount"><br>
+                  <input type="reset" value="Reset" class="btnSetAcount"> <input type="submit" value="Save" name="submit" class="btnSetAcount"><br>
                 </form>
                 </div>
                 <div class="viewdetail">
@@ -86,10 +86,8 @@
                     <label for="You want to delete this record(Test Doctor).">You want to delete this record(Test Doctor).</label><br>
                     <button class="btnDletAcount">Yes</button>
                     <button class="btnDletAcount" onclick="hidDelete()">No</button><br>
-
                 </div>
              </section>
              <script src="../mengjavascript/index.js"></script>
-
 </body>
 </html>
