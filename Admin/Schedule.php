@@ -14,6 +14,9 @@
 <body>
     <?php
    include("sidebar.php");
+   include("connection.php");
+     $list2 = "select * from session";
+        $result = mysqli_query($conn, $list2);
    ?>
     <div class="main-part">
         <h1>Schedule Manager</h1>
@@ -23,7 +26,7 @@
             <h2>Schedule A Session</h2>
             <button id="add-new-button">+ Add Session</button>
         </div>
-        <p>All Sessions(1)</p>
+        <p>All Sessions( <?php echo mysqli_num_rows($result)?>)</p>
         <div class="input-sections">
             Date:<input type="date" name="date" id="date">
             Doctor: <select name="doctor" id="doctor">
@@ -43,9 +46,7 @@
                 <th>Events</th>
             </tr>
             <?php
-     include("connection.php");
-     $list2 = "select * from session";
-        $result = mysqli_query($conn, $list2);
+     
 if(mysqli_num_rows($result) > 0) {
     $data = '';
     while($row = mysqli_fetch_assoc($result)) {
