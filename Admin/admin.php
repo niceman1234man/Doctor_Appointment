@@ -17,7 +17,6 @@
         <input type="search" placeholder="search Doctor Name or Email" id="search">
         <button id="search-button">search</button>
         <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br></p><br>
-
         <h2>Status</h2>
         <ul class="main-part-list">
             <li>Doctors <img src="../img/icons/doctors.svg" alt=""></li>

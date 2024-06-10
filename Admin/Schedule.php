@@ -42,43 +42,37 @@
                 <th>Max num Booked</th>
                 <th>Events</th>
             </tr>
-            <tr>
-                <td>Hllo world</td>
-                <td>Neba</td>
-                <td>01/02/2024</td>
-                <td>45</td>
-                <td>
-                    <button class="view-button"><img src="../img/view-gray.svg" alt="view">View</button>
-                    <button class="delete-button"><img src="../img/icons/delete-iceblue.svg" alt="delet">Cancel</button>
-                </td>
-            </tr>
+            <?php
+     include("connection.php");
+     $list2 = "select * from session";
+        $result = mysqli_query($conn, $list2);
+if(mysqli_num_rows($result) > 0) {
+    $data = '';
+    while($row = mysqli_fetch_assoc($result)) {
+        $title = $row["title"];
+        $spec = $row["dname"]; 
+        $mnum = $row["num"];
+        $d = $row["date"];
+        $t = $row["time"];
+      
+        $data .= '<tr>
+            <td>' . $title . '</td>
+            <td>' . $spec . '</td>
+            <td>' .  $d . " ".  $t .'</td>
+            <td>' . $mnum . '</td>
+            <td>
+                <button class="view-button"><img src="../img/icons/view-iceblue.svg" alt="">View</button>
+                <button><img src="../img/icons/delete-iceblue.svg" alt="">Remove</button>
+            </td>
+        </tr>';
+    }
+    echo $data;
+}
+?>
         </table>
-
-        <div class="add-new-doctors-pop-up ">
-            <form action="">
-                <div class="pop-up-header">
-                    <h2>Add New Session</h2>
-                    <p id="x-sign">&times;</p>
-                </div>
-                <label for="name">Session Title</label><br>
-                <input type="text" name="" id="name" placeholder="Name of This Session"><br>
-                <label for="speciality">Select Doctor</label><br>
-                <select name=" " id="select" placeholder="Choose doctor name from list">
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                </select><br>
-                <label for="nic">Number of Patients/Appointment Numbers</label><br>
-                <input type="number" name="" id="nic" placeholder="The Finial Appointment Number"><br>
-                <label for="email">Session Date</label><br>
-                <input type="date" name="" id="email"><br>
-                <label for="telephone">Schedule Time</label><br>
-                <input type="time" name="" id="telephone"><br>
-                <input type="submit" value="Place This Session" id="add-button">
-                <input type="reset" id="rest-button">
-            </form>
-        </div>
-
+        <?php
+        include("New_session.php");
+         ?>
         <div class="schedule-detail-pop-up">
             <div class="pop-up-header">
                 <h2>View Detail</h2>
