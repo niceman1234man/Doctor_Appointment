@@ -1,3 +1,7 @@
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Your JavaScript code goes here
 document.querySelector('#add-new-button').addEventListener('click', () => {
   document.querySelector('.add-new-doctors-pop-up').classList.add('active');
 });
@@ -28,4 +32,5 @@ document.querySelector('#view-patient-buttons').addEventListener('click', () => 
 });
 document.querySelector('#x-sign').addEventListener('click', () => {
   document.querySelector('.patients-detail-pop-up').classList.remove('active');
+});
 });
