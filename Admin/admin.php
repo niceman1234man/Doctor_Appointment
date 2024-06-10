@@ -44,7 +44,7 @@
 
                     </tr>
                 </table>
-                <button class="show-button">Show all Appointments</button>
+                <button class="show-button" name="show_app">Show all Appointments</button>
             </div>
             <div class="main-part-session">
                 <h3>Upcoming Sesssions Until next Friday</h3>
@@ -64,7 +64,7 @@
 
                     </tr>
                 </table>
-                <button class="show-button">Show all Sesssions</button>
+                <button class="show-button" name="show_sess">Show all Sesssions</button>
             </div>
         </div>
     </div>
