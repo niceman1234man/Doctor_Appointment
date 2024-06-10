@@ -61,15 +61,11 @@ if(mysqli_num_rows($result) > 0) {
 }
 ?>
         </table>
-        <?php 
-// $result=mysqli_query($conn,"select * from patients");
-// while($row=mysqli_fetch_array($result)){
-    
 
-?>
         <?php
         
         include("add_new_doctor.php");
+        include("connection.php");
         ?>
         <div class="doctor-detail-pop-up">
             <div class="pop-up-header">
@@ -90,7 +86,7 @@ if(mysqli_num_rows($result) > 0) {
         </div>
 
     </div>
-    <script src="../JS/index.js"></script>
+    <script src="..JS/index.js"></script>
 </body>
 
 </html>
