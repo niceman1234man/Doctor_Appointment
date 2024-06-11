@@ -20,9 +20,14 @@
         <img src="../img/search.svg" alt="search" id="search-img">
         <input type="search" placeholder="search Patient Name or Email" id="search">
         <button id="search-button">search</button>
-        <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""></p>
+        <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br>
+            <?php date_default_timezone_set('Asia/Kolkata');
 
-        <p>All Patients( <?php echo mysqli_num_rows($result)?>)</p>
+            $today = date('Y-m-d');
+            echo $today;?>
+        </p>
+
+        <p>All Patients( <?php echo mysqli_num_rows($result);?>)</p>
         <table>
             <tr>
                 <th> Name</th>
