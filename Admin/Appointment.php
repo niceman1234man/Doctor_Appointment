@@ -20,7 +20,12 @@
     <div class="main-part">
         <h1>Appointment Manager</h1>
 
-        <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br></p>
+        <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br>
+            <?php  date_default_timezone_set('Asia/Kolkata');
+
+            $today = date('Y-m-d');
+            echo $today;?>
+        </p>
 
 
         <p>All Appointments( <?php echo mysqli_num_rows($result)?>) </p>
