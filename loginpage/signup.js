@@ -64,7 +64,7 @@ if (passwordValue === '') {
 if (confirmpasswordValue === '') {
   setError(confirmpassword, 'Please confirm your password'); // corrected variable name
 } else if (confirmpasswordValue !== passwordValue) {
-  setError(confirmpassword, "Passwords don't match"); // corrected variable name
+  setError(confirmpassword, "Password don't match"); // corrected variable name
 } else {
   setSuccess(confirmpassword);
 }
