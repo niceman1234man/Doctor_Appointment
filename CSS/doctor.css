@@ -21,6 +21,17 @@
     opacity 200ms ease-in-out 0ms,
     transform 20ms ease-in-out 0ms;
 }
+.new-doctor-added-popup{
+position: absolute;
+justify-content: center;
+font-weight: bold;
+width: 30%;
+height: 30%;
+/* top: -150%;
+left: 50%; */
+
+}
+
 
 .add-new-doctors-pop-up.active,
 .schedule-detail-pop-up.active,
