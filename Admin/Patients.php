@@ -47,6 +47,7 @@ if(mysqli_num_rows($result) > 0) {
         $tel = $row["telephone"];
         $email = $row["email"];
         $date_of_birth = $row["date_of_birth"];
+        $id=$row["id"];
       
         $data .= '<tr>
             <td>' .  $name . '</td>
@@ -55,7 +56,12 @@ if(mysqli_num_rows($result) > 0) {
             <td>' . $email. '</td>
              <td>' . $date_of_birth . '</td>
             <td>
-                <button class="view-button"><img src="../img/icons/view-iceblue.svg" alt="">View</button>
+                <form action="view_patient.php" method="post" style="display:flex;">
+          <input type="hidden" value="'.$id .'">
+         <button type="submit" class="view-button">
+        <img src="../img/icons/view-iceblue.svg" alt="View" value="View">View
+          </button>
+       </form>
                 
             </td>
         </tr>';
@@ -64,24 +70,7 @@ if(mysqli_num_rows($result) > 0) {
 }
 ?>
         </table>
-        <div class="patients-detail-pop-up">
-            <div class="pop-up-header">
-                <h2>View Detail</h2>
-                <p id="x-sign">&times;</p>
-            </div>
-            <p>Patient ID</p>
-            <p></p>
-            <p>Name :</p>
-            <p></p>
-            <p>Email :</p>
-            <p></p>
-            <p> NIC :</p>
-            <p></p>
-            <p>Telephone :</p>
-            <p></p>
-            <p>Address :</p>
-            <p></p>
-        </div>
+
         <script src="../JS/index.js"></script>
 </body>
 
