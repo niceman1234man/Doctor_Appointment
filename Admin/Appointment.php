@@ -15,6 +15,8 @@
    include("connection.php");
      $list2 = "select * from appointment";
         $result = mysqli_query($conn, $list2);
+        $list3 ="select name from doctor";
+        $resultd= mysqli_query($conn, $list3);
    ?>
 
     <div class="main-part">
@@ -32,9 +34,14 @@
         <div class="input-sections">
             Date:<input type="date" name="date" id="date">
             Doctor: <select name="doctor" id="doctor">
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+                <?php
+             while($row=mysqli_fetch_assoc($resultd)){
+                $data2 =$row["name"] ;
+                echo '
+                <option value="">'. $data2 . '</option>
+                ';
+             }
+                ?>
             </select>
             <button><img src="../img/icons/filter-iceblue.svg" alt="" id="filter"> Filter</button>
 
