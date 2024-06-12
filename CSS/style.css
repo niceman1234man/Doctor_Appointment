@@ -78,8 +78,7 @@ body {
 }
 
 .main-part-list {
-
-  font-size:large;
+  font-size: large;
   flex-direction: row;
 }
 
@@ -89,8 +88,6 @@ body {
   border: 1px solid black;
   border-radius: 5px;
   display: inline;
-  
-  
 }
 
 .slid-bar-details li:hover {
@@ -130,11 +127,13 @@ tr {
   text-align: center;
   width: 85%;
 }
-.form-button,.schedule-form-button{
+
+.form-button,
+.schedule-form-button {
   display: flex;
 }
 
-.form-button button{
+.form-button button {
   width: 90%;
 }
 
