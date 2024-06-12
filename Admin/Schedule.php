@@ -17,6 +17,9 @@
    include("connection.php");
      $list2 = "select * from session";
         $result = mysqli_query($conn, $list2);
+        $list1 = "select name from doctor";
+        $resultd = mysqli_query($conn, $list1);
+        $data2="";
    ?>
     <div class="main-part">
         <h1>Schedule Manager</h1>
@@ -30,10 +33,19 @@
         <div class="input-sections">
             Date:<input type="date" name="date" id="date">
             Doctor: <select name="doctor" id="doctor">
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+                <?php
+             while($row=mysqli_fetch_assoc($resultd)){
+                $data2 =$row["name"] ;
+                echo '
+                <option value="">'. $data2 . '</option>
+                ';
+
+            }
+            ?>
             </select>
+
+
+
             <button><img src="../img/icons/filter-iceblue.svg" alt="" id="filter"> Filter</button>
 
         </div>
@@ -55,6 +67,7 @@ if(mysqli_num_rows($result) > 0) {
         $mnum = $row["num"];
         $d = $row["date"];
         $t = $row["time"];
+        $id=$row["id"];
       
         $data .= '<tr>
             <td>' . $title . '</td>
@@ -62,8 +75,21 @@ if(mysqli_num_rows($result) > 0) {
             <td>' .  $d . " ".  $t .'</td>
             <td>' . $mnum . '</td>
             <td>
-                <button class="view-button"><img src="../img/icons/view-iceblue.svg" alt="">View</button>
-                <button><img src="../img/icons/delete-iceblue.svg" alt="">Remove</button>
+            <div class="schedule-form-button">
+        <form action="viewSchedule.php" method="post" style="display:flex;">
+          <input type="hidden" value="' . $id .'">
+         <button type="submit" class="view-button">
+        <img src="../img/icons/view-iceblue.svg" alt="View" value="View">View
+          </button>
+       </form>
+
+    <form action="deleteSchedule.php" method="post">
+    <input type="hidden" value="' . $id .'">
+    <button type="submit">
+        <img src="../img/icons/delete-iceblue.svg" alt="Remove" value="Remove">
+    </button>
+</form>
+ </div>
             </td>
         </tr>';
     }
@@ -77,6 +103,7 @@ if(mysqli_num_rows($result) > 0) {
                     <h2>Add New Session</h2>
                     <p id="x-sign">&times;</p>
                 </div>
+
                 <label for="name">Session Title</label><br>
                 <input type="text" name="title" id="name" placeholder="Name of This Session"><br>
                 <label for="speciality">Select Doctor</label><br>
@@ -95,29 +122,7 @@ if(mysqli_num_rows($result) > 0) {
                 <input type="reset" id="rest-button">
             </form>
         </div>
-        <div class="schedule-detail-pop-up">
-            <div class="pop-up-header">
-                <h2>View Detail</h2>
-                <p id="xs-sign">&times;</p>
-            </div>
-            <p>Session Title :</p>
-            <p></p>
-            <p>Doctor of This Session :</p>
-            <p></p>
-            <p>Scheduled Date :</p>
-            <p></p>
-            <p>Scheduled Time :</p>
-            <p></p>
-            <h4>Patients That Already Registered for this session(1/50)</h4>
-            <table>
-                <tr>
-                    <th>Patient ID</th>
-                    <th>Patient Name</th>
-                    <th>Appointment Number</th>
-                    <th>Patient Telephone</th>
-                </tr>
-            </table>
-        </div>
+
         <script src="../JS/index.js"></script>
 </body>
 
