@@ -16,8 +16,10 @@
   ?>
     <div class="main-part">
         <img src="../img/search.svg" alt="search" id="search-img">
-        <input type="search" placeholder="search Doctor Name or Email" id="search">
-        <button id="search-button">search</button>
+        <form action="">
+            <input type="search" placeholder="search Doctor Name or Email" id="search" name="find">
+            <input type="submit" name="search" id="search-button">search</input>
+        </form>
         <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br>
             <?php date_default_timezone_set('Asia/Kolkata'); 
             $today=date('Y-m-d');
@@ -33,13 +35,8 @@
         ?>
         <p>All Doctors (<?php echo mysqli_num_rows($result); ?>)</p>
         <?php
-    if(isset($_POST["submit"])) {
-        echo "<div class='new-doctor-added-popup'>
-            <h3>New Doctor Added!</h3>
-            <p>You will be redirected to the Doctors page in a few seconds.</p>
-        </div>";
-    }
-    ?>
+  
+        ?>
         <table>
             <tr>
                 <th>Doctor Name</th>
@@ -47,26 +44,41 @@
                 <th>Specialities</th>
                 <th>Events</th>
             </tr>
-            <?php 
+            <?php
+            
 if(mysqli_num_rows($result) > 0) {
     $data = '';
     while($row = mysqli_fetch_assoc($result)) {
         $name = $row["name"];
         $email = $row["email"];
         $spec = $row["speciality"];
+        $id=$row["id"];
         $data .= '<tr>
             <td>' . $name . '</td>
             <td>' . $email . '</td>
             <td>' . $spec . '</td>
             <td>
-                <button><img src="../img/icons/edit-iceblue.svg" alt="">Edit</button>
-                <button class="view-button"><img src="../img/icons/view-iceblue.svg" alt="">View</button>
-                <button><img src="../img/icons/delete-iceblue.svg" alt="">Remove</button>
+            <div class="form-button">
+                <form action="view_doctor.php" method="post" style="display:flex;">
+          <input type="hidden"  name="id" value="' .$id . '">
+         <button type="submit" class="view-button">
+        <img src="../img/icons/view-iceblue.svg" alt="View" value="View">View
+          </button>
+       </form>
+
+    <form action="delete_doctor.php" method="post">
+    <input type="hidden" name="id" value="' .$id . '">
+    <button type="submit">
+        <img src="../img/icons/delete-iceblue.svg" alt="Remove" value="Remove">
+    </button>
+</form>
+</div>
             </td>
         </tr>';
     }
     echo $data;
 }
+            
 ?>
         </table>
         <div class="add-new-doctors-pop-up ">
@@ -100,24 +112,7 @@ if(mysqli_num_rows($result) > 0) {
         <?php
         include("connection.php");
         ?>
-        <p class="view"></p>
-        <div class="doctor-detail-pop-up">
-            <div class="pop-up-header">
-                <h2>View Detail</h2>
-                <p id="xd-sign">&times;</p>
-            </div>
-            <p>Name :</p>
-            <p></p>
-            <p>Email :</p>
-            <p></p>
-            <p> NIC :</p>
-            <p></p>
-            <p>Telephone :</p>
-            <p></p>
-            <p>Specialities :</p>
-            <p></p>
-            <button>ok</button>
-        </div>
+
     </div>
     <!-- <script src="..JS/index.js"></script> -->
     <!-- <script src="../JS/ab.js"></script> -->
