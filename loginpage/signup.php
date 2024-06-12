@@ -1,60 +1,49 @@
-<!-- <?php
+<?php
+// Include config file
+require "Connection.php"; // Ensure this file sets up $link variable correctly
 
-session_start();
+// Initialize variables
+$First_Name = $Last_name = $email = $NIC = $password = $address = $Phone_number = $dob = '';
 
-$_SESSION["user"]="";
-$_SESSION["usertype"]="";
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get form data
+    $First_Name = isset($_POST['fname']) ? $_POST['fname'] : '';
+    $Last_name = isset($_POST['lname']) ? $_POST['lname'] : '';
+    $email = isset($_POST['email']) ? $_POST['email'] : '';
+    $NIC = isset($_POST['nic']) ? $_POST['nic'] : '';
+    $password = isset($_POST['password']) ? $_POST['password'] : '';
+    $address = isset($_POST['address']) ? $_POST['address'] : '';
+    $Phone_number = isset($_POST['phonenumber']) ? $_POST['phonenumber'] : '';
+    $dob = isset($_POST['dob']) ? $_POST['dob'] : '';
 
-// Set the new timezone
-date_default_timezone_set('Asia/Kolkata');
-$date = date('Y-m-d');
+    // Validate form data (you may want to add more validation here)
 
-$_SESSION["date"]=$date;
-//import database
-include("connection.php");
-if($_POST){
+    // Check if all required fields are filled
+    if ($First_Name && $Last_name && $address && $NIC && $dob && $email && $Phone_number && $password) {
+        // Hash the password
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    $result= $database->query("select * from webuser");
+        // Prepare and bind
+        $stmt = $link->prepare("INSERT INTO personal_data (FirstName, LastName, email, NIC, password, Address, phone_number, dob) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssssss", $First_Name, $Last_name, $email, $NIC, $hashed_password, $address, $Phone_number, $dob);
 
-    $fname=$_SESSION['personal']['fname'];
-    $lname=$_SESSION['personal']['lname'];
-    $name=$fname." ".$lname;
-    $address=$_SESSION['personal']['address'];
-    $nic=$_SESSION['personal']['nic'];
-    $dob=$_SESSION['personal']['dob'];
-    $email=$_POST['newemail'];
-    $tele=$_POST['tele'];
-    $newpassword=$_POST['newpassword'];
-    $cpassword=$_POST['cpassword'];
-    
-    if ($newpassword==$cpassword){
-        $result= $database->query("select * from webuser where email='$email';");
-        if($result->num_rows==1){
-            $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Already have an account for this Email address.</label>';
-        }else{
-            
-            $database->query("insert into patient(pemail,pname,ppassword, paddress, pnic,pdob,ptel) values('$email','$name','$newpassword','$address','$nic','$dob','$tele');");
-            $database->query("insert into webuser values('$email','p')");
-
-            //print_r("insert into patient values($pid,'$email','$fname','$lname','$newpassword','$address','$nic','$dob','$tele');");
-            $_SESSION["user"]=$email;
-            $_SESSION["usertype"]="p";
-            $_SESSION["username"]=$fname;
-
-            header('Location: patient/index.php');
-            $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;"></label>';
+        // Execute the statement
+        if ($stmt->execute()) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $stmt->error;
         }
-        
-    }else{
-        $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Password Conformation Error! Reconform Password</label>';
+
+        // Close the statement
+        $stmt->close();
+    } else {
+        echo "Please fill all required fields.";
     }
-
-
-
-    
-}else{
-        //header('location: signup.php');
-    $error='<label for="promter" class="form-label"></label>';
 }
 
-?> -->
+// Close the connection
+if (isset($link)) {
+    $link->close();
+}
+?>
