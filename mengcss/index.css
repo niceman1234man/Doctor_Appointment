@@ -68,6 +68,12 @@
   margin-left: 2%;
 }
 
+#dashbourd {
+  /* background-image: url(/images/img/bg01.jpg) ;
+background-size: cover;
+background-repeat: no-repeat; */
+}
+
 .statusDash {
   float: left;
   margin: 3% 3%;
@@ -293,6 +299,8 @@ td {
 
 /* /////for popup */
 .accountSetting,
+.accountSetting1,
+.accountSetting2,
 .viewdetail,
 .confiDelet,
 .cancelApoin,
@@ -316,6 +324,7 @@ td {
   border-radius: 5px;
 }
 
+.next,
 .btnSetAcount,
 .btnDletAcount {
   width: 20%;
@@ -325,6 +334,7 @@ td {
   border-radius: 5px;
 }
 
+.next:hover,
 .btnSetAcount:hover,
 .btnDletAcount:hover {
   background-color: #2790f2;
@@ -348,11 +358,12 @@ td {
   color: #0c55f3;
 }
 
-.accountSetting.active {
+.accountSetting.active,
+.accountSetting1.active,
+.accountSetting2.active {
   background-color: rgb(18, 194, 238);
-  padding-top: 2%;
   width: 60%;
-  top: 20%;
+  top: 15%;
   left: 30%;
   opacity: 1;
   transform: translate(-50%, -50%) scale(0.9);

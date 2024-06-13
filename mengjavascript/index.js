@@ -54,6 +54,13 @@ function hidPationtDetail() {
   document.querySelector('.viewPationt').classList.remove('active');
 }
 /// ///////////////
+function displaySetting1() {
+  document.querySelector('.accountSetting1').classList.add('active');
+}
+function displaySetting2() {
+  document.querySelector('.accountSetting2').classList.add('active');
+}
+//
 displaySetting();
 hidSetting();
 displayDetail();
@@ -68,3 +75,5 @@ displayCancelSesion();
 hidCancelSesion();
 displayPationtDetail();
 hidPationtDetail();
+displaySetting1();
+displaySetting2();

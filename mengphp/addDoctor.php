@@ -6,6 +6,7 @@ if (isset($_POST["submit"])) {
     $fName = $_POST["Fname"];
     $lName = $_POST["Lname"];
     $nic = $_POST["NIC"];
+    $userName = $_POST["userName"];    
     $email = $_POST["email"];
     $telephone = $_POST["Telephone"];
     $speciality = $_POST["specialties"];
@@ -16,7 +17,7 @@ if (isset($_POST["submit"])) {
         echo "Passwords do not match.";
         return;
     }
-    $sql = "INSERT INTO Doctor VALUES ('$fName', '$lName', '$nic', '$email', '$telephone', '$speciality', '$password')";
+    $sql = "INSERT INTO Doctor VALUES ('$fName', '$lName', '$nic', '$userName','$email', '$telephone', '$speciality', '$password')";
 
     if (mysqli_query($connection, $sql)) {
         echo "New Doctor Added!";

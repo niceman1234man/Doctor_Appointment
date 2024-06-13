@@ -43,7 +43,7 @@
                 <!-- ***************************** -->
                 <div class="upcoming_events">
                     <h1>your Up Coming Sessions untill Next Week</h1>
-                    <table cellspacing="20">
+                    <table cellspacing="30">
                         <tr>
                             <th>Session Title</th>
                             <th>Sheduled Date<th>
