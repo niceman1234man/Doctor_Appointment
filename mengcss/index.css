@@ -66,9 +66,9 @@
 .dashbourd {
   display: block;
   margin-left: 2%;
-  
 }
-#dashbourd{
+
+#dashbourd {
   /* background-image: url(/images/img/bg01.jpg) ;
 background-size: cover;
 background-repeat: no-repeat; */
@@ -323,6 +323,7 @@ td {
   width: 100%;
   border-radius: 5px;
 }
+
 .next,
 .btnSetAcount,
 .btnDletAcount {
@@ -332,6 +333,7 @@ td {
   background-color: #5aa6ee;
   border-radius: 5px;
 }
+
 .next:hover,
 .btnSetAcount:hover,
 .btnDletAcount:hover {
