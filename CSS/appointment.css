@@ -1,0 +1,18 @@
+.input-sections {
+  border: 1px solid rgb(233, 230, 230);
+  margin-top: 3%;
+}
+
+#date,
+#doctor {
+  width: 30%;
+  padding: 1%;
+}
+
+#filter {
+  width: 40%;
+  margin-top: 2%;
+  padding: 1%;
+  margin-left: 50%;
+  border-radius: 5px;
+}

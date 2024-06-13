@@ -1,0 +1,118 @@
+.add-new-doctors-pop-up,
+.schedule-detail-pop-up,
+.patients-detail-pop-up {
+  width: 40%;
+  position: absolute;
+  padding-bottom: 2%;
+  background: white;
+  justify-content: center;
+  padding-left: 10%;
+  font-size: large;
+  font-weight: bold;
+  border: 1px solid rgb(141, 140, 140);
+  border-radius: 5px;
+  top: -150%;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translate(-50%, -50%) scale(1.25);
+  transition:
+    top 0ms ease-in-out 200ms,
+    opacity 200ms ease-in-out 0ms,
+    transform 20ms ease-in-out 0ms;
+}
+
+.new-doctor-added-popup {
+  position: absolute;
+  justify-content: center;
+  font-weight: bold;
+  width: 30%;
+  height: 30%;
+
+  /* top: -150%;
+left: 50%; */
+}
+
+.doctor-detail,
+.patients-detail {
+  width: 40%;
+  position: absolute;
+  padding-bottom: 2%;
+  background: white;
+  margin-left: 20%;
+  justify-content: center;
+  padding-left: 10%;
+  font-size: large;
+  font-weight: bold;
+  border: 1px solid rgb(215, 41, 41);
+  border-radius: 5px;
+}
+
+.add-new-doctors-pop-up.active,
+.schedule-detail-pop-up.active,
+.patients-detail-pop-up.active {
+  margin-top: 4%;
+  top: 50%;
+
+  /* opacity:0.7; */
+  transform: translate(-50%, -50%) scale(1);
+  transition:
+    top 0ms ease-in-out 0ms,
+    opacity 200ms ease-in-out 0ms,
+    transform 20ms ease-in-out 0ms;
+  box-shadow: 10px 10px 10px 300px rgb(139, 141, 141);
+}
+
+#email,
+#nic,
+#telephone,
+#password,
+#confirm,
+#name,
+#select {
+  padding: 2%;
+  width: 50%;
+  margin: 1%;
+  border-radius: 5px;
+  font-size: large;
+}
+
+#add-button,
+#rest-button {
+  width: 20%;
+  padding: 2%;
+  border-radius: 5px;
+  border-style: none;
+  background: rgb(102, 102, 147);
+  color: white;
+  cursor: pointer;
+}
+
+#x-sign,
+#xd-sign,
+#xs-sign {
+  width: 5%;
+  height: 5%;
+  background: rgb(238, 230, 230);
+  text-align: center;
+  font-size: larger;
+  font-weight: bolder;
+  float: right;
+  margin-top: 0;
+  cursor: pointer;
+  color: red;
+}
+
+.pop-up-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.view-button,
+.delete-button {
+  background: rgb(146, 146, 166);
+  border-radius: 5px;
+  border-style: none;
+  padding: 2%;
+  text-align: center;
+  cursor: pointer;
+}

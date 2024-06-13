@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <title>Sign Up</title>
+</head>
+
+<body>
+    <div class="back">
+
+        <div class="container">
+            <center>
+                <p class="header-text"><b>Let's Get Started</b></p>
+                <p class="sub-text"><b>Add Your Personal Details to Continue </b></p>
+                <p class="sub-text"><b> Now Create Your User Account.</b></p>
+            </center>
+            <form id="account-details-form" action="signup.php" method="POST">
+
+                <label for="name" class="form-label">Name: </label>
+                <input type="text" name="fname" class="input-text" placeholder="First Name" required>
+                <input type="text" name="lname" class="input-text" placeholder="Last Name" required>
+
+                <label for="address" class="form-label">Address: </label>
+                <input type="text" name="address" class="input-text" placeholder="Address" required>
+
+                <label for="nic" class="form-label">NIC: </label>
+                <input type="text" name="nic" class="input-text" placeholder="NIC Number" required>
+
+                <label for="dob" class="form-label">Date of Birth: </label>
+
+                <input type="date" name="dob" class="input-text" required>
+
+            </form>
+        </div>
+
+        <div class="container2">
+
+            <form id="account-details-form" action="signup.php" method="POST" onsubmit="return validateDate()">
+                <label for="Email" class="form-label">Email: </label>
+                <input type="email" name="email" class="input-text" placeholder="email" required>
+
+                <label for="phonenumber" class="form-label">Phone Number: </label>
+                <input type="text" name="phonenumber" class="input-text" placeholder="Phone Number" required>
+
+                <label for="password" class="form-label">Password: </label>
+                <input type="password" name="password" class="input-text" placeholder="Password" required>
+
+                <label for="confirmpassword" class="form-label">Confirm Password: </label>
+                <input type="password" name="confirmpassword" class="input-text" placeholder="confirm-password"
+                    required>
+
+                <div class="button-group">
+                    <input type="reset" value="Reset" class="login-btn btn-primary-soft btn">
+
+
+                    <input type="submit" value="Sign Up" class="login-btn btn-primary-soft btn">
+
+
+                </div>
+                <p class="sub-text">
+                    <b> Already have an account?
+                        <a href="login.html" class="hover-link1 non-style-link">Login</a>
+                </p></b>
+            </form>
+        </div>
+
+    </div>
+    <script src="signup.js"></script>
+</body>
+
+</html>
