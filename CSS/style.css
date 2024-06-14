@@ -1,0 +1,164 @@
+body {
+  justify-content: center;
+  display: flex;
+  margin-top: 2%;
+}
+
+.side-bar {
+  width: 15%;
+  border-right: 1px solid black;
+}
+
+#search-button {
+  padding: 1%;
+  border-radius: 5px;
+  font-size: medium;
+  color: rgb(222, 222, 227);
+  border-style: none;
+  width: 10%;
+  background: blue;
+}
+
+#search-button:hover {
+  background: rgb(168, 168, 180);
+  color: white;
+  cursor: pointer;
+}
+
+.slid-bar-details {
+  list-style-type: none;
+  padding: 1%;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.slid-bar-details a {
+  padding: 1%;
+  text-decoration: none;
+}
+
+#admin-img {
+  border-radius: 50%;
+}
+
+.side-bar #admin-img {
+  width: 20%;
+}
+
+.side-bar #logout-button {
+  width: 50%;
+  padding: 2%;
+  color: rgb(192, 192, 197);
+  background: blue;
+  border-radius: 5px;
+  font-weight: bold;
+  border-style: none;
+}
+
+.side-bar #logout-button:visited {
+  background: rgb(184, 171, 171);
+  color: rgb(152, 47, 47);
+  cursor: pointer;
+}
+
+.side-bar #logout-button:hover {
+  background: rgb(108, 108, 112);
+  color: white;
+  cursor: pointer;
+}
+
+.main-part {
+  width: 70%;
+  padding: 1%;
+  border-right: 1px solid black;
+}
+
+#today-date {
+  float: right;
+}
+
+.main-part-list {
+  font-size: large;
+  flex-direction: row;
+}
+
+.main-part-list li {
+  list-style-type: none;
+  padding: 1%;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: inline;
+}
+
+.slid-bar-details li:hover {
+  background: rgb(184, 143, 143);
+  color: white;
+  padding: 5px;
+}
+
+.main-part #search {
+  width: 60%;
+  padding: 1%;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.main-part-detail {
+  display: flex;
+}
+
+.main-part #search-img {
+  padding: 1%;
+  position: absolute;
+}
+
+table {
+  border: 1px solid rgb(209, 206, 206);
+  padding-top: 0%;
+  width: 90%;
+  margin-top: 1%;
+}
+
+th {
+  border-bottom: 2px solid rgb(97, 97, 148);
+}
+
+tr {
+  text-align: center;
+  width: 85%;
+}
+
+.form-button,
+.schedule-form-button {
+  display: flex;
+}
+
+.form-button button {
+  width: 90%;
+}
+
+.show-button {
+  width: 90%;
+  background-color: rgb(42, 42, 184);
+  border-style: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.show-button:hover {
+  background: rgb(133, 133, 144);
+  color: rgb(33, 32, 32);
+}
+
+.main-part-appoint {
+  width: 50%;
+}
+
+.main-part-session {
+  width: 50%;
+}
+
+h3 {
+  color: blue;
+}
