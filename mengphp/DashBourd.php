@@ -11,8 +11,6 @@
 <body>
     <section class="doctor_first_section">
     <?php include ("sidBar.php")?>
-
-
         <div class="dashbourd" id="dashbourd">
             <!-- //////////////// -->
             <div class="topTitle">

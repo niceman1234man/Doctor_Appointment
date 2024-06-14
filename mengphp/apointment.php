@@ -21,13 +21,59 @@
 
                 <div  class="inputDate"> <h3>Date:</h3><input type="date"> <button class="filterbtn"><img src="../images/icons/filter-iceblue.svg" class="filteimg"> Filter</button></div>
                 <div class="apointTable">
-                    <table class="table" cellspacing="20" > <tr><th>Patient name</th>
-                    <th>Appointment number</th>
-                    <th>Session Title</th>
-                    <th>Session Date & Time</th>
-                    <th>Appointment Date</th>
-                    <th>Events</th></tr><tr><td> Test Patient</td> <td>1</td><td>Test Session</td><td>2050-01-01 @18:00	</td><td>2022-06-03	
-                    </td><td><button class="tablebtn" onclick="cancelApointment()"><img src="../images/icons/delete-iceblue.svg">cancel</button></td></tr></table>
+                <?php
+include("connection.php");
+if ($connection->connect_error) {
+    die("Connection failed: " . $connection->connect_error);
+}
+$sql = "SELECT *FROM `Apointmant` WHERE 1";
+$result = mysqli_query($connection, $sql);
+
+if ($result->num_rows > 0) {
+    echo "<table>";
+    echo "<tr>";
+    echo "<th>Patient Name</th>";
+    echo "<th>Telephone</th>";
+    echo "<th>Session Title</th>";
+    echo "<th>Session Date & Time</th>";
+    echo "<th>Appointment Date</th>";
+    echo "<th>Actions</th>";
+    echo "</tr>";
+    while($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $row["Patient Name"] . "</td>";
+        echo "<td>" . $row["Telephone"] . "</td>";
+        echo "<td>" . $row["Session Title"] . "</td>";
+        echo "<td>" . $row["Session Date & Time"] . "</td>";
+        echo "<td>" . $row["Appointment Date"] . "</td>";
+        echo "<td>
+            <div class=\"form-button\">
+                <form action=\"deleteApointment.php\" method=\"post\">
+                    <input type=\"hidden\" name=\"id\" value=\"" . $row["ID"] . "\">
+                    <button type=\"submit\" class=\"deletebutton\" >
+                        <img src=\"../images/icons/delete-red.svg\"  value=\"Delete\">Delete
+                    </button>
+                </form>
+            </div>
+            <div class=\"form-button\">
+                <form action=\"viewApointment.php\" method=\"post\">
+                    <input type=\"hidden\" name=\"id\" value=\"" . $row["ID"] . "\">
+                    <button type=\"submit\" class=\"viewbutton\">
+                        <img src=\"../images/icons/view-iceblue.svg\" value=\"View\">View
+                    </button>
+                </form>
+            </div>
+        </td>";
+        echo "</tr>";
+    
+
+    }
+    echo "</table>";
+} else {
+    echo "No results found.";
+}
+$connection->close();
+?>
                   </div>
             </div>
             </section>
