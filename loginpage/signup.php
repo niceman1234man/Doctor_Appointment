@@ -1,60 +1,44 @@
 <!-- <?php
+// Initialize the session
+ 
 
-session_start();
+// // Check if the user is already logged in, if yes then redirect him to welcome page
+// if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+//     header("location: welcome.php");
+//     exit;
+// }
 
-$_SESSION["user"]="";
-$_SESSION["usertype"]="";
-
-// Set the new timezone
-date_default_timezone_set('Asia/Kolkata');
-$date = date('Y-m-d');
-
-$_SESSION["date"]=$date;
-//import database
-include("connection.php");
-if($_POST){
-
-    $result= $database->query("select * from webuser");
-
-    $fname=$_SESSION['personal']['fname'];
-    $lname=$_SESSION['personal']['lname'];
-    $name=$fname." ".$lname;
-    $address=$_SESSION['personal']['address'];
-    $nic=$_SESSION['personal']['nic'];
-    $dob=$_SESSION['personal']['dob'];
-    $email=$_POST['newemail'];
-    $tele=$_POST['tele'];
-    $newpassword=$_POST['newpassword'];
-    $cpassword=$_POST['cpassword'];
-    
-    if ($newpassword==$cpassword){
-        $result= $database->query("select * from webuser where email='$email';");
-        if($result->num_rows==1){
-            $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Already have an account for this Email address.</label>';
-        }else{
-            
-            $database->query("insert into patient(pemail,pname,ppassword, paddress, pnic,pdob,ptel) values('$email','$name','$newpassword','$address','$nic','$dob','$tele');");
-            $database->query("insert into webuser values('$email','p')");
-
-            //print_r("insert into patient values($pid,'$email','$fname','$lname','$newpassword','$address','$nic','$dob','$tele');");
-            $_SESSION["user"]=$email;
-            $_SESSION["usertype"]="p";
-            $_SESSION["username"]=$fname;
-
-            header('Location: patient/index.php');
-            $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;"></label>';
-        }
-        
-    }else{
-        $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Password Conformation Error! Reconform Password</label>';
-    }
+// Include config file
+include("Connection.php");
 
 
+    // Retrieve form data
+    $First_Name = $_POST["fname"] ?? '';
+    $Last_name = $_POST["lname"] ?? '';
+    $email = $_POST["email"] ?? '';
+    $NIC = $_POST["nic"] ?? '';
+    $password = $_POST["password"] ?? '';
+    $address = $_POST["address"] ?? '';
+    $Phone_number = $_POST["phonenumber"] ;
+    $dob = $_POST["dob"] ;
 
-    
-}else{
-        //header('location: signup.php');
-    $error='<label for="promter" class="form-label"></label>';
+ $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+      if ($stmt = $conn->prepare("INSERT INTO personal_data (FirstName, LastName, email, NIC, password, Address, phone_number, dob) VALUES (?, ?, ?, ?, ?, ?, ?, ?)")) 
+            $stmt->bind_param("ssssssss", $First_Name, $Last_name, $email, $NIC, $hashed_password, $address, $Phone_number, $dob);
+
+// Execute the statement
+if ($stmt->execute()) {
+    $message = "New record created successfully";
+    $status = "success";
+} else {
+    $message = "Error: " . $stmt->error;
+    $status = "error";
 }
 
+// Close the connection
+$stmt->close();
+$conn->close()
+      
+    
 ?> -->

@@ -66,8 +66,8 @@ function displayPationtDetail() {
 function hidPationtDetail() {
   document.querySelector('.viewPationt').classList.remove('active');
 }
-/// ///////////////
-
+/* all of the following functions are called for the sake of linter error because
+if it is not called on the js file it will the case for linter error */
 displayDetail();
 hidDetail();
 displayDelete();
@@ -82,3 +82,7 @@ displayPationtDetail();
 hidPationtDetail();
 displaySetting1();
 displaySetting2();
+hidSetting1();
+hidSetting2();
+displaySetting3();
+hidSetting3();
