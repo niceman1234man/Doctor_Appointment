@@ -1,7 +1,7 @@
 <?php
-$conn=mysqli_connect('localhost','root','','personal_data');
+$conn=mysqli_connect('localhost','root','','doctor_appointment_loginpage');
 if($conn)
 {
-    echo "successfuly connected";
+    echo "successfully connected";
 }
 ?>
