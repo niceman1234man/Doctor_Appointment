@@ -1,69 +1,70 @@
-.whole{
-    display: flex;
+.whole {
+  display: flex;
 }
 
+.center_home {
+  display: inline-block;
+  margin-left: 20px;
+}
 
+.home_text {
+  margin-left: 20px;
+}
 
-.center_home{
-    display: inline-block;
-    margin-left: 20px;
+.patient_text {
+  padding-left: 30px;
+  background-color: hsla(160, 43%, 63%, 0.827);
+  border-radius: 10px;
+  background-image: url("pic/b3.jpg");
 }
-.home_text{
-    margin-left: 20px;
-    
-}
-.patient_text{
-    padding-left: 30px;
-    background-color: hsla(160, 43%, 63%, 0.827);
-    border-radius: 10px;
-    background-image: url("pic/b3.jpg");
-}
-.input{
-    width: 400px;
-    height: 40px;
-    border-radius: 5px;
-    padding-left: 15px;
-    border-color: rgb(85, 85, 212);
-}
-.btn{
-    background-color: blue;
-    width: 150px;
-    height: 40px;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
 
+.input {
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border-color: rgb(85, 85, 212);
 }
-.btn:hover{
-    background-color: rgb(20, 20, 108);;
+
+.btn {
+  background-color: blue;
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
 }
+
+.btn:hover {
+  background-color: rgb(20, 20, 108);
+}
+
 .Status-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal-width columns */
-    grid-template-rows: 1fr 1fr; /* Two equal-height rows */
-    grid-template-areas: 
-        "one two"
-        "three four";
-         
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+  grid-template-rows: 1fr 1fr; /* Two equal-height rows */
+  grid-template-areas:
+    "one two"
+    "three four";
 }
 
 .stat1 {
-    grid-area: one;
-    
+  grid-area: one;
 }
+
 .stat2 {
-    grid-area: two;
-    
+  grid-area: two;
 }
+
 .stat3 {
-    grid-area: three;
-    
+  grid-area: three;
 }
+
 .stat4 {
-    grid-area: four;
-    
+  grid-area: four;
 }
-.stat{
+
+.stat {
   padding: 5px 10px;
   font-size: 20px;
   font-weight: bold;
@@ -71,21 +72,22 @@
   margin: 5px;
   border: 1px solid rgb(69, 59, 59);
   background-color: white;
-   
-}
-.Status-inline-maker{
-    display:inline-block;
-}
-.Home_last{
-    display: flex;
-}
-.table-container{
-    display: flex;
-    flex-direction: column;
-    margin-left: 70px;
-}
-.table tr{
-background-color: rgb(197, 197, 197);
 }
 
- 
+.Status-inline-maker {
+  display: inline-block;
+}
+
+.Home_last {
+  display: flex;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+}
+
+.table tr {
+  background-color: rgb(197, 197, 197);
+}

@@ -1,84 +1,84 @@
-.whole{
-    display: flex;
+.whole {
+  display: flex;
 }
 
+.doctor_All {
+  margin-left: 30px;
+  background-color: white;
+  display: inline-block;
+}
 
-.doctor_All{
-margin-left: 30px;
-background-color: white;
-display: inline-block;
+.head {
+  display: flex;
+  margin-top: 10px;
 }
-.head{
-    display: flex;
-    margin-top: 10px;
 
+.backbtn {
+  width: 100px;
+  height: 45px;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 50px;
 }
-.backbtn{
-    width: 100px;
-    height: 45px;
-    background-color: blue;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-right: 50px;
 
+.backbtn:hover {
+  background-color: rgb(64, 64, 138);
 }
-.backbtn:hover{
-   
-    background-color: rgb(64, 64, 138);
-}
-.text{
-    width: 430px;
-    height: 30px;
-    border-radius: 5px;
-    border-color: rgb(80, 80, 203);
-    margin-left: 20px ;
-    margin-right: 30px;
-    padding: 5px 20px;
 
+.text {
+  width: 430px;
+  height: 30px;
+  border-radius: 5px;
+  border-color: rgb(80, 80, 203);
+  margin-left: 20px;
+  margin-right: 30px;
+  padding: 5px 20px;
 }
-.searchBtn{
-    width: 100px;
-    height: 45px;
-    background-color: rgb(5, 144, 114);
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
 
+.searchBtn {
+  width: 100px;
+  height: 45px;
+  background-color: rgb(5, 144, 114);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
+.searchBtn:hover {
+  background-color: rgb(38, 38, 167);
 }
-.searchBtn:hover{
-    background-color: rgb(38, 38, 167);
-}
-.currentDate{
-    position:  absolute;
-    right: 0;
-    top: 10px;
-}
-.topAjust{
-    margin-top: 70px;
-    
-}
-.docTable{
-    margin-top: 30px;
-    margin-left: 80px;
-    width: 100%;
-    background-color:wheat;
 
+.currentDate {
+  position: absolute;
+  right: 0;
+  top: 10px;
 }
-.table{
-    width: 100%;
-   
+
+.topAjust {
+  margin-top: 70px;
 }
-.table th{
-    font-weight: bold;
-    font-size: 20px;
-    height: 40px;
-    background-color: rgb(7, 96, 96);
-    color: white;
-    
+
+.docTable {
+  margin-top: 30px;
+  margin-left: 80px;
+  width: 100%;
+  background-color: wheat;
+}
+
+.table {
+  width: 100%;
+}
+
+.table th {
+  font-weight: bold;
+  font-size: 20px;
+  height: 40px;
+  background-color: rgb(7, 96, 96);
+  color: white;
 }
 
 .table tr {
-    text-align: center;
+  text-align: center;
 }
