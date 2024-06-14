@@ -12,13 +12,15 @@
 
 <body>
     <?php
-  include("sidebar.php");
-  ?>
+     
+     include("connection.php");
+    include("sidebar.php");
+    ?>
     <div class="main-part">
         <img src="../img/search.svg" alt="search" id="search-img">
-        <form action="">
-            <input type="search" placeholder="search Doctor Name or Email" id="search" name="find">
-            <input type="submit" name="search" id="search-button">search</input>
+        <form action="Doctors.php" method="post">
+            <input type="search" placeholder="Search Doctor Name or Email" id="search" name="search_term">
+            <input type="submit" name="search" id="search-button" value="Search">
         </form>
         <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br>
             <?php date_default_timezone_set('Asia/Kolkata'); 
@@ -30,13 +32,22 @@
         </div>
         <?php
         include("connection.php");
-        $list1 = "select * from doctor";
-        $result = mysqli_query($conn, $list1);
+       
+        if (isset($_POST['search_term'])) {
+            $search_term = $_POST['search_term'];
+            $list1 = "SELECT * FROM doctor WHERE name LIKE '%$search_term%' OR email LIKE '%$search_term%'";
+            $result = mysqli_query($conn, $list1);
+        } else {
+            $list1 = "SELECT * FROM doctor";
+            $result = mysqli_query($conn, $list1);
+        }
+        
         ?>
         <p>All Doctors (<?php echo mysqli_num_rows($result); ?>)</p>
         <?php
-  
-        ?>
+  if(mysqli_num_rows($result) > 0) {
+    $data = '';
+    echo '
         <table>
             <tr>
                 <th>Doctor Name</th>
@@ -44,10 +55,7 @@
                 <th>Specialities</th>
                 <th>Events</th>
             </tr>
-            <?php
-            
-if(mysqli_num_rows($result) > 0) {
-    $data = '';
+          ';
     while($row = mysqli_fetch_assoc($result)) {
         $name = $row["name"];
         $email = $row["email"];
@@ -78,7 +86,7 @@ if(mysqli_num_rows($result) > 0) {
     }
     echo $data;
 }
-            
+   
 ?>
         </table>
         <div class="add-new-doctors-pop-up ">
@@ -109,13 +117,7 @@ if(mysqli_num_rows($result) > 0) {
                 <input type="reset" id="rest-button">
             </form>
         </div>
-        <?php
-        include("connection.php");
-        ?>
-
     </div>
-    <!-- <script src="..JS/index.js"></script> -->
-    <!-- <script src="../JS/ab.js"></script> -->
     <script src="../JS/index.js"></script>
 </body>
 
