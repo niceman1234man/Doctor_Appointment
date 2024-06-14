@@ -39,7 +39,6 @@ if ($result->num_rows > 0) {
     echo "<th>Appointment Date</th>";
     echo "<th>Actions</th>";
     echo "</tr>";
-
     while($row = $result->fetch_assoc()) {
         echo "<tr>";
         echo "<td>" . $row["Patient Name"] . "</td>";
@@ -48,16 +47,26 @@ if ($result->num_rows > 0) {
         echo "<td>" . $row["Session Date & Time"] . "</td>";
         echo "<td>" . $row["Appointment Date"] . "</td>";
         echo "<td>
-        <div class=\"form-button\">
-            <form action=\"view_patient.php\" method=\"post\">
-                <input type=\"hidden\" name=\"id\" value=\"" . $row["ID"] . "\">
-                <button type=\"submit\" class=\"viewbutton\" >
-                    <img src=\"../images/icons/view-iceblue.svg\" alt=\"View\" value=\"View\">View
-                </button>
-            </form>
-        </div>
-    </td>";
+            <div class=\"form-button\">
+                <form action=\"deleteApointment.php\" method=\"post\">
+                    <input type=\"hidden\" name=\"id\" value=\"" . $row["ID"] . "\">
+                    <button type=\"submit\" class=\"deletebutton\" >
+                        <img src=\"../images/icons/delete-red.svg\"  value=\"Delete\">Delete
+                    </button>
+                </form>
+            </div>
+            <div class=\"form-button\">
+                <form action=\"viewApointment.php\" method=\"post\">
+                    <input type=\"hidden\" name=\"id\" value=\"" . $row["ID"] . "\">
+                    <button type=\"submit\" class=\"viewbutton\">
+                        <img src=\"../images/icons/view-iceblue.svg\" value=\"View\">View
+                    </button>
+                </form>
+            </div>
+        </td>";
         echo "</tr>";
+    
+
     }
     echo "</table>";
 } else {
