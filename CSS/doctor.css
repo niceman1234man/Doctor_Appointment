@@ -1,5 +1,6 @@
 .add-new-doctors-pop-up,
 .schedule-detail-pop-up,
+.doctor-detail-pop-up,
 .patients-detail-pop-up {
   width: 40%;
   position: absolute;
@@ -21,34 +22,9 @@
     transform 20ms ease-in-out 0ms;
 }
 
-.new-doctor-added-popup {
-  position: absolute;
-  justify-content: center;
-  font-weight: bold;
-  width: 30%;
-  height: 30%;
-
-  /* top: -150%;
-left: 50%; */
-}
-
-.doctor-detail,
-.patients-detail {
-  width: 40%;
-  position: absolute;
-  padding-bottom: 2%;
-  background: white;
-  margin-left: 20%;
-  justify-content: center;
-  padding-left: 10%;
-  font-size: large;
-  font-weight: bold;
-  border: 1px solid rgb(215, 41, 41);
-  border-radius: 5px;
-}
-
 .add-new-doctors-pop-up.active,
 .schedule-detail-pop-up.active,
+.doctor-detail-pop-up.active,
 .patients-detail-pop-up.active {
   margin-top: 4%;
   top: 50%;

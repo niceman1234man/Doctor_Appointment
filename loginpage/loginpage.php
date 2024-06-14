@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 
 //learn from w3schools.com
 //Unset all the server side variables
@@ -37,4 +37,4 @@ if($_POST){
 
 }
 
-?> -->
+?>
