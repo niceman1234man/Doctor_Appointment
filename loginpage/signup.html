@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="signup.css">
     <title>Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
 </head>
-
 <body>
-    <div class="back">
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form id="account-details-form" action="signup.php" method="post">
+            <label for="name" class="form-label">Name: </label>
+            <input type="text" name="name" class="input-text" placeholder="First Name" required>
+            <input type="text" name="lname" class="input-text" placeholder="Last Name" required>
 
+<<<<<<< HEAD
+            <label for="address" class="form-label">Address: </label>
+            <input type="text" name="address" class="input-text" placeholder="Address" required>
+=======
         <div class="container">
             <center>
                 <p class="header-text"><b>Let's Get Started</b></p>
@@ -19,17 +25,27 @@
                 <p class="sub-text"><b>It's Okay, Now Create Your User Account.</b></p>
             </center>
             <form action="" method="POST">
+>>>>>>> 8dce2b351f416c862ffa1616a5fc39a6db945808
 
-                <label for="name" class="form-label">Name: </label>
-                <input type="text" name="fname" class="input-text" placeholder="First Name" required>
-                <input type="text" name="lname" class="input-text" placeholder="Last Name" required>
+            <label for="nic" class="form-label">NIC: </label>
+            <input type="text" name="nic" class="input-text" placeholder="NIC Number" required>
 
-                <label for="address" class="form-label">Address: </label>
-                <input type="text" name="address" class="input-text" placeholder="Address" required>
+            <label for="dob" class="form-label">Date of Birth: </label>
+            <input type="date" name="dob" class="input-text" required>
 
-                <label for="nic" class="form-label">NIC: </label>
-                <input type="text" name="nic" class="input-text" placeholder="NIC Number" required>
+            <label for="Email" class="form-label">Email: </label>
+            <input type="email" name="email" class="input-text" placeholder="email" required>
 
+<<<<<<< HEAD
+            <label for="phonenumber" class="form-label">Phone Number: </label>
+            <input type="text" name="phonenumber" class="input-text" placeholder="Phone Number" required>
+
+            <label for="password" class="form-label">Password: </label>
+            <input type="password" name="password" class="input-text" placeholder="Password" required>
+
+            <label for="confirmpassword" class="form-label">Confirm Password: </label>
+            <input type="password" name="confirmPassword" class="input-text" placeholder="confirm-password" required>
+=======
                 <label for="dob" class="form-label">Date of Birth: </label>
                 <input type="date" name="dob" class="input-text" required>
 
@@ -67,9 +83,12 @@
                 </p></b>
             </form>
         </div>
+>>>>>>> 8dce2b351f416c862ffa1616a5fc39a6db945808
 
+            <div class="button-group">
+                <input type="submit" name="submit" value="Sign Up" class="login-btn btn-primary-soft btn">
+            </div>
+        </form>
     </div>
-    <script src="signup.js"></script>
 </body>
-
 </html>
