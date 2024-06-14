@@ -1,0 +1,66 @@
+.whole{
+    display: flex;
+}
+.Book_part{
+    display: inline-block;
+    margin-left: 30px;
+    background-color: white;
+}
+.head{
+    display: flex;
+}
+.backbtn{
+    width: 100px;
+    height: 45px;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+
+}
+.backbtn:hover{
+   
+    background-color: rgb(64, 64, 138);
+}
+.h01{
+    margin-left: 50px;
+}
+.currentDate{
+    position:  absolute;
+    right: 0;
+    top: 10px;
+}
+.innerDiv{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-left: 80px;
+    border: 1px solid rgb(90, 79, 79);
+    width: 100%;
+    background-color: white;
+    height: 50px;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 15px;
+  
+}
+ .text{
+    width: 450px;
+    height: 40px;
+    border-radius: 5px;
+    border-color: rgb(55, 55, 171);
+ }
+ .filterBtn{
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    
+    margin-left: 20px;
+    background-color: rgb(5, 63, 5);
+    color: white;
+ }
+ .filterBtn:hover{
+    background-color: rgb(0, 0, 255);
+ }
