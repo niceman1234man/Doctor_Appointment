@@ -61,8 +61,12 @@ function displayPationtDetail() {
 function hidPationtDetail() {
   document.querySelector('.viewPationt').classList.remove('active');
 }
+<<<<<<< HEAD
 
 /// ///////////
+=======
+//
+>>>>>>> 6502ceaa7a1afb29256dbf12a1cd779becf6ef3b
 displaySetting1();
 hidSetting1();
 displaySetting2();
@@ -70,8 +74,11 @@ hidSetting2();
 displaySetting3();
 hidSetting3();
 
+<<<<<<< HEAD
 /// ///////////////
 
+=======
+>>>>>>> 6502ceaa7a1afb29256dbf12a1cd779becf6ef3b
 displayDetail();
 hidDetail();
 displayDelete();

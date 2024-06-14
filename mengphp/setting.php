@@ -57,6 +57,9 @@
                     <option value="anaesthetic">anaesthetic</option>
                   </select><br>  
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6502ceaa7a1afb29256dbf12a1cd779becf6ef3b
                   <button class="previos" onclick="displaySetting1();">previos</button>
                   <button class="next" onclick="displaySetting3();">Next</button>
                  </div>
@@ -65,9 +68,13 @@
                  <div class="buton" onclick="hidSetting3();">
                     &times;
                     </div>
+<<<<<<< HEAD
 =======
 
 >>>>>>> c95735cd768b0afa3c78bfa9b013d44b74b7ac48
+=======
+
+>>>>>>> 6502ceaa7a1afb29256dbf12a1cd779becf6ef3b
                   <label for="Password">Password: </label><br>
                   <input type="password" required name="password" placeholder="your password here" maxlength="255" class="inpSetAcount"><br>
                   <label for="Conform Password">Conform Password:</label><br>
