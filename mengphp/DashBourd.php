@@ -11,8 +11,6 @@
 <body>
     <section class="doctor_first_section">
     <?php include ("sidBar.php")?>
-
-
         <div class="dashbourd" id="dashbourd">
             <!-- //////////////// -->
             <div class="topTitle">
@@ -51,7 +49,7 @@
                         </tr>
                         <tr><td>title1</td><td>schedule1</td> <td>time1</td></tr>
                     </table>
-                    <button class="showSesions" onclick="h"> Show All Sessions</button>
+                    <a class="showSesions" href="session.php"> Show All Sessions</a>
                 </div>
             </div>
             <!-- ////////////// -->
