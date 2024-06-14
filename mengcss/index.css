@@ -36,7 +36,7 @@ body {
 
 .welcome {
   padding-left: 3%;
-  background: url(../images/b8.jpg) no-repeat  center;
+  background: url(../images/b8.jpg) no-repeat center;
 }
 
 .statusDash a {
@@ -70,12 +70,6 @@ body {
 .dashbourd {
   display: block;
   margin-left: 2%;
-}
-
-#dashbourd {
-  /* background-image: url(/images/img/bg01.jpg) ;
-background-size: cover;
-background-repeat: no-repeat; */
 }
 
 .statusDash {
@@ -302,9 +296,11 @@ td {
 }
 
 /* /////for popup */
+
 .accountSetting1,
 .accountSetting2,
 .accountSetting3,
+.accountSetting,
 .viewdetail,
 .confiDelet,
 .cancelApoin,
@@ -362,10 +358,12 @@ td {
 
 .accountSetting1.active,
 .accountSetting2.active,
-.accountSetting3.active {
+.accountSetting3.active,
+.accountSetting.active {
   background-color: rgb(18, 194, 238);
+  padding-top: 2%;
   width: 60%;
-  top: 15%;
+  top: 20%;
   left: 30%;
   opacity: 1;
   transform: translate(-50%, -50%) scale(0.9);
@@ -419,17 +417,4 @@ td {
   display: block;
   width: 100%;
   flex-wrap: nowrap;
-}
-
-.previos,
-.next {
-  width: 10%;
-  height: 30px;
-  background-color: #5aa6ee;
-  font-size: large;
-}
-
-.previos:hover,
-.next:hover {
-  background-color: #f7e70d;
 }
