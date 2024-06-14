@@ -32,14 +32,35 @@
             </div>
             </section>
             <section>
+
                 <div class="cancelApoin">
-                    <div class="buton" onclick="hidCancelApointment()">
+                <?php
+                include("connection.php");
+if (isset($_POST['btnDletAcount'])) {
+      $patientName = $_POST['name'];
+    $appointmentNumber = $_POST['appointmentNumber'];
+
+    $query = "DELETE FROM Apointmant WHERE `Patient name` = ? AND `Number` = ?";
+    $statement = $connection->prepare($query);
+    $statement->bind_param("ss", $patientName, $appointmentNumber);
+
+    if ($statement->execute()) {
+        echo "Record deleted successfully.";
+    } else {
+        echo "Error deleting record: " . $statement->error;
+    }
+    $statement->close();
+}
+?>
+                   <div class="buton" onclick="hidCancelApointment()">
                         &times;
                         </div>
                     <label for="Are you sure?">Are you sure?</label><br>
                     <label for="You want to delete this record(Test Doctor).">You want to delete this record.</label><br>
-                     <label for="Patient Name:">Patient Name:</label><input type="text" name="name" readonly><br>
-                     <label for="Appointment number">Appointment number</label><input type="text" name="name" readonly><br>
+                     <label for="Patient Name:">Patient Name:</label>
+                     <input type="text" name="name" readonly><br>
+                     <label for="Appointment number">Appointment number</label>
+                     <input type="text" name="name" readonly><br>
                     <button class="btnDletAcount">Yes</button>
                     <button class="btnDletAcount" onclick="hidCancelApointment()">No</button><br>
 

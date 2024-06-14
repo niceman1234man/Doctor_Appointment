@@ -321,14 +321,16 @@ td {
 .inpSetAcount {
   font-size: large;
   margin: 1%;
-  height: 20px;
-  width: 20%;
+  height: 30px;
+  width: 50%;
   border-radius: 5px;
 }
 
 .next,
 .btnSetAcount,
-.btnDletAcount {
+.btnDletAcount,
+.previos,
+.next {
   width: 20%;
   height: 30px;
   font-size: large;
@@ -336,6 +338,10 @@ td {
   border-radius: 5px;
 }
 
+<<<<<<< HEAD
+=======
+.previos:hover,
+>>>>>>> 23c3ba309e2a959b99b246be90045aaa3d190be3
 .next:hover,
 .btnSetAcount:hover,
 .btnDletAcount:hover {

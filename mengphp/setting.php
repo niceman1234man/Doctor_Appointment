@@ -89,6 +89,7 @@
             </div>
         </form>
 
+<<<<<<< HEAD
         <div class="viewdetail">
             <div class="buton" onclick="hidDetail()">
                 &times;
@@ -119,6 +120,83 @@
         </div>
     </section>
     <script src="../mengjavascript/index.js"></script>
+=======
+                 <div class="accountSetting3">
+                 <div class="buton" onclick="hidSetting3();">
+                    &times;
+                    </div>
+                  <label for="Password">Password: </label><br>
+                  <input type="password" required name="password" placeholder="your password here" maxlength="255" class="inpSetAcount"><br>
+                  <label for="Conform Password">Conform Password:</label><br>
+                  <input type="password" name="ConformPassword" placeholder="Conform Password here" maxlength="255" required class="inpSetAcount"><br>
+                  <input type="reset" value="Reset" class="btnSetAcount"> <input type="submit" value="Save" name="submit" class="btnSetAcount"><br>
+                  <button class="previos" onclick="displaySetting2();">previos</button>  
+                </div>
+                </form>
+                
+                <div class="viewdetail">
+<?php
+// Include the database connection file
+include("connection.php");
+// Retrieve the data from the database
+$sql = "SELECT `Fname`, `Lname`, `NIC`, `userName`, `Email`, `Telephone`, `Speciality` FROM `Doctor` WHERE `Fname` = 'tsion'";
+$result = mysqli_query($connection, $sql);
+
+// Check if the query was successful
+if (mysqli_num_rows($result) > 0) {
+    // Fetch the data row by row
+    while ($row = mysqli_fetch_assoc($result)) {
+        $fName = $row["Fname"];
+        $lName = $row["Lname"];
+        $nic = $row["NIC"];
+        $userName = $row["userName"];    
+        $email = $row["Email"];
+        $telephone = $row["Telephone"];
+        $speciality = $row["Speciality"];
+?>
+                    <div class="buton" onclick="hidDetail()" >
+                        &times;
+                        </div>
+                    <label for="View Details.">View Details.</label><br>
+                    <label for="Name:.">Name</label><br>
+                    <input type="text"  name="name"  class="inpSetAcount" readonly value="<?php echo $fName . ' ' . $lName; ?>"><br>
+                    <label for="Email:">Email:</label><br>
+                    <input type="email"  name="email" class="inpSetAcount" readonly value="<?php echo $email; ?>"><br>
+                    <label for=" NIC:"> NIC:</label><br>
+                    <input type="text" name="NIC" class="inpSetAcount" readonly value="<?php echo $nic; ?>"><br>
+                    <label for="Name">User Name: </label><br>
+                    <input type="text" required name="userName" class="inpSetAcount" value="<?php echo $userName; ?>"><br>
+                    <label for="Telephone:"> Telephone:</label><br>
+                    <input type="text" name="Telephone"  class="inpSetAcount" readonly value="<?php echo $telephone; ?>"><br>
+                    <label for=" Specialties."> Specialties.</label><br>
+                    <input type="text" name="speciality"  class="inpSetAcount" readonly value="<?php echo $speciality; ?>"><br>
+                    <button class="btnSetAcount" onclick="hidDetail()">Ok</button><br>
+                </div>
+<?php
+    }
+} 
+else {
+    echo "No data found in the database.";
+}
+mysqli_close($connection);
+?>
+
+
+
+
+
+                          <div class="confiDelet">
+                    <div class="buton" onclick="hidDelete()">
+                        &times;
+                        </div>
+                    <label for="Are you sure?">Are you sure?</label><br>
+                    <label for="You want to delete this record(Test Doctor).">You want to delete this record(Test Doctor).</label><br>
+                    <button class="btnDletAcount">Yes</button>
+                    <button class="btnDletAcount" onclick="hidDelete()">No</button><br>
+                </div>
+             </section>
+             <script src="../mengjavascript/index.js"></script>
+>>>>>>> 23c3ba309e2a959b99b246be90045aaa3d190be3
 </body>
 
 </html>
