@@ -19,19 +19,59 @@
                 <div  class="inputDate"> <span class="dateSesLable">Date:</span><input type="date"> <button class="filterbtn"><img src="../images/icons/filter-iceblue.svg" class="filteimg"> Filter</button></div>
 
                 <div class="apointTable">
-              <table cellspacing="30" class="table"> 
-                <tr><th>Session Title</th>
-                <th>Sheduled Date & Time</th>
-                <th>Max num that can be booked	</th>
-                <th>Events</th></tr>
-                 <tr>
-                    <td> Test Session</td>
-                 <td>2050-01-01 18:00	</td>
-                 <td>50</td><td><button class="tablebtn" onclick="displaySession()">
-                    <img src="../images/icons/view-iceblue.svg" alt=""> view</button>
-                    <button class="tablebtn" onclick="displayCancelSesion()"><img src="../images/icons/delete-iceblue.svg">cancel session</button>
-                </td>
-            </tr></table>
+                <?php
+include("connection.php");
+if ($connection->connect_error) {
+    die("Connection failed: " . $connection->connect_error);
+}
+$sql = "SELECT *FROM `Sessions` WHERE 1";
+$result = mysqli_query($connection, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    echo '
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Date & Time</th>
+            <th>Max Num</th>
+            <th>Actions</th>
+        </tr>';
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $id = $row["id"];
+        echo '
+        <tr>
+            <td>' . $row["Title"] . '</td>
+            <td>' . $row["Date & Time"] . '</td>
+            <td>' . $row["Max num"] . '</td>
+            <td>
+                <div class="form-button" style="display="flex"">
+        <form action=\"view_session.php\" method=\"post\" style=\"display:flex;\">
+                        <input type="hidden" name="id" value="' . $id . '">
+                        <button type="submit" class="viewbutton" >
+                            <img src="../img/icons/view-iceblue.svg" alt="View" value="View">View
+                        </button>
+                    </form>
+
+                    <form action="delete_session.php" method="post">
+                        <input type="hidden" name="id" value="' . $id . '">
+                        <button type="submit">
+                            <img src="../img/icons/delete-iceblue.svg" alt="Remove" value="Remove">
+                        </button>
+                    </form>
+                </div>
+            </td>
+        </tr>';
+    }
+
+    echo '</table>';
+} else {
+    echo "No results found.";
+}
+
+$connection->close();
+?>
+            
             </div>
             </div>
         </section>
@@ -42,11 +82,9 @@ include("connection.php");
 if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
 }
-
 // Retrieve data from the Sessions table
 $sql = "SELECT * FROM Sessions";
 $result = $connection->query($sql);
-
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         // Display the retrieved data
