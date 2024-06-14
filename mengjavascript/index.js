@@ -3,17 +3,15 @@ function date() {
   const day = now.getDay();
   const month = now.getMonth();
   const year = now.getFullYear();
-
   document.querySelector('.todaysDate').innerHTML += ` ${day}/${month}/${year}`;
 }
 date();
 function displaySetting1() {
   document.querySelector('.accountSetting1').classList.add('active');
 }
-function hidSetting1() {
-  document.querySelector('.accountSetting1').classList.remove('active');
+function hidSetting() {
+  document.querySelector('.accountSetting').classList.remove('active');
 }
-
 function displaySetting2() {
   document.querySelector('.accountSetting2').classList.add('active');
 }
@@ -26,7 +24,6 @@ function displaySetting3() {
 function hidSetting3() {
   document.querySelector('.accountSetting3').classList.remove('active');
 }
-
 function displayDetail() {
   document.querySelector('.viewdetail').classList.add('active');
 }
@@ -39,14 +36,12 @@ function displayDelete() {
 function hidDelete() {
   document.querySelector('.confiDelet').classList.remove('active');
 }
-/// ///////////////
 function cancelApointment() {
   document.querySelector('.cancelApoin').classList.add('active');
 }
 function hidCancelApointment() {
   document.querySelector('.cancelApoin').classList.remove('active');
 }
-
 function displaySession() {
   document.querySelector('.viewSession').classList.add('active');
 }
@@ -67,7 +62,8 @@ function hidPationtDetail() {
   document.querySelector('.viewPationt').classList.remove('active');
 }
 /// ///////////////
-
+displaySetting();
+hidSetting();
 displayDetail();
 hidDetail();
 displayDelete();
@@ -80,5 +76,3 @@ displayCancelSesion();
 hidCancelSesion();
 displayPationtDetail();
 hidPationtDetail();
-displaySetting1();
-displaySetting2();

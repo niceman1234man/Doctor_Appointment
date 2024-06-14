@@ -51,7 +51,7 @@
                         </tr>
                         <tr><td>title1</td><td>schedule1</td> <td>time1</td></tr>
                     </table>
-                    <button class="showSesions"> Show All Sessions</button>
+                    <button class="showSesions" onclick="h"> Show All Sessions</button>
                 </div>
             </div>
             <!-- ////////////// -->

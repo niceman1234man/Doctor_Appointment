@@ -1,7 +1,7 @@
 {
   "name": "project-due-date-may-1-2024",
   "version": "1.0.0",
-  "description": "",
+  "description": "📗 Table of Contents\r 📖 About the Project\r 🛠 Built With\r Tech Stack\r Key Features\r 🚀 Live Demo\r 💻 Getting Started\r Setup\r Prerequisites\r Install\r Usage\r Run tests\r Deployment\r 👥 Authors\r 🔭 Future Features\r 🤝 Contributing\r ⭐️ Show your support\r 🙏 Acknowledgements\r ❓ FAQ (OPTIONAL)\r 📝 License\r 📖 Hello World! Project <a name=\"about-project\"></a>\r Hello World! project is a repository consisting of the following files:",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
