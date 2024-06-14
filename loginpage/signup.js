@@ -1,35 +1,70 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const nextButton = document.getElementById('next-button');
-  if (nextButton) {
-    nextButton.addEventListener('click', (event) => {
-      event.preventDefault();
-      window.location.href = 'signup2.html';
-    });
-  }
+const form = document.getElementById('form');
+const username = document.getElementById('NIC');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const confirmpassword = document.getElementById('password2'); // corrected variable name
 
-  const backButton = document.getElementById('back-button');
-  if (backButton) {
-    backButton.addEventListener('click', (event) => {
-      event.preventDefault();
-      window.location.href = 'signup.html';
-    });
-  }
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  // validateInputs();
 });
 
-function validateForm() {
-  const fname = document.getElementsByName('fname')[0].value;
-  const lname = document.getElementsByName('lname')[0].value;
-  const address = document.getElementsByName('address')[0].value;
-  const nic = document.getElementsByName('nic')[0].value;
-  const dob = document.getElementsByName('dob')[0].value;
+const setError = (element, message) => {
+  const inputControl = element.parentElement;
+  const errorDisplay = inputControl.querySelector('.error');
 
-  if (fname === '' || lname === '' || address === '' || nic === '' || dob === '') {
-    // alert('Please fill in all required fields!');
-    return false;
-  }
-  // If all fields are filled, allow the user to proceed
-  // You can add additional logic here, such as submitting the form or navigating to the next page
-  // alert('Form is valid! Proceeding to next step...');
-  return true;
+  errorDisplay.innerText = message;
+  inputControl.classList.add('error');
+  inputControl.classList.remove('success');
+};
+
+const setSuccess = (element) => {
+  const inputControl = element.parentElement;
+  const errorDisplay = inputControl.querySelector('.error');
+
+  errorDisplay.innerText = '';
+  inputControl.classList.add('success');
+  inputControl.classList.remove('error');
+};
+
+const isValidEmail = (email) => {
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+};
+
+// const validateInputs = () => {
+const usernameValue = username.value.trim();
+const emailValue = email.value.trim();
+const passwordValue = password.value.trim();
+const confirmpasswordValue = confirmpassword.value.trim(); // corrected variable name
+
+if (usernameValue === '') {
+  setError(username, 'NIC is required'); // corrected variable name
+} else {
+  setSuccess(username);
 }
-validateForm();
+
+if (emailValue === '') {
+  setError(email, 'Email is required');
+} else if (!isValidEmail(emailValue)) {
+  setError(email, 'Provide a valid email address');
+} else {
+  setSuccess(email);
+}
+
+if (passwordValue === '') {
+  setError(password, 'Password is required');
+} else if (passwordValue.length < 8) {
+  setError(password, 'Password must be at least 8 characters.');
+} else {
+  setSuccess(password);
+}
+
+if (confirmpasswordValue === '') {
+  setError(confirmpassword, 'Please confirm your password'); // corrected variable name
+} else if (confirmpasswordValue !== passwordValue) {
+  setError(confirmpassword, "Passwords don't match"); // corrected variable name
+} else {
+  setSuccess(confirmpassword);
+}
