@@ -14,11 +14,11 @@
             <div class="Appointments">
     
         <div class="topTitle">
-            <div > <button class="backImg"><img src="../images/icons/back-iceblue.svg" class="backImg">back</button>  <span class="set">Settings</span> </div>
+            <div > <button class="backImg" onck ="DashBourd.php"><img src="../images/icons/back-iceblue.svg" class="backImg" >back</button>  <span class="set">Settings</span> </div>
             <div class="todaysDate"><h5>todays date</h5> </div>
            </div>
                 <div class="setindbtncontener">
-                <button class="setingbtn" id="settingbtn" onclick="displaySetting()"><h1 class="seting"><img src="../images/icons/settings-iceblue.svg">Acount setting <h6 class="setingsmalfont">edit you acount detail and change you password</h6></h1> </button>
+                <button class="setingbtn" id="settingbtn" onclick="displaySetting1()"><h1 class="seting"><img src="../images/icons/settings-iceblue.svg">Acount setting <h6 class="setingsmalfont">edit you acount detail and change you password</h6></h1> </button>
 
                 <button class="setingbtn" id="detailbtn" onclick="displayDetail()"><h1 class="seting"><img src="../images/icons/view-iceblue.svg">View Account Details</h1><h6 class="setingsmalfont">view profesional information about you acount</h6> <br></button>
                 <button class="setingbtn" id="deletbtn" onclick="displayDelete()"> <h1 class="setingdelet"><img src="../images/icons/delete-iceblue.svg" alt="">Delete Acount </h1><h6 class="setingsmalfont">will permanently delete your acount</h6></button>
@@ -27,11 +27,11 @@
             </section>
             <!-- popUp section -->
             <section>
-                <div class="accountSetting">
-                    <div class="buton" onclick="hidSetting()">
+                <form action="addDoctor.php" method="post">
+                <div class="accountSetting1">
+                    <div class="buton" onclick="hidSetting1()">
                     &times;
                     </div>
-                    <form action="addDoctor.php" method="post">
                     <label for=""><h1>Edit Doctor Details.
                     </h1>
                     <h4>Doctor ID (Auto Generated)
@@ -42,8 +42,16 @@
                   <input type="text" required name="Fname" placeholder="your first name here" maxlength="20" class="inpSetAcount"><br>
                   <label for="Name">LName: </label><br>
                   <input type="text" required name="Lname" placeholder="your last name here" maxlength="20" class="inpSetAcount"><br>
+                  <button class="next" onclick="displaySetting2();">Next</button>
+                      </div>
+                      <div class="accountSetting2">
+                      <div class="buton" onclick="hidSetting2()">
+                    &times;
+                    </div>
                   <label for="nic">NIC </label><br>
                   <input type="text" name="NIC" placeholder="your nic here" maxlength="50" class="inpSetAcount"><br>
+                  <label for="Name">user Name: </label><br>
+                  <input type="text" required name="userName" placeholder="your user name here" maxlength="20" class="inpSetAcount"><br>
                   <label for="Telephone">Telephone:</label><br>
                   <input type="text" name="Telephone" placeholder="your Telephone here" maxlength="13"class="inpSetAcount"><br>
                   <label for="Choose specialties">Choose specialties: (CurrentAccident and emergency medicine)</label><br>
@@ -51,20 +59,29 @@
                     <option value="acadamic and emergency medicin">acadamic and emergency medicin</option>
                     <option value="All ergology">All ergology</option>
                     <option value="anaesthetic">anaesthetic</option>
-                  </select><br>
+                  </select><br>  
+                  <button class="previos" onclick="displaySetting1();">previos</button>
+                  <button class="next" onclick="displaySetting3();">Next</button>
+                 </div>
+                 <div class="accountSetting3">
+                 <div class="buton" onclick="hidSetting3();">
+                    &times;
+                    </div>
                   <label for="Password">Password: </label><br>
                   <input type="password" required name="password" placeholder="your password here" maxlength="6" class="inpSetAcount"><br>
                   <label for="Conform Password">Conform Password:</label><br>
                   <input type="password" name="ConformPassword" placeholder="Conform Password here" maxlength="6" required class="inpSetAcount"><br>
                   <input type="reset" value="Reset" class="btnSetAcount"> <input type="submit" value="Save" name="submit" class="btnSetAcount"><br>
-                </form>
+                  <button class="previos" onclick="displaySetting2();">previos</button>  
                 </div>
+                </form>
+                
                 <div class="viewdetail">
 <?php
 // Include the database connection file
 include("connection.php");
 // Retrieve the data from the database
-$sql = "SELECT * FROM Doctor WHERE id =40";
+$sql = "SELECT * FROM Doctor WHERE useName=300";
 $result = mysqli_query($connection, $sql);
 
 // Check if the query was successful
@@ -74,6 +91,7 @@ if (mysqli_num_rows($result) > 0) {
         $fName = $row["Fname"];
         $lName = $row["Lname"];
         $nic = $row["NIC"];
+        $userName = $row["userName"];    
         $email = $row["Email"];
         $telephone = $row["Telephone"];
         $speciality = $row["Speciality"];
@@ -88,6 +106,8 @@ if (mysqli_num_rows($result) > 0) {
                     <input type="email"  name="email" class="inpSetAcount" readonly value="<?php echo $email; ?>"><br>
                     <label for=" NIC:"> NIC:</label><br>
                     <input type="text" name="NIC" class="inpSetAcount" readonly value="<?php echo $nic; ?>"><br>
+                    <label for="Name">user Name: </label><br>
+                  <input type="text" required name="userName"><br>
                     <label for="Telephone:"> Telephone:</label><br>
                     <input type="text" name="Telephone:"  class="inpSetAcount" readonly value="<?php echo $telephone; ?>"><br>
                     <label for=" Specialties."> Specialties.</label><br>
@@ -100,13 +120,18 @@ if (mysqli_num_rows($result) > 0) {
     
                 <?php
     }
-} else {
+} 
+else {
     echo "No data found in the database.";
 }
+mysqli_close($connection);?>  
 
-mysqli_close($connection);
-?>
-                <div class="confiDelet">
+
+
+
+
+
+                          <div class="confiDelet">
                     <div class="buton" onclick="hidDelete()">
                         &times;
                         </div>

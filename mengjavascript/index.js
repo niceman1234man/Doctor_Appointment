@@ -7,11 +7,24 @@ function date() {
   document.querySelector('.todaysDate').innerHTML += ` ${day}/${month}/${year}`;
 }
 date();
-function displaySetting() {
-  document.querySelector('.accountSetting').classList.add('active');
+function displaySetting1() {
+  document.querySelector('.accountSetting1').classList.add('active');
 }
-function hidSetting() {
-  document.querySelector('.accountSetting').classList.remove('active');
+function hidSetting1() {
+  document.querySelector('.accountSetting1').classList.remove('active');
+}
+
+function displaySetting2() {
+  document.querySelector('.accountSetting2').classList.add('active');
+}
+function hidSetting2() {
+  document.querySelector('.accountSetting2').classList.remove('active');
+}
+function displaySetting3() {
+  document.querySelector('.accountSetting3').classList.add('active');
+}
+function hidSetting3() {
+  document.querySelector('.accountSetting3').classList.remove('active');
 }
 
 function displayDetail() {
@@ -54,8 +67,13 @@ function hidPationtDetail() {
   document.querySelector('.viewPationt').classList.remove('active');
 }
 /// ///////////////
-displaySetting();
-hidSetting();
+//
+displaySetting1();
+hidSetting1();
+displaySetting2();
+hidSetting2();
+displaySetting3();
+hidSetting3();
 displayDetail();
 hidDetail();
 displayDelete();
@@ -68,3 +86,5 @@ displayCancelSesion();
 hidCancelSesion();
 displayPationtDetail();
 hidPationtDetail();
+displaySetting1();
+displaySetting2();
