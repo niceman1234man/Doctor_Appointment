@@ -61,7 +61,7 @@ function displayPationtDetail() {
 function hidPationtDetail() {
   document.querySelector('.viewPationt').classList.remove('active');
 }
-<<<<<<< HEAD
+
 /// ///////////
 displaySetting1();
 hidSetting1();
@@ -69,10 +69,9 @@ displaySetting2();
 hidSetting2();
 displaySetting3();
 hidSetting3();
-=======
+
 /// ///////////////
 
->>>>>>> c95735cd768b0afa3c78bfa9b013d44b74b7ac48
 displayDetail();
 hidDetail();
 displayDelete();
