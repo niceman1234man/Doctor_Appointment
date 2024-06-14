@@ -36,14 +36,18 @@
                     </h1>
                     <h4>Doctor ID (Auto Generated)
                     </h4></label><br>
-
                   <label for="Email">Email:</label><br>
                   <input type="email" required name="email" maxlength="50" placeholder="fill your email here" class="inpSetAcount"><br>
                   <label for="Name">FName: </label><br>
                   <input type="text" required name="Fname" placeholder="your first name here" maxlength="20" class="inpSetAcount"><br>
                   <label for="Name">LName: </label><br>
                   <input type="text" required name="Lname" placeholder="your last name here" maxlength="20" class="inpSetAcount"><br>
-
+                  <button class="next" onclick="displaySetting2();">Next</button>
+                      </div>
+                      <div class="accountSetting2">
+                      <div class="buton" onclick="hidSetting2()">
+                    &times;
+                    </div>
                   <label for="nic">NIC </label><br>
                   <input type="text" name="NIC" placeholder="your nic here" maxlength="50" class="inpSetAcount"><br>
                   <label for="Name">user Name: </label><br>
@@ -56,11 +60,18 @@
                     <option value="All ergology">All ergology</option>
                     <option value="anaesthetic">anaesthetic</option>
                   </select><br>  
+                  <button class="previos" onclick="displaySetting1();">previos</button>
+                  <button class="next" onclick="displaySetting3();">Next</button>
+                 </div>
 
+                 <div class="accountSetting3">
+                 <div class="buton" onclick="hidSetting3();">
+                    &times;
+                    </div>
                   <label for="Password">Password: </label><br>
-                  <input type="password" required name="password" placeholder="your password here" maxlength="6" class="inpSetAcount"><br>
+                  <input type="password" required name="password" placeholder="your password here" maxlength="255" class="inpSetAcount"><br>
                   <label for="Conform Password">Conform Password:</label><br>
-                  <input type="password" name="ConformPassword" placeholder="Conform Password here" maxlength="6" required class="inpSetAcount"><br>
+                  <input type="password" name="ConformPassword" placeholder="Conform Password here" maxlength="255" required class="inpSetAcount"><br>
                   <input type="reset" value="Reset" class="btnSetAcount"> <input type="submit" value="Save" name="submit" class="btnSetAcount"><br>
                   <button class="previos" onclick="displaySetting2();">previos</button>  
                 </div>
@@ -71,7 +82,7 @@
 // Include the database connection file
 include("connection.php");
 // Retrieve the data from the database
-$sql = "SELECT * FROM Doctor WHERE useName=300";
+$sql = "SELECT `Fname`, `Lname`, `NIC`, `userName`, `Email`, `Telephone`, `Speciality` FROM `Doctor` WHERE `Fname` = 'tsion'";
 $result = mysqli_query($connection, $sql);
 
 // Check if the query was successful
@@ -96,26 +107,22 @@ if (mysqli_num_rows($result) > 0) {
                     <input type="email"  name="email" class="inpSetAcount" readonly value="<?php echo $email; ?>"><br>
                     <label for=" NIC:"> NIC:</label><br>
                     <input type="text" name="NIC" class="inpSetAcount" readonly value="<?php echo $nic; ?>"><br>
-                    <label for="Name">user Name: </label><br>
-                  <input type="text" required name="userName"><br>
+                    <label for="Name">User Name: </label><br>
+                    <input type="text" required name="userName" value="<?php echo $userName; ?>"><br>
                     <label for="Telephone:"> Telephone:</label><br>
-                    <input type="text" name="Telephone:"  class="inpSetAcount" readonly value="<?php echo $telephone; ?>"><br>
+                    <input type="text" name="Telephone"  class="inpSetAcount" readonly value="<?php echo $telephone; ?>"><br>
                     <label for=" Specialties."> Specialties.</label><br>
-                    <input type="text" name="speciality:"  class="inpSetAcount" readonly value="<?php echo $speciality; ?>"><br>
+                    <input type="text" name="speciality"  class="inpSetAcount" readonly value="<?php echo $speciality; ?>"><br>
                     <button class="btnSetAcount" onclick="hidDetail()">Ok</button><br>
-
-
                 </div>
-
-    
-                <?php
+<?php
     }
 } 
 else {
     echo "No data found in the database.";
 }
-mysqli_close($connection);?>  
-
+mysqli_close($connection);
+?>
 
 
 

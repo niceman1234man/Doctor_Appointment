@@ -3,7 +3,6 @@ function date() {
   const day = now.getDay();
   const month = now.getMonth();
   const year = now.getFullYear();
-
   document.querySelector('.todaysDate').innerHTML += ` ${day}/${month}/${year}`;
 }
 date();
@@ -13,7 +12,6 @@ function displaySetting1() {
 function hidSetting1() {
   document.querySelector('.accountSetting1').classList.remove('active');
 }
-
 function displaySetting2() {
   document.querySelector('.accountSetting2').classList.add('active');
 }
@@ -26,7 +24,6 @@ function displaySetting3() {
 function hidSetting3() {
   document.querySelector('.accountSetting3').classList.remove('active');
 }
-
 function displayDetail() {
   document.querySelector('.viewdetail').classList.add('active');
 }
@@ -39,14 +36,12 @@ function displayDelete() {
 function hidDelete() {
   document.querySelector('.confiDelet').classList.remove('active');
 }
-/// ///////////////
 function cancelApointment() {
   document.querySelector('.cancelApoin').classList.add('active');
 }
 function hidCancelApointment() {
   document.querySelector('.cancelApoin').classList.remove('active');
 }
-
 function displaySession() {
   document.querySelector('.viewSession').classList.add('active');
 }
@@ -66,6 +61,13 @@ function displayPationtDetail() {
 function hidPationtDetail() {
   document.querySelector('.viewPationt').classList.remove('active');
 }
+/// ///////////
+displaySetting1();
+hidSetting1();
+displaySetting2();
+hidSetting2();
+displaySetting3();
+hidSetting3();
 /* all of the following functions are called for the sake of linter error because
 if it is not called on the js file it will the case for linter error */
 displayDetail();

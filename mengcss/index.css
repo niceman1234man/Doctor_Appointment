@@ -7,6 +7,10 @@
   /* position: absolute;///////////// */
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .side_bar ul {
   list-style-type: none;
 }
@@ -292,6 +296,10 @@ td {
 }
 
 /* /////for popup */
+
+.accountSetting1,
+.accountSetting2,
+.accountSetting3,
 .accountSetting,
 .viewdetail,
 .confiDelet,
@@ -299,10 +307,10 @@ td {
 .cancelSession,
 .viewSession,
 .viewPationt {
-  width: 30%;
+  width: 20%;
   font-size: x-large;
   margin: 25%;
-  padding: 10%;
+  padding: 5%;
   right: -1500px;
   position: absolute;
   cursor: pointer;
@@ -311,8 +319,8 @@ td {
 .inpSetAcount {
   font-size: large;
   margin: 1%;
-  height: 35px;
-  width: 100%;
+  height: 20px;
+  width: 20%;
   border-radius: 5px;
 }
 
@@ -348,6 +356,9 @@ td {
   color: #0c55f3;
 }
 
+.accountSetting1.active,
+.accountSetting2.active,
+.accountSetting3.active,
 .accountSetting.active {
   background-color: rgb(18, 194, 238);
   padding-top: 2%;

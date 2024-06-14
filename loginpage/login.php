@@ -1,4 +1,9 @@
 <?php
+<<<<<<< HEAD
+echo " this";
+ ?>
+
+=======
 
 // Initialize the session
 session_start();
@@ -88,3 +93,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($link);
 }
 ?>
+>>>>>>> b221e02290fbc76473069d731592c8fe035f0cb3
