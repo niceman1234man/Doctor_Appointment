@@ -1,0 +1,420 @@
+.side_bar {
+  width: 30%;
+  margin-right: 2%;
+
+  /* background-color: rgb(153, 51, 68); */
+
+  /* position: absolute;///////////// */
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.side_bar ul {
+  list-style-type: none;
+}
+
+.sidbarUserImg {
+  width: 30%;
+  margin: 3%;
+}
+
+/* .side_bar ul a img {
+  width: 30px;
+  margin: 2%;
+} */
+
+.side_bar ul li {
+  font-size: 150%;
+  padding: 8%;
+}
+
+.side_bar ul li:hover {
+  background-color: #d8ebfa;
+}
+
+.welcome {
+  padding-left: 3%;
+  background: url(../images/b8.jpg) no-repeat center;
+}
+
+.statusDash a {
+  padding: 0 10% 1% 0;
+  text-decoration: none;
+  font-size: large;
+  color: black;
+}
+
+.side_bar ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.side_bar ul li a:hover {
+  text-decoration: none;
+  color: #0a76d8;
+}
+
+.doctor_first_section {
+  display: flex;
+}
+
+.backImg {
+  display: inline-flex;
+  border: none;
+  height: 30px;
+  font-size: large;
+}
+
+.dashbourd {
+  display: block;
+  margin-left: 2%;
+}
+
+.statusDash {
+  float: left;
+  margin: 3% 3%;
+  padding: 3%;
+  width: 50%;
+}
+
+.statusDash div {
+  margin: 3%;
+  width: 130%;
+}
+
+.upcoming_events {
+  margin: 0 0;
+  width: 50%;
+}
+
+.statusimg {
+  width: 10%;
+  padding: 0;
+  margin: 0;
+}
+
+.statusUpcomingEvent {
+  margin-left: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.par1 {
+  width: 55%;
+
+  /* text-align: center; */
+  margin: 3%;
+  font-weight: 500;
+  font-size: larger;
+}
+
+.loginbtn {
+  background-color: #d8ebfa;
+  margin: 5%;
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 1%;
+  margin: 2%;
+  font-size: x-large;
+  color: white;
+  width: 50%;
+  height: 25px;
+  background-color: #006dd3;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  background-color: #2689e6ec;
+}
+
+.tablebtn {
+  background-color: #d8ebfa;
+  border-radius: 10px;
+  color: black;
+  font-size: large;
+  border: 0.3px;
+}
+
+.loginbtn:hover,
+.backImg:hover,
+.tablebtn:hover {
+  background-color: #0a76d8;
+}
+
+.imgtod {
+  width: 20px;
+}
+
+/* .status table td {
+  border: 2px;
+  background-color: rgb(132, 100, 34);
+} */
+
+.showSesions {
+  align-self: center;
+  margin: 30%;
+  background-color: #d8ebfa;
+  color: #0a76d8;
+  width: 50%;
+  border-radius: 10px;
+  height: 35px;
+  font-size: large;
+}
+
+.filterbtn {
+  background-color: #d8ebfa;
+  width: 20%;
+  margin: 0 2% 0 2%;
+  text-align: center;
+  font-size: large;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.showSesions:hover,
+.filterbtn:hover {
+  background-color: #0a76d8;
+  color: white;
+}
+
+#myApointment {
+  display: flex;
+}
+
+.inputDate {
+  display: flex;
+  margin: 3%;
+  height: 10%;
+  border: 1px;
+}
+
+.inputDate label {
+  width: 30%;
+  margin: 1% 1% 1% 10%;
+  font-size: x-large;
+}
+
+.inputDate select {
+  width: 25%;
+  height: 30px;
+  font-size: large;
+}
+
+td {
+  font-size: large;
+}
+
+.inputDate input {
+  width: 60%;
+  padding: 1% 5% 1% 5%;
+  text-align: center;
+  font-size: large;
+  border-radius: 10px;
+  height: 20px;
+}
+
+.filteimg {
+  width: 10%;
+}
+
+.head {
+  width: 100%;
+}
+
+.setindbtncontener {
+  margin: 2% 2%;
+}
+
+.setingbtn {
+  background-color: white;
+  color: #599edf;
+  margin: 1%;
+  border-radius: 10px;
+  width: 90%;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.setingbtn:hover {
+  background-color: #f1f1f1;
+  color: #0a78df;
+}
+
+.setingdelet {
+  color: red;
+}
+
+.setingsmalfont {
+  font-size: 15px;
+  color: black;
+}
+
+.searPationtbtn {
+  margin: 1% 1%;
+  height: 30px;
+  background-color: #2790f2;
+}
+
+.searPationtbtn:hover {
+  background-color: #0a76d8;
+}
+
+.searinputPationt {
+  width: 70%;
+  margin: 0 1%;
+  text-align: center;
+  font-size: large;
+  height: 30px;
+}
+
+.btnsearchDivePation {
+  display: flex;
+  margin: 2% 1%;
+}
+
+.topTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.set {
+  font-size: x-large;
+}
+
+.setindbtncontener img {
+  width: 30px;
+  margin-right: 2%;
+}
+
+/* /////for popup */
+
+.accountSetting1,
+.accountSetting2,
+.accountSetting3,
+.accountSetting,
+.viewdetail,
+.confiDelet,
+.cancelApoin,
+.cancelSession,
+.viewSession,
+.viewPationt {
+  width: 20%;
+  font-size: x-large;
+  margin: 25%;
+  padding: 5%;
+  right: -1500px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.inpSetAcount {
+  font-size: large;
+  margin: 1%;
+  height: 20px;
+  width: 20%;
+  border-radius: 5px;
+}
+
+.btnSetAcount,
+.btnDletAcount {
+  width: 20%;
+  height: 30px;
+  font-size: large;
+  background-color: #5aa6ee;
+  border-radius: 5px;
+}
+
+.btnSetAcount:hover,
+.btnDletAcount:hover {
+  background-color: #2790f2;
+}
+
+.viewdetail .inpSetAcount {
+  border: none;
+}
+
+.buton {
+  width: 5px;
+  margin-left: 98%;
+  margin-top: 0.5%;
+  color: black;
+  font-weight: 900;
+  font-size: 60px;
+  cursor: pointer;
+}
+
+.buton:hover {
+  color: #0c55f3;
+}
+
+.accountSetting1.active,
+.accountSetting2.active,
+.accountSetting3.active,
+.accountSetting.active {
+  background-color: rgb(18, 194, 238);
+  padding-top: 2%;
+  width: 60%;
+  top: 20%;
+  left: 30%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(0.9);
+  transition:
+    top 200ms ease-in-out 20ms,
+    opacity 20ms ease-in-out 10ms,
+    transform 220ms ease-in-out 10ms;
+  box-shadow: 10px 10px 10px 300px white;
+}
+
+.viewdetail.active,
+.viewSession.active,
+.viewPationt.active {
+  width: 60%;
+  padding: 5%;
+  background-color: rgb(18, 194, 238);
+  top: 5%;
+  left: 30%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition:
+    top 200ms ease-in-out 20ms,
+    opacity 202ms ease-in-out 100ms,
+    transform 220ms ease-in-out 10ms;
+  box-shadow: 10px 10px 10px 300px white;
+}
+
+.confiDelet.active,
+.cancelApoin.active,
+.cancelSession.active {
+  background-color: rgb(18, 194, 238);
+  font-size: x-large;
+  width: 50%;
+  text-align: center;
+  padding: 2%;
+  top: 8%;
+  left: 30%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition:
+    top 200ms ease-in-out 20ms,
+    opacity 220ms ease-in-out 10ms,
+    transform 220ms ease-in-out 10ms;
+  box-shadow: 10px 10px 10px 500px white;
+}
+
+.Appointments,
+.table,
+.apointTable,
+.inputDate {
+  display: block;
+  width: 100%;
+  flex-wrap: nowrap;
+}
