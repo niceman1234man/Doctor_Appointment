@@ -108,7 +108,7 @@ if (mysqli_num_rows($result) > 0) {
                     <label for=" NIC:"> NIC:</label><br>
                     <input type="text" name="NIC" class="inpSetAcount" readonly value="<?php echo $nic; ?>"><br>
                     <label for="Name">User Name: </label><br>
-                    <input type="text" required name="userName" value="<?php echo $userName; ?>"><br>
+                    <input type="text" required name="userName" class="inpSetAcount" value="<?php echo $userName; ?>"><br>
                     <label for="Telephone:"> Telephone:</label><br>
                     <input type="text" name="Telephone"  class="inpSetAcount" readonly value="<?php echo $telephone; ?>"><br>
                     <label for=" Specialties."> Specialties.</label><br>
