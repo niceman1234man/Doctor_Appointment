@@ -298,9 +298,9 @@ td {
 }
 
 /* /////for popup */
-.accountSetting,
 .accountSetting1,
 .accountSetting2,
+.accountSetting3,
 .viewdetail,
 .confiDelet,
 .cancelApoin,
@@ -324,7 +324,6 @@ td {
   border-radius: 5px;
 }
 
-.next,
 .btnSetAcount,
 .btnDletAcount {
   width: 20%;
@@ -334,7 +333,6 @@ td {
   border-radius: 5px;
 }
 
-.next:hover,
 .btnSetAcount:hover,
 .btnDletAcount:hover {
   background-color: #2790f2;
@@ -358,9 +356,9 @@ td {
   color: #0c55f3;
 }
 
-.accountSetting.active,
 .accountSetting1.active,
-.accountSetting2.active {
+.accountSetting2.active,
+.accountSetting3.active {
   background-color: rgb(18, 194, 238);
   width: 60%;
   top: 15%;
@@ -417,4 +415,17 @@ td {
   display: block;
   width: 100%;
   flex-wrap: nowrap;
+}
+
+.previos,
+.next {
+  width: 10%;
+  height: 30px;
+  background-color: #5aa6ee;
+  font-size: large;
+}
+
+.previos:hover,
+.next:hover {
+  background-color: #f7e70d;
 }
