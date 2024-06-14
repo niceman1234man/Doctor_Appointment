@@ -60,7 +60,7 @@ if ($result->num_rows > 0) {
         echo "<td>" . $row["ID"] . "</td>";
         echo "<td>
             <div class=\"form-button\">
-                <form action=\"view_patient.php\" method=\"post\">
+                <form action=\"viewPasiont.php\" method=\"post\">
                     <input type=\"hidden\" name=\"id\" value=\"" . $row["ID"] . "\">
                     <button type=\"submit\" class=\"viewbutton\" onclick=\"displayPationtDetail();\"  >
                         <img src=\"../images/icons/view-iceblue.svg\" alt=\"View\" value=\"View\">View
