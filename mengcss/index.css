@@ -319,13 +319,15 @@ td {
 .inpSetAcount {
   font-size: large;
   margin: 1%;
-  height: 20px;
-  width: 20%;
+  height: 30px;
+  width: 50%;
   border-radius: 5px;
 }
 
 .btnSetAcount,
-.btnDletAcount {
+.btnDletAcount,
+.previos,
+.next {
   width: 20%;
   height: 30px;
   font-size: large;
@@ -333,6 +335,8 @@ td {
   border-radius: 5px;
 }
 
+.previos:hover,
+.next:hover,
 .btnSetAcount:hover,
 .btnDletAcount:hover {
   background-color: #2790f2;
