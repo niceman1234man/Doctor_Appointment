@@ -53,7 +53,7 @@ if (mysqli_num_rows($result) > 0) {
                         </button>
                     </form>
 
-                    <form action="delete_session.php" method="post">
+                    <form action="deletSession.php" method="post">
                         <input type="hidden" name="id" value="' . $id . '">
                         <button type="submit">
                             <img src="../img/icons/delete-iceblue.svg" alt="Remove" value="Remove">
