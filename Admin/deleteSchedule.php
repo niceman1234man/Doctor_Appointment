@@ -1,12 +1,16 @@
 <?php
 include("connection.php");
-$id = $_POST['id'];
 
-$sql = "DELETE FROM session WHERE id='$id'";
-if (mysqli_query($conn, $sql)) {
-    echo "Session deleted successfully";
+if (isset($_POST['id'])) {
+    $id = $_POST['id'];
+
+    $delete_query = "DELETE FROM session WHERE id = '$id'";
+    if (mysqli_query($conn, $delete_query)) {
+        echo "Session deleted successfully";
+    } else {
+        echo "Error deleting session: " . mysqli_error($conn);
+    }
 } else {
-    echo "Error deleting Sesion: " . mysqli_error($conn);
+    echo "Session ID not provided.";
 }
-mysqli_close($conn);
 ?>
