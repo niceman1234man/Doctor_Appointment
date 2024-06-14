@@ -1,6 +1,4 @@
-.add-new-doctors-pop-up,
-.schedule-detail-pop-up,
-.patients-detail-pop-up {
+.add-new-doctors-pop-up {
   width: 40%;
   position: absolute;
   padding-bottom: 2%;
@@ -33,7 +31,8 @@ left: 50%; */
 }
 
 .doctor-detail,
-.patients-detail {
+.patients-detail,
+.schedule-detail {
   width: 40%;
   position: absolute;
   padding-bottom: 2%;
@@ -43,13 +42,23 @@ left: 50%; */
   padding-left: 10%;
   font-size: large;
   font-weight: bold;
-  border: 1px solid rgb(215, 41, 41);
+  border: 1px solid rgb(16, 4, 4);
+  box-shadow: 10px 10px 10px 10px rgb(60, 24, 202);
   border-radius: 5px;
+  top: 20%;
 }
 
-.add-new-doctors-pop-up.active,
-.schedule-detail-pop-up.active,
-.patients-detail-pop-up.active {
+.doctor-detail #ok,.patients-detail #ok{
+  padding: 2%;
+  cursor: pointer;
+  background: blue;
+  color: white;
+  width: 20%;
+  border-radius: 5px;
+  
+}
+
+.add-new-doctors-pop-up.active {
   margin-top: 4%;
   top: 50%;
 
@@ -75,6 +84,17 @@ left: 50%; */
   border-radius: 5px;
   font-size: large;
 }
+#xd-sign,#xp-sign{
+  float: right;
+  margin-top: 0%;
+  font-weight: bolder;
+  cursor: pointer;
+  font-size: x-large;
+  color: red;
+  text-align: center;
+  background: rgb(99, 97, 97);
+  padding: 2%;
+}
 
 #add-button,
 #rest-button {
@@ -88,7 +108,6 @@ left: 50%; */
 }
 
 #x-sign,
-#xd-sign,
 #xs-sign {
   width: 5%;
   height: 5%;
