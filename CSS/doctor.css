@@ -48,14 +48,14 @@ left: 50%; */
   top: 20%;
 }
 
-.doctor-detail #ok,.patients-detail #ok{
+.doctor-detail #ok,
+.patients-detail #ok {
   padding: 2%;
   cursor: pointer;
   background: blue;
   color: white;
   width: 20%;
   border-radius: 5px;
-  
 }
 
 .add-new-doctors-pop-up.active {
@@ -84,7 +84,9 @@ left: 50%; */
   border-radius: 5px;
   font-size: large;
 }
-#xd-sign,#xp-sign{
+
+#xd-sign,
+#xp-sign {
   float: right;
   margin-top: 0%;
   font-weight: bolder;
