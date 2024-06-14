@@ -1,5 +1,5 @@
 .side_bar {
-  width: 30%;
+  width: 21%;
   margin-right: 2%;
 
   /* background-color: rgb(153, 51, 68); */
@@ -344,6 +344,15 @@ td {
 
 .viewdetail .inpSetAcount {
   border: none;
+}
+
+.viewbutton {
+  font-size: medium;
+  background-color: #569cdf;
+}
+
+.viewbutton:hover {
+  background-color: #1e87e9;
 }
 
 .buton {
