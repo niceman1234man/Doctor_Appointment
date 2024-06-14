@@ -24,28 +24,19 @@
             $spec = $row["speciality"];
             $id = $row["id"];
 
-            echo '
-            <div class="doctor-detail">
-                <div class="pop-up-header">
-                    <h2>View Detail</h2>
-                    <a href="Doctors.php">
-                        <p id="xd-sign">&times;</p>
-                    </a>
-                </div>
-                <p>ID :</p>
-                <p>' . $id . '</p>
-                <p>Name :</p>
-                <p>' . $name . '</p>
-                <p>Email :</p>
-                <p>' . $email . '</p>
-                <p>NIC :</p>
-                <p>' . $nic . '</p>
-                <p>Telephone :</p>
-                <p>' . $telephone . '</p>
-                <p>Specialities :</p>
-                <p>' . $spec . '</p>
-                <a href="Doctors.php"><button>OK</button></a>
-            </div>';
+            echo ' <div class="doctor-detail">
+            <a href="Doctors.php">
+                <p id="xd-sign">&times;</p>
+            </a>
+        <h2>View Detail</h2>
+        <p>ID :' . $id . '</p>
+        <p>Name :' . $name . '</p>
+        <p>Email :' . $email . '</p>
+        <p>NIC :' . $nic . '</p>
+        <p>Telephone :' . $telephone . '</p>
+        <p>Specialities :' . $spec . '</p>
+        <a href="Doctors.php"><button id="ok">OK</button></a>
+    </div>';
         } else {
             echo "No doctor found with the given ID.";
         }
@@ -53,6 +44,10 @@
         echo "No doctor ID provided.";
     }
     ?>
+
+
+
+
 </body>
 
 </html>
