@@ -17,9 +17,11 @@
     include("sidebar.php");
     ?>
     <div class="main-part">
-        <img src="../img/search.svg" alt="search" id="search-img">
-        <input type="search" placeholder="search Patient Name or Email" id="search">
-        <button id="search-button">search</button>
+        <form action="Patients.php" method="post">
+            <img src="../img/search.svg" alt="search" id="search-img">
+            <input type="search" placeholder="search Patient Name or Email" id="search" name="search_term">
+            <button type="submit" name="search" id="search-button">search</button>
+        </form>
         <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br>
             <?php date_default_timezone_set('Asia/Kolkata');
 
@@ -28,6 +30,19 @@
         </p>
 
         <p>All Patients( <?php echo mysqli_num_rows($result);?>)</p>
+
+        <?php
+           if (isset($_POST['search'])) {
+            $search_term = $_POST['search_term'];
+            $list1 = "SELECT * FROM patient WHERE name LIKE '%$search_term%' OR email LIKE '%$search_term%'";
+            $result = mysqli_query($conn, $list1);
+        } else {
+            $list1 = "SELECT * FROM patient";
+            $result = mysqli_query($conn, $list1);
+        }
+        
+        
+        echo '
         <table>
             <tr>
                 <th> Name</th>
@@ -36,8 +51,8 @@
                 <th>Email</th>
                 <th>Date of birth</th>
                 <th>Events</th>
-            </tr>
-            <?php
+            </tr>';
+          
      
 if(mysqli_num_rows($result) > 0) {
     $data = '';
@@ -48,7 +63,6 @@ if(mysqli_num_rows($result) > 0) {
         $email = $row["email"];
         $date_of_birth = $row["date_of_birth"];
         $id=$row["id"];
-      
         $data .= '<tr>
             <td>' .  $name . '</td>
             <td>' .   $nic  . '</td>
@@ -56,15 +70,14 @@ if(mysqli_num_rows($result) > 0) {
             <td>' . $email. '</td>
              <td>' . $date_of_birth . '</td>
             <td>
-                <form action="view_patient.php" method="post" style="display:flex;">
-          <input type="hidden" value="'.$id .'">
-         <button type="submit" class="view-button">
+          <form action="view_patient.php" method="post" style="display:flex;">
+    <input type="hidden" name="id" value="'. $id .'">
+    <button type="submit" class="view-button">
         <img src="../img/icons/view-iceblue.svg" alt="View" value="View">View
-          </button>
-       </form>
-                
-            </td>
-        </tr>';
+    </button>
+</form>
+          </td>
+          </tr>';
     }
     echo $data;
 }
