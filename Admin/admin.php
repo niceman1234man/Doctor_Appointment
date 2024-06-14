@@ -11,7 +11,7 @@
 <body>
     <?php
    include("sidebar.php");
-   include("connection.php");
+   include("../connection.php");
     $list3 = "select * from patient";
        $result = mysqli_query($conn, $list3);
        $list1 = "select * from doctor";

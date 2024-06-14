@@ -12,7 +12,7 @@
     <div class="side-bar">
         <h1>Admin Slide</h1>
         <p> <img src="../img/user.png" alt="administer img" id="admin-img">Administrator</p>
-        <button id="logout-button">Log out</button>
+        <a href="../logout.php"> <button id="logout-button">Log out</button> </a>
         <ul class="slid-bar-details">
             <a href="admin.php">
                 <li><img src="../img/icons/dashboard.svg" alt="">Dashboard</li>

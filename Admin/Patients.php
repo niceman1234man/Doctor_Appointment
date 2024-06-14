@@ -11,7 +11,7 @@
 
 <body>
     <?php
-    include("connection.php");
+   include("../connection.php");
     $list3 = "select * from patient";
        $result = mysqli_query($conn, $list3);
     include("sidebar.php");
@@ -32,9 +32,12 @@
         <p>All Patients( <?php echo mysqli_num_rows($result);?>)</p>
 
         <?php
+
+
+ 
            if (isset($_POST['search'])) {
             $search_term = $_POST['search_term'];
-            $list1 = "SELECT * FROM patient WHERE name LIKE '%$search_term%' OR email LIKE '%$search_term%'";
+            $list1 = "SELECT * FROM patient WHERE FirstName LIKE '%$search_term%' OR email LIKE '%$search_term%'";
             $result = mysqli_query($conn, $list1);
         } else {
             $list1 = "SELECT * FROM patient";
@@ -57,14 +60,15 @@
 if(mysqli_num_rows($result) > 0) {
     $data = '';
     while($row = mysqli_fetch_assoc($result)) {
-        $name = $row["name"];
-        $nic = $row["nic"];
-        $tel = $row["telephone"];
+        $name = $row["FirstName"];
+        $lname=$row["LastName"];
+        $nic = $row["NIC"];
+        $tel = $row["phone_number"];
         $email = $row["email"];
         $date_of_birth = $row["date_of_birth"];
         $id=$row["id"];
         $data .= '<tr>
-            <td>' .  $name . '</td>
+            <td>' .  $name .'  '. $lname.'</td>
             <td>' .   $nic  . '</td>
             <td>' .  $tel .'</td>
             <td>' . $email. '</td>

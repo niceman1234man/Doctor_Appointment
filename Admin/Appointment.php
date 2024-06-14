@@ -12,7 +12,7 @@
 <body>
     <?php
    include("sidebar.php");
-   include("connection.php");
+   include("../connection.php");
      $list2 = "select * from appointment";
         $result = mysqli_query($conn, $list2);
         $list3 ="select name from doctor";

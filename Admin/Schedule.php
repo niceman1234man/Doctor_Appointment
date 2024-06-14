@@ -14,7 +14,7 @@
 <body>
     <?php
    include("sidebar.php");
-   include("connection.php");
+   include("../connection.php");
      $list2 = "select * from session";
         $result = mysqli_query($conn, $list2);
         $list1 = "select name from doctor";

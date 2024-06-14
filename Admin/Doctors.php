@@ -13,7 +13,7 @@
 <body>
     <?php
      
-     include("connection.php");
+     include("../connection.php");
     include("sidebar.php");
     ?>
     <div class="main-part">
@@ -31,7 +31,7 @@
             <button id="add-new-button">+ Add New</button>
         </div>
         <?php
-        include("connection.php");
+        include("../connection.php");
        
         if (isset($_POST['search_term'])) {
             $search_term = $_POST['search_term'];

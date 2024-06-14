@@ -10,8 +10,8 @@
 
 <body>
     <?php
-include("connection.php");
-
+include("../connection.php");
+//"INSERT INTO patient (FirstName, LastName, NIC, phone_number, email, date_of_birth, Address, password)
 if (isset($_POST["id"])) {
     $id = $_POST["id"];
     $sql = "SELECT * FROM patient WHERE id='$id'";
@@ -19,11 +19,13 @@ if (isset($_POST["id"])) {
 
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
-        $name = $row["name"];
-        $nic = $row["nic"];
-        $tel = $row["telephone"];
+        $name = $row["FirstName"];
+        $lname=$row["LastName"];
+        $nic = $row["NIC"];
+        $tel = $row["phone_number"];
         $email = $row["email"];
         $date_of_birth = $row["date_of_birth"];
+        $address=$row=["Address"];
 
         echo ' <div class="patients-detail">
             <a href="Patients.php">
@@ -31,11 +33,12 @@ if (isset($_POST["id"])) {
             </a>
             <h2>View Detail</h2>
             <p>Patient ID:' . $id . '</p>
-            <p>Name :' . $name . '</p>
+            <p>Name :' . $name .' '.  $lname.'</p>
             <p>Email :' . $email . '</p>
             <p> NIC :' . $nic . '</p>
             <p>Telephone :' . $tel . '</p>
             <p>date of birth : ' . $date_of_birth . '</p>
+             <p>Address: ' .    $address . '</p>S
             <a href="Patients.php"><button id="ok">OK</button></a>
         </div>';
     } else {
