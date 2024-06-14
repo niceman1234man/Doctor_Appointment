@@ -56,11 +56,19 @@
                     <option value="All ergology">All ergology</option>
                     <option value="anaesthetic">anaesthetic</option>
                   </select><br>  
+                  <button class="previos" onclick="displaySetting1();">previos</button>
+                  <button class="next" onclick="displaySetting3();">Next</button>
+                 </div>
+
+                 <div class="accountSetting3">
+                 <div class="buton" onclick="hidSetting3();">
+                    &times;
+                    </div>
 
                   <label for="Password">Password: </label><br>
-                  <input type="password" required name="password" placeholder="your password here" maxlength="6" class="inpSetAcount"><br>
+                  <input type="password" required name="password" placeholder="your password here" maxlength="255" class="inpSetAcount"><br>
                   <label for="Conform Password">Conform Password:</label><br>
-                  <input type="password" name="ConformPassword" placeholder="Conform Password here" maxlength="6" required class="inpSetAcount"><br>
+                  <input type="password" name="ConformPassword" placeholder="Conform Password here" maxlength="255" required class="inpSetAcount"><br>
                   <input type="reset" value="Reset" class="btnSetAcount"> <input type="submit" value="Save" name="submit" class="btnSetAcount"><br>
                   <button class="previos" onclick="displaySetting2();">previos</button>  
                 </div>
