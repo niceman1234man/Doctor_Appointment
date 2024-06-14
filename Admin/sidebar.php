@@ -29,6 +29,10 @@
             <a href="Patients.php">
                 <li><img src="../img/icons/patients.svg" alt="">Patients</li>
             </a>
+
+
+
+
         </ul>
     </div>
 </body>

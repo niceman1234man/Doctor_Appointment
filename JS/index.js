@@ -34,11 +34,7 @@ document.getElementById('add-button').addEventListener('click', (event) => {
 document.querySelector('#x-sign').addEventListener('click', () => {
   document.querySelector('.add-new-doctors-pop-up').classList.remove('active');
 });
-const date = new Date();
-const day = date.getDate();
-const month = date.getMonth();
-const year = date.getFullYear();
-document.getElementById('today-date').append(`${day}/${month}/${year}`);
+
 // document.querySelector('#today-date').appendChild(datee);
 document.getElementById('add-button').addEventListener('click', () => {
   document.getElementById('name').focus();
@@ -47,3 +43,7 @@ document.getElementById('add-button').addEventListener('click', () => {
 // Get all the "View" buttons
 
 // Add a click event listener to each "View" button
+
+
+
+

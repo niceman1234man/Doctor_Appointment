@@ -86,7 +86,7 @@
     }
     echo $data;
 }
-   
+
 ?>
         </table>
         <div class="add-new-doctors-pop-up ">
@@ -104,10 +104,18 @@
                 <label for="telephone">Telephone</label><br>
                 <input type="number" name="telephone" id="telephone" placeholder="Telephone Number "><br>
                 <label for="speciality">Speciality</label><br>
-                <select name=" speciality" id="select">
-                    <option value="nurse">nurse</option>
-                    <option value="anstesia">Anstesia</option>
-                    <option value="padio">Padio</option>
+                <select name="speciality" id="select">
+                    <?php
+            include("connection.php");
+            $sql = "SELECT speciality FROM doctor";
+            $result = mysqli_query($conn, $sql);
+            $options = "";
+            while ($row = mysqli_fetch_assoc($result)) {
+                $spec = $row["speciality"];
+                $options .= '<option value="' . $spec . '">' . $spec . '</option>';
+            }
+            echo $options;
+            ?>
                 </select><br>
                 <label for="password">Password</label><br>
                 <input type="password" name="password" id="password" placeholder="Enter Password "><br>
@@ -117,8 +125,7 @@
                 <input type="reset" id="rest-button">
             </form>
         </div>
-    </div>
-    <script src="../JS/index.js"></script>
+        <script src="../JS/index.js"></script>
 </body>
 
 </html>
