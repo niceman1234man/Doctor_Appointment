@@ -1,0 +1,18 @@
+.add-new-section {
+  display: flex;
+  justify-content: space-around;
+}
+
+#add-new-button {
+  width: 20%;
+  height: 20%;
+  margin-top: 2%;
+  background: blue;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  border-style: none;
+  padding: 1%;
+  font-size: large;
+  font-weight: bold;
+}
