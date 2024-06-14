@@ -297,7 +297,10 @@ td {
   margin-right: 2%;
 }
 
-
+/* /////for popup */
+.accountSetting1,
+.accountSetting2,
+.accountSetting3,
 .viewdetail,
 .confiDelet,
 .cancelApoin,
@@ -321,7 +324,6 @@ td {
   border-radius: 5px;
 }
 
-.next,
 .btnSetAcount,
 .btnDletAcount {
   width: 20%;
@@ -331,7 +333,6 @@ td {
   border-radius: 5px;
 }
 
-.next:hover,
 .btnSetAcount:hover,
 .btnDletAcount:hover {
   background-color: #2790f2;
@@ -355,7 +356,9 @@ td {
   color: #0c55f3;
 }
 
-
+.accountSetting1.active,
+.accountSetting2.active,
+.accountSetting3.active {
   background-color: rgb(18, 194, 238);
   width: 60%;
   top: 15%;
