@@ -36,36 +36,99 @@
             </div>
         </section>
         <section>
-        <div class="viewSession">
-                    <div class="buton" onclick="hidSession()" >
-                        &times;
-                        </div>
-                    <label for="View Details.">View Details.</label><br>
-                    <label for="Session Title:">Session Title:</label><br>
-                    <input type="text" required name="sessiontitle"  class="inpSetAcount" readonly><br>
-                    <label for="Doctor of this session::.">Doctor of this session:</label><br>
-                    <input type="text" required name="doctor"  class="inpSetAcount" readonly><br>
-                    <label for="Scheduled Date">Scheduled Date:</label><br>
-                    <input type="text" required name="ScheduledDate" class="inpSetAcount" readonly><br>
-                    <label for=" Scheduled Time"> Scheduled Time:</label><br>
-                    <input type="text" name="ScheduledTime" class="inpSetAcount" readonly><br>
-                    <label for="total:"> Patients that Already registerd for this session:</label><br>
-                        <table><tr><th>Patient ID	</th><th>Patient name</th><th>Appointment number</th><th>Patient Telephone</th></tr></table>
-                    <button class="btnSetAcount" onclick="hidSession()">Ok</button><br>
-                </div>
-                <div class="cancelSession">
+        <?php
+include("connection.php");
+// Check connection
+if ($connection->connect_error) {
+    die("Connection failed: " . $connection->connect_error);
+}
 
-                <div class="buton" onclick="hidCancelSesion()">
-                        &times;
-                        </div>
-                    <label for="Are you sure?">Are you sure?</label><br>
-                    <label for="You want to delete this record(Test Doctor).">You want to delete this record.</label><br>
-                     <label for="Patient Name:">Session Title</label><input type="text" name="SessionTitle" readonly><br>
-                     <label for="Appointment number">Sheduled Date & Time</label><input type="text" name="SheduledDate" readonly><br>
-                    <button class="btnDletAcount">Yes</button>
-                    <button class="btnDletAcount" onclick="hidCancelSesion()">No</button><br>
+// Retrieve data from the Sessions table
+$sql = "SELECT * FROM Sessions";
+$result = $connection->query($sql);
 
-                </div>
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        // Display the retrieved data
+        echo "<div class='viewSession'>";
+        echo "    <div class='buton' onclick='hidSession()'>&times;</div>";
+        echo "    <label for='View Details.'>View Details.</label><br>";
+        echo "    <label for='Session Title:'>Session Title:</label><br>";
+        echo "    <input type='text' required name='sessiontitle' class='inpSetAcount' readonly value='" . $row["Title"] . "'><br>";
+        echo "    <label for='Doctor of this session::'>Doctor of this session:</label><br>";
+        echo "    <input type='text' required name='doctor' class='inpSetAcount' readonly><br>";
+        echo "    <label for='Scheduled Date'>Scheduled Date:</label><br>";
+        echo "    <input type='text' required name='ScheduledDate' class='inpSetAcount' readonly value='" . $row["Date & Time"] . "'><br>";
+        echo "    <label for=' Scheduled Time'> Scheduled Time:</label><br>";
+        echo "    <input type='text' name='ScheduledTime' class='inpSetAcount' readonly><br>";
+        echo "    <label for='total:'> Patients that Already registerd for this session:</label><br>";
+        echo "    <table>";
+        echo "        <tr><th>Patient ID</th><th>Patient name</th><th>Appointment number</th><th>Patient Telephone</th></tr>";
+        // Retrieve data from the Patients table for the current session
+        $sql_patients = "SELECT * FROM Patients";
+        $result_patients = $conn->query($sql_patients);
+        if ($result_patients->num_rows > 0) {
+            while($row_patients = $result_patients->fetch_assoc()) {
+                echo "        <tr>";
+                echo "            <td>" . $row_patients["ID"] . "</td>";
+                echo "            <td>" . $row_patients["Fname"] . " " . $row_patients["Lname"] . "</td>";
+                echo "            <td></td>";
+                echo "            <td>" . $row_patients["Telephone"] . "</td>";
+                echo "        </tr>";
+            }
+        }
+        echo "    </table>";
+        echo "    <button class='btnSetAcount' onclick='hidSession()'>Ok</button><br>";
+        echo "</div>";
+    }
+} else {
+    echo "No data found.";
+}
+
+$connection->close();
+?>
+
+        <!-- ////////////////////// -->
+                   
+        <?php
+include("connection.php");
+if ($connection->connect_error) {
+    die("Connection failed: " . $connection->connect_error);
+}
+
+// Check if the delete button was clicked
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["deleteSession"])) {
+    $sessionTitle = $_POST["sessionTitle"];
+    $scheduledDate = $_POST["scheduledDate"];
+
+    // Prepare and execute the delete query
+    $statement = $connection->prepare("DELETE FROM Sessions WHERE Title = ? AND `Date & Time` = ?");
+    $statement->bind_param("ss", $sessionTitle, $scheduledDate);
+
+    if ($statement->execute()) {
+        echo "Session deleted successfully!";
+    } else {
+        echo "Error deleting session: " . $statement->error;
+    }
+    $statement->close();
+} else {
+    $sessionTitle = $_GET["sessionTitle"];
+    $scheduledDate = $_GET["scheduledDate"];
+    echo "<div class='cancelSession'>";
+    echo "    <div class='buton' onclick='hidCancelSesion()'>&times;</div>";
+    echo "    <label for='Are you sure?'>Are you sure?</label><br>";
+    echo "    <label for='You want to delete this record(Test Doctor).'>You want to delete this record.</label><br>";
+    echo "    <label for='Patient Name:'>Session Title</label><input type='text' name='sessionTitle' readonly value='$sessionTitle'><br>";
+    echo "    <label for='Appointment number'>Sheduled Date & Time</label><input type='text' name='scheduledDate' readonly value='$scheduledDate'><br>";
+    echo "    <form method='post' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "'>";
+    echo "        <input type='hidden' name='deleteSession' value='1'>";
+    echo "        <button class='btnDletAcount' type='submit'>Yes</button>";
+    echo "    </form>";
+    echo "    <button class='btnDletAcount' onclick='hidCancelSesion()'>No</button><br>";
+    echo "</div>";
+}
+$connection->close();
+?>
         </section>
         <script src="../mengjavascript/index.js"></script>
 
