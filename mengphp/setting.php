@@ -36,18 +36,14 @@
                     </h1>
                     <h4>Doctor ID (Auto Generated)
                     </h4></label><br>
+
                   <label for="Email">Email:</label><br>
                   <input type="email" required name="email" maxlength="50" placeholder="fill your email here" class="inpSetAcount"><br>
                   <label for="Name">FName: </label><br>
                   <input type="text" required name="Fname" placeholder="your first name here" maxlength="20" class="inpSetAcount"><br>
                   <label for="Name">LName: </label><br>
                   <input type="text" required name="Lname" placeholder="your last name here" maxlength="20" class="inpSetAcount"><br>
-                  <button class="next" onclick="displaySetting2();">Next</button>
-                      </div>
-                      <div class="accountSetting2">
-                      <div class="buton" onclick="hidSetting2()">
-                    &times;
-                    </div>
+
                   <label for="nic">NIC </label><br>
                   <input type="text" name="NIC" placeholder="your nic here" maxlength="50" class="inpSetAcount"><br>
                   <label for="Name">user Name: </label><br>
@@ -68,6 +64,7 @@
                  <div class="buton" onclick="hidSetting3();">
                     &times;
                     </div>
+
                   <label for="Password">Password: </label><br>
                   <input type="password" required name="password" placeholder="your password here" maxlength="255" class="inpSetAcount"><br>
                   <label for="Conform Password">Conform Password:</label><br>

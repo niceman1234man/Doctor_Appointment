@@ -11,15 +11,23 @@
 
 <body>
     <?php
+    include("connection.php");
+    $list3 = "select * from patient";
+       $result = mysqli_query($conn, $list3);
     include("sidebar.php");
     ?>
     <div class="main-part">
         <img src="../img/search.svg" alt="search" id="search-img">
         <input type="search" placeholder="search Patient Name or Email" id="search">
         <button id="search-button">search</button>
-        <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""></p>
+        <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br>
+            <?php date_default_timezone_set('Asia/Kolkata');
 
-        <p>All Patients(1)</p>
+            $today = date('Y-m-d');
+            echo $today;?>
+        </p>
+
+        <p>All Patients( <?php echo mysqli_num_rows($result);?>)</p>
         <table>
             <tr>
                 <th> Name</th>
@@ -30,26 +38,31 @@
                 <th>Events</th>
             </tr>
             <?php
-     include("connection.php");
-     $list2 = "select * from session";
-        $result = mysqli_query($conn, $list2);
+     
 if(mysqli_num_rows($result) > 0) {
     $data = '';
     while($row = mysqli_fetch_assoc($result)) {
-        $title = $row["title"];
-        $spec = $row["dname"];
-        $mnum = $row["num"];
-        $d = $row["date"];
-        $t = $row["time"];
+        $name = $row["name"];
+        $nic = $row["nic"];
+        $tel = $row["telephone"];
+        $email = $row["email"];
+        $date_of_birth = $row["date_of_birth"];
+        $id=$row["id"];
       
         $data .= '<tr>
-            <td>' . $title . '</td>
-            <td>' . $spec . '</td>
-            <td>' .  $d . " ".  $t .'</td>
-            <td>' . $mnum . '</td>
+            <td>' .  $name . '</td>
+            <td>' .   $nic  . '</td>
+            <td>' .  $tel .'</td>
+            <td>' . $email. '</td>
+             <td>' . $date_of_birth . '</td>
             <td>
-                <button class="view-button"><img src="../img/icons/view-iceblue.svg" alt="">View</button>
-                <button><img src="../img/icons/delete-iceblue.svg" alt="">Remove</button>
+                <form action="view_patient.php" method="post" style="display:flex;">
+          <input type="hidden" value="'.$id .'">
+         <button type="submit" class="view-button">
+        <img src="../img/icons/view-iceblue.svg" alt="View" value="View">View
+          </button>
+       </form>
+                
             </td>
         </tr>';
     }
@@ -57,24 +70,7 @@ if(mysqli_num_rows($result) > 0) {
 }
 ?>
         </table>
-        <div class="patients-detail-pop-up">
-            <div class="pop-up-header">
-                <h2>View Detail</h2>
-                <p id="x-sign">&times;</p>
-            </div>
-            <p>Patient ID</p>
-            <p></p>
-            <p>Name :</p>
-            <p></p>
-            <p>Email :</p>
-            <p></p>
-            <p> NIC :</p>
-            <p></p>
-            <p>Telephone :</p>
-            <p></p>
-            <p>Address :</p>
-            <p></p>
-        </div>
+
         <script src="../JS/index.js"></script>
 </body>
 

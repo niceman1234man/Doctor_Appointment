@@ -68,6 +68,7 @@ displaySetting2();
 hidSetting2();
 displaySetting3();
 hidSetting3();
+
 displayDetail();
 hidDetail();
 displayDelete();
