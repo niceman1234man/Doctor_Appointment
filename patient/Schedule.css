@@ -1,0 +1,165 @@
+.whole {
+  display: flex;
+}
+
+.Schedul_part {
+  margin-left: 30px;
+  background-color: white;
+  display: inline-block;
+}
+
+.head {
+  display: flex;
+  margin-top: 10px;
+}
+
+.backbtn {
+  width: 100px;
+  height: 45px;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.backbtn:hover {
+  background-color: rgb(64, 64, 138);
+}
+
+.text {
+  width: 430px;
+  height: 30px;
+  border-radius: 5px;
+  border-color: rgb(80, 80, 203);
+  margin-left: 20px;
+  margin-right: 30px;
+  padding: 5px 20px;
+}
+
+.searchBtn {
+  width: 100px;
+  height: 45px;
+  background-color: rgb(5, 144, 114);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.searchBtn:hover {
+  background-color: rgb(38, 38, 167);
+}
+
+.currentDate {
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+
+.TopAjust {
+  margin-top: 30px;
+}
+
+.sechedule li {
+  background-color: white;
+  width: 300px;
+  height: auto;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 2px 3px 7px;
+  list-style-type: none;
+  margin: 15px;
+}
+
+.booknowBtn {
+  width: 200px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: rgb(17, 17, 172);
+  border-radius: 5px;
+}
+
+.booknowBtn:hover {
+  background-color: rgb(25, 76, 25);
+}
+
+.sechedule {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#first {
+  width: 100%;
+  display: block;
+  height: 100px;
+}
+
+.appointPopUp {
+  display: flex;
+  background-color: white;
+  border: 1px solid rgb(119, 111, 111);
+  border-radius: 10px;
+}
+
+.detail {
+  box-shadow: 3px 5px  7px;
+  margin: 30px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.ketero {
+  box-shadow: 3px 5px 7px;
+  width: 280px;
+  margin: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.ketero p {
+  width: 200px;
+  margin: 40px;
+  height: 100px;
+  background-color: rgb(39, 109, 39);
+  color: white;
+  text-align: center;
+  padding-top: 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 60px;
+}
+
+.ketero button {
+  background-color: blue;
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 10px;
+  color: white;
+}
+
+.ketero button:hover {
+  background-color: rgb(39, 109, 39);
+}
+
+.columMaker {
+  display: flex;
+  flex-direction: column;
+}
+
+.btntry {
+  background-color: blue;
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+  box-shadow: 2px 3px;
+  border-radius: 10px;
+  color: white;
+  margin-left: 70px;
+}
+
+.btntry:hover {
+  background-color: rgb(39, 109, 39);
+}
