@@ -1,8 +1,3 @@
 # .gitignore
-<<<<<<< HEAD
-node_modules
-
-
-=======
 node_modules/
->>>>>>> 52c053fd67b845196632a77954635b5030efefac
+
