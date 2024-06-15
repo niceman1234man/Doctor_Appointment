@@ -1,10 +1,6 @@
 .side_bar {
   width: 21%;
-  margin-right: 2%;
-
-  /* background-color: rgb(153, 51, 68); */
-
-  /* position: absolute;///////////// */
+  margin: 2% 2% 0 0;
 }
 
 body {
@@ -20,14 +16,9 @@ body {
   margin: 3%;
 }
 
-/* .side_bar ul a img {
-  width: 30px;
-  margin: 2%;
-} */
-
 .side_bar ul li {
-  font-size: 150%;
-  padding: 8%;
+  font-size: large;
+  padding: 8% 1% 3% 1%;
 }
 
 .side_bar ul li:hover {
@@ -36,7 +27,13 @@ body {
 
 .welcome {
   padding-left: 3%;
-  background: url(../images/b8.jpg) no-repeat center;
+  background: url(../images/img/b8.jpg) no-repeat center;
+}
+
+th,
+td {
+  padding: 10px;
+  font-size: large;
 }
 
 .statusDash a {
@@ -48,11 +45,13 @@ body {
 
 .side_bar ul li a {
   text-decoration: none;
-  color: black;
+  color: #192836;
+  font-size: larger;
 }
 
 .side_bar ul li a:hover {
   text-decoration: none;
+  font-size: x-large;
   color: #0a76d8;
 }
 
@@ -68,20 +67,21 @@ body {
 }
 
 .dashbourd {
+  margin-top: 0;
   display: block;
-  margin-left: 2%;
 }
 
 .statusDash {
-  float: left;
-  margin: 3% 3%;
-  padding: 3%;
+  margin: 0.5% 1% 0 0;
   width: 50%;
+  height: 100%;
 }
 
-.statusDash div {
-  margin: 3%;
-  width: 130%;
+.statusDash table tr td {
+  padding: 30px;
+  font-size: large;
+  width: 20%;
+  height: 25%;
 }
 
 .upcoming_events {
@@ -90,7 +90,7 @@ body {
 }
 
 .statusimg {
-  width: 10%;
+  width: 20%;
   padding: 0;
   margin: 0;
 }
@@ -102,12 +102,9 @@ body {
 }
 
 .par1 {
-  width: 55%;
-
-  /* text-align: center; */
+  text-align: center;
   margin: 3%;
   font-weight: 500;
-  font-size: larger;
 }
 
 .loginbtn {
@@ -119,15 +116,14 @@ body {
 }
 
 .btn {
-  text-decoration: none;
-  padding: 1%;
-  margin: 2%;
-  font-size: x-large;
+  padding: 3px;
+  border: 20px;
+  font-size: large;
   color: white;
-  width: 50%;
-  height: 25px;
+  width: 30%;
+  height: 30px;
   background-color: #006dd3;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .btn:hover {
@@ -151,11 +147,6 @@ body {
 .imgtod {
   width: 20px;
 }
-
-/* .status table td {
-  border: 2px;
-  background-color: rgb(132, 100, 34);
-} */
 
 .showSesions {
   align-self: center;
@@ -198,16 +189,12 @@ body {
 .inputDate label {
   width: 30%;
   margin: 1% 1% 1% 10%;
-  font-size: x-large;
+  font-size: large;
 }
 
 .inputDate select {
   width: 25%;
   height: 30px;
-  font-size: large;
-}
-
-td {
   font-size: large;
 }
 
@@ -229,24 +216,24 @@ td {
 }
 
 .setindbtncontener {
-  margin: 2% 2%;
+  margin: 0 0 2% 0.5%;
 }
 
 .setingbtn {
   background-color: white;
-  color: #599edf;
-  margin: 1%;
+  margin: 0.5%;
   border-radius: 10px;
-  width: 90%;
+  width: 80%;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: medium;
 }
 
 .setingbtn:hover {
   background-color: #f1f1f1;
   color: #0a78df;
+  font-size: large;
 }
 
 .setingdelet {
@@ -254,7 +241,7 @@ td {
 }
 
 .setingsmalfont {
-  font-size: 15px;
+  font-size: 10px;
   color: black;
 }
 
@@ -287,33 +274,12 @@ td {
 }
 
 .set {
-  font-size: x-large;
+  font-size: large;
 }
 
 .setindbtncontener img {
   width: 30px;
   margin-right: 2%;
-}
-
-/* /////for popup */
-
-.accountSetting1,
-.accountSetting2,
-.accountSetting3,
-.accountSetting,
-.viewdetail,
-.confiDelet,
-.cancelApoin,
-.cancelSession,
-.viewSession,
-.viewPationt {
-  width: 20%;
-  font-size: x-large;
-  margin: 25%;
-  padding: 5%;
-  right: -1500px;
-  position: absolute;
-  cursor: pointer;
 }
 
 .inpSetAcount {
@@ -346,15 +312,6 @@ td {
   border: none;
 }
 
-.viewbutton {
-  font-size: medium;
-  background-color: #569cdf;
-}
-
-.viewbutton:hover {
-  background-color: #1e87e9;
-}
-
 .buton {
   width: 5px;
   margin-left: 98%;
@@ -369,60 +326,6 @@ td {
   color: #0c55f3;
 }
 
-.accountSetting1.active,
-.accountSetting2.active,
-.accountSetting3.active,
-.accountSetting.active {
-  background-color: rgb(18, 194, 238);
-  padding-top: 2%;
-  width: 60%;
-  top: 20%;
-  left: 30%;
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(0.9);
-  transition:
-    top 200ms ease-in-out 20ms,
-    opacity 20ms ease-in-out 10ms,
-    transform 220ms ease-in-out 10ms;
-  box-shadow: 10px 10px 10px 300px white;
-}
-
-.viewdetail.active,
-.viewSession.active,
-.viewPationt.active {
-  width: 60%;
-  padding: 5%;
-  background-color: rgb(18, 194, 238);
-  top: 5%;
-  left: 30%;
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-  transition:
-    top 200ms ease-in-out 20ms,
-    opacity 202ms ease-in-out 100ms,
-    transform 220ms ease-in-out 10ms;
-  box-shadow: 10px 10px 10px 300px white;
-}
-
-.confiDelet.active,
-.cancelApoin.active,
-.cancelSession.active {
-  background-color: rgb(18, 194, 238);
-  font-size: x-large;
-  width: 50%;
-  text-align: center;
-  padding: 2%;
-  top: 8%;
-  left: 30%;
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-  transition:
-    top 200ms ease-in-out 20ms,
-    opacity 220ms ease-in-out 10ms,
-    transform 220ms ease-in-out 10ms;
-  box-shadow: 10px 10px 10px 500px white;
-}
-
 .Appointments,
 .table,
 .apointTable,
@@ -430,4 +333,86 @@ td {
   display: block;
   width: 100%;
   flex-wrap: nowrap;
+}
+
+.viewPationtPage {
+  background-color: rgb(18, 194, 238);
+  padding-top: 2%;
+  width: 60%;
+  top: 20%;
+  left: 30%;
+  opacity: 1;
+  transition:
+    top 200ms ease-in-out 20ms,
+    opacity 20ms ease-in-out 10ms,
+    transform 220ms ease-in-out 10ms;
+  box-shadow: 10px 10px 10px 300px white;
+}
+
+.butonPa {
+  margin: 5%;
+  width: 5px;
+  margin-left: 98%;
+  margin-top: 0.5%;
+  color: black;
+  font-weight: 900;
+  font-size: 60px;
+  cursor: pointer;
+}
+
+.butonPa:hover {
+  color: #0c55f3;
+}
+
+.tdforflex {
+  display: flex;
+}
+
+.deletebutton,
+.viewbutton {
+  border-radius: 5px;
+  height: auto;
+  padding: 1px;
+  margin-left: 1%;
+  background-color: #71ade6;
+}
+
+.viewbutton:hover,
+.deletebutton:hover {
+  background-color: #1e87e9;
+}
+
+.formeditdoc {
+  margin: 5% 15%;
+  align-items: center;
+}
+
+.viewSessionDoc,
+.cancelSessionDoc,
+.Editdoc,
+.viewDocdetail,
+.viewPationtPage {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  margin: 5%;
+}
+
+.viewPationtPage input,
+.viewPationtPage label,
+.delDoc input,
+.delDoc label,
+.Editdoc input,
+.Editdoc label,
+.Editdoc select,
+.viewDocdetail input,
+.viewDocdetail label,
+.cancelSessionDoc input,
+.cancelSessionDoc label,
+.viewSessionDoc input,
+.viewSessionDoc label {
+  font-size: larger;
+  margin: 1%;
+  width: 100%;
+  height: 30px;
 }
