@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YOUR DETAIL</title>
+    <link rel="stylesheet" type="text/css" href="../DoctorCss/index.css">
+
 </head>
 <body>
-<div class="viewdetail">
+<div class="viewDocdetail">
 <?php
 // Include the database connection file
 include("connection.php");
@@ -25,24 +27,24 @@ if (mysqli_num_rows($result) > 0) {
         $email = $row["Email"];
         $telephone = $row["Telephone"];
         $speciality = $row["Speciality"];
-?>
-                    <div class="buton" onclick="hidDetail()" >
-                        &times;
-                        </div>
-                    <label for="View Details.">View Details.</label><br>
+?>                <div>
+                  <label for="View Details.">View Details.</label><br>
                     <label for="Name:.">Name</label><br>
                     <input type="text"  name="name"  class="inpSetAcount" readonly value="<?php echo $fName . ' ' . $lName; ?>"><br>
                     <label for="Email:">Email:</label><br>
                     <input type="email"  name="email" class="inpSetAcount" readonly value="<?php echo $email; ?>"><br>
                     <label for=" NIC:"> NIC:</label><br>
                     <input type="text" name="NIC" class="inpSetAcount" readonly value="<?php echo $nic; ?>"><br>
+                    </div> 
+                    <div>
                     <label for="Name">User Name: </label><br>
                     <input type="text" required name="userName" class="inpSetAcount" value="<?php echo $userName; ?>"><br>
                     <label for="Telephone:"> Telephone:</label><br>
                     <input type="text" name="Telephone"  class="inpSetAcount" readonly value="<?php echo $telephone; ?>"><br>
                     <label for=" Specialties."> Specialties.</label><br>
                     <input type="text" name="speciality"  class="inpSetAcount" readonly value="<?php echo $speciality; ?>"><br>
-                    <button class="btnSetAcount" onclick="hidDetail()">Ok</button><br>
+                   <a href="setting.php"><button class="btnSetAcount" >Ok</button></a><br>
+                </div>
                 </div>
 <?php
     }

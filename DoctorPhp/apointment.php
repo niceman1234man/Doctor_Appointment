@@ -15,8 +15,8 @@
             <div > <button class="backImg"><img src="../images//icons/back-iceblue.svg" class="backImg">back</button><span class="set">Appointment Manager</span> </div>
             <div class="todaysDate"><h5>todays date</h5> </div>
         </div>
-        <h1>My Apointment</h1>
-                <div  class="inputDate"> <h3>Date:</h3><input type="date"> <button class="filterbtn"><img src="../images/icons/filter-iceblue.svg" class="filteimg"> Filter</button></div>
+        <h3>My Apointment</h3>
+                <div  class="inputDate"> Date:<input type="date"> <button class="filterbtn"><img src="../images/icons/filter-iceblue.svg" class="filteimg"> Filter</button></div>
                 <div class="apointTable">
                 <?php
 include("connection.php");
@@ -43,12 +43,12 @@ if ($result->num_rows > 0) {
         echo "<td>" . $row["Session Title"] . "</td>";
         echo "<td>" . $row["Session Date & Time"] . "</td>";
         echo "<td>" . $row["Appointment Date"] . "</td>";
-        echo "<td>
+        echo "<td class=\"tdforflex\">
             <div class=\"form-button\">
-                <form action=\"deleteApointment.php\" method=\"post\">
+                <form action=\"DeletApointment.php\" method=\"post\">
                     <input type=\"hidden\" name=\"id\" value=\"" . $row["ID"] . "\">
                     <button type=\"submit\" class=\"deletebutton\" >
-                        <img src=\"../images/icons/delete-red.svg\"  value=\"Delete\">Delete
+                        <img src=\"../images/icons/delete-iceblue.svg\"  value=\"Delete\">Delete
                     </button>
                 </form>
             </div>
@@ -62,8 +62,6 @@ if ($result->num_rows > 0) {
             </div>
         </td>";
         echo "</tr>";
-    
-
     }
     echo "</table>";
 } else {
@@ -73,42 +71,6 @@ $connection->close();
 ?>
                   </div>
             </div>
-            </section>
-            <section>
-
-                <div class="cancelApoin">
-                <?php
-                include("connection.php");
-if (isset($_POST['btnDletAcount'])) {
-      $patientName = $_POST['name'];
-    $appointmentNumber = $_POST['appointmentNumber'];
-
-    $query = "DELETE FROM Apointmant WHERE `Patient name` = ? AND `Number` = ?";
-    $statement = $connection->prepare($query);
-    $statement->bind_param("ss", $patientName, $appointmentNumber);
-
-    if ($statement->execute()) {
-        echo "Record deleted successfully.";
-    } else {
-        echo "Error deleting record: " . $statement->error;
-    }
-    $statement->close();
-}
-?>
-                   <div class="buton" onclick="hidCancelApointment()">
-                        &times;
-                        </div>
-                    <label for="Are you sure?">Are you sure?</label><br>
-                    <label for="You want to delete this record(Test Doctor).">You want to delete this record.</label><br>
-                     <label for="Patient Name:">Patient Name:</label>
-                     <input type="text" name="name" readonly><br>
-                     <label for="Appointment number">Appointment number</label>
-                     <input type="text" name="name" readonly><br>
-                    <button class="btnDletAcount">Yes</button>
-                    <button class="btnDletAcount" onclick="hidCancelApointment()">No</button><br>
-
-                </div>
-             </section>
             </section>
             <script src="../DoctorJs/index.js"></script>
 

@@ -18,7 +18,7 @@
                 <input type="search" placeholder="search pationt name or email" class="searinputPationt"> 
             <button class="searPationtbtn">search</button><span class="todaysDate">
                 <h5>todays date</h5> </span></div>
-                <h1>My Patients</h1>
+                <h4>My Patients</h4>
 
             <div  class="inputDate"><label for="Show Details About">Show Details About</label>
             <select name="patioets" id="pationts">
@@ -79,27 +79,7 @@ $connection->close();
               </div>
             </div>
             </section>
-            <!-- <section>
-            <div class="viewPationt">
-            <div class="buton" onclick="hidPationtDetail()" >
-                        &times;
-                        </div>
-                    <label for="View Details.">View Details.</label><br>
-                    <label for="Patient ID">Patient ID:</label><br>
-                    <input type="text" required name="PatientID"  class="inpSetAcount" readonly><br>
-                    <label for="Name:.">Name</label><br>
-                    <input type="text" required name="name"  class="inpSetAcount" readonly><br>
-                    <label for="Email:">Email:</label><br>
-                    <input type="email" required name="email" class="inpSetAcount" readonly><br>
-                    <label for=" NIC:"> NIC:</label><br>
-                    <input type="text" name="NIC" class="inpSetAcount" readonly><br>
-                    <label for="Telephone:"> Telephone:</label><br>
-                    <input type="text" name="Telephone:"  class="inpSetAcount" readonly><br>
-                    <label for=" Address"> Address:</label><br>
-                    <input type="text" name="Address"  class="inpSetAcount" readonly><br>
-                    <button class="btnSetAcount" onclick="hidPationtDetail()">Ok</button><br>
-                </div>
-            </section> -->
+    
             <script src="../DoctorJs/index.js"></script>
 </body>
 </html>
