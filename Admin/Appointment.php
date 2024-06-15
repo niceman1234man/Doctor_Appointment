@@ -12,21 +12,36 @@
 <body>
     <?php
    include("sidebar.php");
+   include("../connection.php");
+     $list2 = "select * from appointment";
+        $result = mysqli_query($conn, $list2);
+        $list3 ="select name from doctor";
+        $resultd= mysqli_query($conn, $list3);
    ?>
 
     <div class="main-part">
         <h1>Appointment Manager</h1>
 
-        <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br></p>
+        <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br>
+            <?php  date_default_timezone_set('Asia/Kolkata');
+
+            $today = date('Y-m-d');
+            echo $today;?>
+        </p>
 
 
-        <p>All Appointments(1)</p>
+        <p>All Appointments( <?php echo mysqli_num_rows($result)?>) </p>
         <div class="input-sections">
             Date:<input type="date" name="date" id="date">
             Doctor: <select name="doctor" id="doctor">
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+                <?php
+             while($row=mysqli_fetch_assoc($resultd)){
+                $data2 =$row["name"] ;
+                echo '
+                <option value="">'. $data2 . '</option>
+                ';
+             }
+                ?>
             </select>
             <button><img src="../img/icons/filter-iceblue.svg" alt="" id="filter"> Filter</button>
 
@@ -36,31 +51,33 @@
                 <th>Patient Name</th>
                 <th>Appointment Number</th>
                 <th>Doctor</th>
+                <th>session Title</th>
                 <th>Schedule date&time</th>
                 <th>Appointment Date</th>
                 <th>Events</th>
             </tr>
             <?php
-     include("connection.php");
-     $list2 = "select * from session";
-        $result = mysqli_query($conn, $list2);
+     
 if(mysqli_num_rows($result) > 0) {
     $data = '';
     while($row = mysqli_fetch_assoc($result)) {
+        $name = $row["name"];
+        $num = $row["apo_num"];
+        $doc_name = $row["doc_name"];
         $title = $row["title"];
-        $spec = $row["dname"];
-        $mnum = $row["num"];
         $d = $row["date"];
         $t = $row["time"];
-      
+        $apo_date=$row["apo_date"];
         $data .= '<tr>
-            <td>' . $title . '</td>
-            <td>' . $spec . '</td>
-            <td>' .  $d . " ".  $t .'</td>
-            <td>' . $mnum . '</td>
+            <td>' .  $name . '</td>
+            <td>' .  $num . '</td>
+            <td>' .   $doc_name . '</td>
+            <td>' .  $d . " " . $t .'</td>
+             <td>' .  $title . '</td>
+              <td>' .   $apo_date . '</td>
             <td>
-                <button class="view-button"><img src="../img/icons/view-iceblue.svg" alt="">View</button>
-                <button><img src="../img/icons/delete-iceblue.svg" alt="">Remove</button>
+                
+                <button><img src="../img/icons/delete-iceblue.svg" alt="">Cancel</button>
             </td>
         </tr>';
     }
