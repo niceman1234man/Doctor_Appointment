@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="../mengcss/index.css">
+    <link rel="stylesheet" type="text/css" href="../DoctorCss/index.css">
     </head>
 
 <body>
@@ -57,7 +57,7 @@
 </div>
     </section>
     <!-- MY APOINTMENT SECTION -->
-    <script src="../mengjavascript/index.js"></script>
+    <script src="../DoctorJs/index.js"></script>
 
 </body>
 

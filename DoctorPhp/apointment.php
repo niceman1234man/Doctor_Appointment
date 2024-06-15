@@ -5,20 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Appointment</title>
-    <link rel="stylesheet" type="text/css" href="../mengcss/index.css">
+    <link rel="stylesheet" type="text/css" href="../DoctorCss/index.css">
 </head>
 <body>
     <section class="myApointment" id="myApointment">
     <?php include ("sidBar.php")?>
-
-            
             <div class="Appointments">
         <div class="topTitle">
             <div > <button class="backImg"><img src="../images//icons/back-iceblue.svg" class="backImg">back</button><span class="set">Appointment Manager</span> </div>
             <div class="todaysDate"><h5>todays date</h5> </div>
         </div>
         <h1>My Apointment</h1>
-
                 <div  class="inputDate"> <h3>Date:</h3><input type="date"> <button class="filterbtn"><img src="../images/icons/filter-iceblue.svg" class="filteimg"> Filter</button></div>
                 <div class="apointTable">
                 <?php
@@ -113,7 +110,7 @@ if (isset($_POST['btnDletAcount'])) {
                 </div>
              </section>
             </section>
-            <script src="../mengjavascript/index.js"></script>
+            <script src="../DoctorJs/index.js"></script>
 
 </body>
 </html>

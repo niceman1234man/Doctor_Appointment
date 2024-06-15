@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="../mengcss/index.css">
+    <link rel="stylesheet" type="text/css" href="../DoctorCss/index.css">
 
 </head>
 <body>
@@ -19,7 +19,7 @@
             <li><a href="setting.php"><img src="../images/icons/settings.svg">Setting</a></li>
             <li></li></ul>
             </div> 
-            <script src="../mengjavascript/index.js"></script>
+            <script src="../DoctorJs/index.js"></script>
 
 </body>
 </html> 
