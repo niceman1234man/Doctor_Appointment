@@ -47,6 +47,7 @@
         <?php
   if(mysqli_num_rows($result) > 0) {
     $data = '';
+    $data2 = '';
     echo '
         <table>
             <tr>
@@ -60,12 +61,21 @@
         $name = $row["name"];
         $email = $row["email"];
         $spec = $row["speciality"];
+        
         $id=$row["id"];
+        $data2 .= '<option value="'. $spec .'">'. $spec .'</option>';
         $data .= '<tr>
             <td>' . $name . '</td>
             <td>' . $email . '</td>
             <td>' . $spec . '</td>
             <td>
+             <div class="form-button">
+                <form action="edit_doctor.php" method="post" style="display:flex;">
+          <input type="hidden"  name="id" value="' .$id . '">
+         <button type="submit" class="view-button" name="edit">
+        <img src="../img/icons/edit-iceblue.svg" alt="View" value="View">Edit
+          </button>
+       </form>
             <div class="form-button">
                 <form action="view_doctor.php" method="post" style="display:flex;">
           <input type="hidden"  name="id" value="' .$id . '">
@@ -76,7 +86,7 @@
 
     <form action="delete_doctor.php" method="post">
     <input type="hidden" name="id" value="' .$id . '">
-    <button type="submit">
+    <button type="submit" id="delete">
         <img src="../img/icons/delete-iceblue.svg" alt="Remove" value="Remove">
     </button>
 </form>
@@ -105,9 +115,9 @@
                 <input type="number" name="telephone" id="telephone" placeholder="Telephone Number "><br>
                 <label for="speciality">Speciality</label><br>
                 <select name=" speciality" id="select">
-                    <option value="nurse">nurse</option>
-                    <option value="anstesia">Anstesia</option>
-                    <option value="padio">Padio</option>
+                    <?php
+                    echo $data2;
+                    ?>
                 </select><br>
                 <label for="password">Password</label><br>
                 <input type="password" name="password" id="password" placeholder="Enter Password "><br>

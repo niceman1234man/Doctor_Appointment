@@ -1,49 +1,30 @@
-<!-- <?php
-// Initialize the session
- 
-
-// // Check if the user is already logged in, if yes then redirect him to welcome page
-// if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-//     header("location: welcome.php");
-//     exit;
-// }
-
-// Include config file
-include("Connection.php");
-
-
+<?php
+include("../Connection.php");
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
-    $First_Name = $_POST["fname"] ?? '';
-    $Last_name = $_POST["lname"] ?? '';
-    $email = $_POST["email"] ?? '';
-    $NIC = $_POST["nic"] ?? '';
-    $password = $_POST["password"] ?? '';
-    $address = $_POST["address"] ?? '';
-    $Phone_number = $_POST["phonenumber"] ;
-    $dob = $_POST["dob"] ;
-
- $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-      if ($stmt = $conn->prepare("INSERT INTO personal_data (FirstName, LastName, email, NIC, password, Address, phone_number, dob) VALUES (?, ?, ?, ?, ?, ?, ?, ?)")) 
-            $stmt->bind_param("ssssssss", $First_Name, $Last_name, $email, $NIC, $hashed_password, $address, $Phone_number, $dob);
-
-// Execute the statement
-if ($stmt->execute()) {
-    $message = "New record created successfully";
-    $status = "success";
-} else {
-    $message = "Error: " . $stmt->error;
-    $status = "error";
+    $uname=$_POST["uname"];
+    $name = $_POST["name"];
+    $lname = $_POST["lname"];
+    $address = $_POST["address"];
+    $nic = $_POST["nic"];
+    $dob = $_POST["dob"];
+    $email = $_POST["email"];
+    $phonenumber = $_POST["phonenumber"];
+    $password = $_POST["password"];
+    $confirmPassword = $_POST["confirmPassword"];
+    if($password===$confirmPassword){
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    $sql = "INSERT INTO patient (FirstName, LastName, NIC, phone_number, email, date_of_birth, Address, password)
+            VALUES ('$name', '$lname', '$address', '$nic', '$dob', '$email', '$phonenumber', '$hashedPassword')";
+            $sql2="INSERT INTO users (username, password, usertype) Values('$uname',' $password','p')";
+            
+    if ($conn->query($sql)&&($conn->query($sql2))) {
+        echo "Registration successful!";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    // Close the database connection
+    $conn->close();
 }
-
-// Close the connection
-$stmt->close();
-$conn->close()
-      
-    
-<<<<<<< HEAD
-?> -->
->>>>>>> b221e02290fbc76473069d731592c8fe035f0cb3
-=======
-?> -->
->>>>>>> 4032e8b0de6a7a2ba165a469be344eb43e508a0f
+}
+?>

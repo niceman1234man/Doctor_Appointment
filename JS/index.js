@@ -40,11 +40,10 @@ document.getElementById('add-button').addEventListener('click', () => {
   document.getElementById('name').focus();
 });
 
-<<<<<<< HEAD
 document.querySelector('.view-button').addEventListener('click', () => {
   document.querySelector('.schedule-detail-pop-up').classList.add('active');
 });
-<<<<<<< HEAD
+
 
 // Get all the "View" buttons
 
@@ -53,25 +52,29 @@ document.querySelector('.view-button').addEventListener('click', () => {
 
 
 
-=======
-document.querySelector('#xs-sign').addEventListener('click', () => {
-  document.querySelector('.schedule-detail-pop-up').classList.remove('active');
-});
-document.querySelector('.view-button').addEventListener('click', () => {
-  document.querySelector('.doctor-detail-pop-up').classList.add('active');
-});
-document.querySelector('#xd-sign').addEventListener('click', () => {
-  document.querySelector('.doctor-detail-pop-up').classList.remove('active');
-});
-document.querySelector('#view-patient-buttons').addEventListener('click', () => {
-  document.querySelector('.patients-detail-pop-up').classList.add('active');
-});
-document.querySelector('#x-sign').addEventListener('click', () => {
-  document.querySelector('.patients-detail-pop-up').classList.remove('active');
-});
->>>>>>> 8dce2b351f416c862ffa1616a5fc39a6db945808
-=======
+
 // Get all the "View" buttons
 
 // Add a click event listener to each "View" button
->>>>>>> 4032e8b0de6a7a2ba165a469be344eb43e508a0f
+
+
+
+
+
+document.querySelector('#delete').onclick=function confirmDelete(id) {
+    if (confirm("Are you sure you want to delete this session?")) {
+        // Submit the form to delete the session
+        const form = document.createElement('form');
+        form.method = 'post';
+        form.action = 'delete_session.php';
+
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'id';
+        input.value = id;
+
+        form.appendChild(input);
+        document.body.appendChild(form);
+        form.submit();
+    }
+};
