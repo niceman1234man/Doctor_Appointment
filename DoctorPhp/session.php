@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Session</title>
-    <link rel="stylesheet" type="text/css" href="../mengcss/index.css">
+    <link rel="stylesheet" type="text/css" href="../DoctorCss/index.css">
     </head>
 <body>
     <section class="myApointment" id="myApointment">
@@ -168,7 +168,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["deleteSession"])) {
 $connection->close();
 ?>
         </section>
-        <script src="../mengjavascript/index.js"></script>
+        <script src="../DoctorJs/index.js"></script>
 
 </body>
 </html>

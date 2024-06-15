@@ -138,6 +138,6 @@ mysqli_close($connection);
                     <button class="btnDletAcount" onclick="hidDelete()">No</button><br>
                 </div>
              </section>
-             <script src="../mengjavascript/index.js"></script>
-</body>
+             <script src="../DoctorJs/index.js"></script>
+             </body>
 </html>

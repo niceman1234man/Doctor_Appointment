@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Pationt</title>
- <link rel="stylesheet" type="text/css" href="../mengcss/index.css">
+    <link rel="stylesheet" type="text/css" href="../DoctorCss/index.css">
 
 
 </head>
@@ -79,7 +79,7 @@ $connection->close();
               </div>
             </div>
             </section>
-            <section>
+            <!-- <section>
             <div class="viewPationt">
             <div class="buton" onclick="hidPationtDetail()" >
                         &times;
@@ -99,7 +99,7 @@ $connection->close();
                     <input type="text" name="Address"  class="inpSetAcount" readonly><br>
                     <button class="btnSetAcount" onclick="hidPationtDetail()">Ok</button><br>
                 </div>
-            </section>
-<script src="../mengjavascript/index.js"></script>
+            </section> -->
+            <script src="../DoctorJs/index.js"></script>
 </body>
 </html>
