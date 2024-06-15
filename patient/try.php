@@ -29,6 +29,8 @@
        <?php
  
      include("connection.php");
+     
+  session_start();
 
    if (isset($_GET['id'])) {
     // Retrieve the form data
@@ -37,6 +39,7 @@
     try {
         $sqlquery = "SELECT * FROM schedule WHERE id='$id'";
         $result = mysqli_query($conn, $sqlquery);
+    
 
         if ($result) {
             while ($row = mysqli_fetch_assoc($result)) {
@@ -50,51 +53,83 @@
                 </div>";
                 $x = $row["schedule_date"];
             
+            
+
+            $_SESSION["docName"] = $row["fname"] . " " . $row["lname"];
+            $_SESSION["docemail"] = $row["email"];
+            $_SESSION["doctitle"] = $row["title"];
+            $_SESSION["docschedule"] = $row["schedule_date"];
+            $_SESSION["docstart"] = $row["startTime"];
+
             }
-            $result1 = $x;
+
+             // $result1 = $x;
         } else {
             echo "Unable to fetch data";
         }
     } catch (mysqli_sql_exception $e) {
-        echo "Error: " . $e->getMessage();
+        echo "Error: on detail " ;
     }}
     else{
         echo"id is not found";
     }
     
-    
  
-    $retrieve = "SELECT appoinid FROM appointment WHERE scheduleid = " . $id;
-    $result2 = mysqli_query($conn, $retrieve);
-    $row = mysqli_fetch_assoc($result2);
+
+
+
+
+ try {
+    $cpyschedule = "SELECT id FROM schedule";
+    $executsche = mysqli_query($conn, $cpyschedule);
+
+    $cpyappoint = "SELECT scheduleid FROM appointment";
+    $executappoint = mysqli_query($conn, $cpyappoint);
+
+    $numOfRowsappoint = mysqli_num_rows($executappoint);
+    $numOfRowschedule = mysqli_num_rows($executsche);
+
+    if ($numOfRowsappoint < $numOfRowschedule) {
+        while ($row = mysqli_fetch_assoc($executsche)) {
+            $id1 = $row['id'];
+            $query11 = "INSERT INTO appointment (scheduleid) VALUES ('$id1')";
+            $executQuery11 = mysqli_query($conn, $query11);
+            if (!$executQuery11) {
+                echo "Error inserting data: " . mysqli_error($conn);
+                break;
+            }
+        }
+    }  
+} catch (mysqli_sql_exception $e) {
+    echo "Error: copying schedule table to appointment " ;
+}
+ 
+  
     
-    if ($row["appoinid"] == null) {
-        $sqllast = "INSERT INTO appointment (appoinid, scheduleid) VALUES ('0', " . $id . ")";
+$retrieve = "SELECT appoinid FROM appointment WHERE scheduleid = " . $id;
+$result2 = mysqli_query($conn, $retrieve);
+$row2 = mysqli_fetch_assoc($result2);  
+    
+
+    if ($row2["appoinid"] == null) {
+        $sqllast = "INSERT INTO appointment (appoinid) VALUES ('0')";
         mysqli_query($conn, $sqllast);
     }
-    else {
-        $row = mysqli_fetch_assoc($result2);
-        $value = $row["appoinid"]+1;
+    
+       
+     $value = $row2["appoinid"] + 1;
+     $_SESSION["value"]=$value;
         echo "<div class=\"columMaker\">
             <div class=\"ketero\">
                 <h2>Your Appointment <br>Number</h2>
                 <p>" . $value . "</p>
             </div>
             <div>
-               <a href='Book.php?id=" . $value. "'> <button class=\"btntry\">BOOK NOW</button></a> 
+               <a href='Book.php?id=" . $id. "'> <button class=\"btntry\">BOOK NOW</button></a> 
             </div>
         </div>";
     
-        
-        
-   // $update = "UPDATE appointment SET appoinid = '$value' + 1 WHERE scheduleid = '$id'";
-    //$result2 = mysqli_query($conn, $update);
-
-    }
- 
-
-  
-
+     
       $conn->close();
     ?>
   </div>
