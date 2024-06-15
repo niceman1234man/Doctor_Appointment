@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Display the patient details in the HTML structure
 ?>
 <div class="viewPationtPage">
-    <div class="butonPa" onclick="hidPationtDetail()">&times;</div>
+    <div>
     <label for="View Details.">View Details.</label><br>
     <label for="Patient ID">Patient ID:</label><br>
     <input type="text" required name="PatientID" class="inpSetAcount" value="<?php echo $row["ID"]; ?>" readonly><br>
@@ -32,6 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="text" required name="name" class="inpSetAcount" value="<?php echo $row["Fname"] . " " . $row["Lname"]; ?>" readonly><br>
     <label for="Email:">Email:</label><br>
     <input type="email" required name="email" class="inpSetAcount" value="<?php echo $row["Email"]; ?>" readonly><br>
+    </div>
+    <div>
     <label for=" NIC:"> NIC:</label><br>
     <input type="text" name="NIC" class="inpSetAcount" value="<?php echo $row["NIC"]; ?>" readonly><br>
     <label for="Telephone:"> Telephone:</label><br>
@@ -39,6 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <label for=" Address"> Address:</label><br>
     <input type="text" name="Address" class="inpSetAcount" value="<?php echo $row["Address"]; ?>" readonly><br>
     <button class="btnSetAcount" onclick="hidPationtDetail()">Ok</button><br>
+    </div>
 </div>
 <?php
     } else {
