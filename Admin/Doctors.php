@@ -59,48 +59,6 @@ if(mysqli_num_rows($result) > 0) {
     }
     echo $data;
 }
-<<<<<<< HEAD
-
-?>
-        </table>
-        <div class="add-new-doctors-pop-up ">
-            <form action="add_new_doctor.php" method="post">
-                <div class="pop-up-header">
-                    <h2>Add New Doctor</h2>
-                    <p id="x-sign">&times;</p>
-                </div>
-                <label for="name">Name</label><br>
-                <input type="text" name="name" id="name" placeholder="Name Doctor"><br>
-                <label for="email">Email</label><br>
-                <input type="email" name="email" id="email" placeholder="Email Address "><br>
-                <label for="nic">NIC</label><br>
-                <input type="number" name="nic" id="nic" placeholder="NIC Number "><br>
-                <label for="telephone">Telephone</label><br>
-                <input type="number" name="telephone" id="telephone" placeholder="Telephone Number "><br>
-                <label for="speciality">Speciality</label><br>
-                <select name="speciality" id="select">
-                    <?php
-            include("connection.php");
-            $sql = "SELECT speciality FROM doctor";
-            $result = mysqli_query($conn, $sql);
-            $options = "";
-            while ($row = mysqli_fetch_assoc($result)) {
-                $spec = $row["speciality"];
-                $options .= '<option value="' . $spec . '">' . $spec . '</option>';
-            }
-            echo $options;
-            ?>
-                </select><br>
-                <label for="password">Password</label><br>
-                <input type="password" name="password" id="password" placeholder="Enter Password "><br>
-                <label for="confirm">Confirm Password</label><br>
-                <input type="password" name="confirm" id="confirm" placeholder="Confirm Password"><br>
-                <input type="submit" value="Add" id="add-button" name="submit">
-                <input type="reset" id="rest-button">
-            </form>
-        </div>
-        <script src="../JS/index.js"></script>
-=======
 ?>
         </table>
         <?php 
@@ -133,7 +91,6 @@ if(mysqli_num_rows($result) > 0) {
 
     </div>
     <script src="../JS/index.js"></script>
->>>>>>> 8dce2b351f416c862ffa1616a5fc39a6db945808
 </body>
 
 </html>
