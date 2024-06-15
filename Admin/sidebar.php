@@ -12,11 +12,7 @@
     <div class="side-bar">
         <h1>Admin Slide</h1>
         <p> <img src="../img/user.png" alt="administer img" id="admin-img">Administrator</p>
-<<<<<<< HEAD
-        <button id="logout-button">Log out</button>
-=======
         <a href="../logout.php"> <button id="logout-button">Log out</button> </a>
->>>>>>> 4032e8b0de6a7a2ba165a469be344eb43e508a0f
         <ul class="slid-bar-details">
             <a href="admin.php">
                 <li><img src="../img/icons/dashboard.svg" alt="">Dashboard</li>
@@ -33,13 +29,6 @@
             <a href="Patients.php">
                 <li><img src="../img/icons/patients.svg" alt="">Patients</li>
             </a>
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> 4032e8b0de6a7a2ba165a469be344eb43e508a0f
         </ul>
     </div>
 </body>
