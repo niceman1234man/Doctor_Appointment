@@ -3,7 +3,7 @@
   justify-content: space-around;
 }
 
-#add-new-button a{
+#add-new-button a {
   width: 50%;
   height: 20%;
   margin-top: 2%;
@@ -15,5 +15,4 @@
   padding: 1%;
   font-size: large;
   font-weight: bold;
-  color: white;
 }
