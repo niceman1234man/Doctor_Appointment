@@ -14,9 +14,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $confirmPassword = $_POST["confirmPassword"];
     if($password===$confirmPassword){
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO patient (FirstName, LastName, NIC, phone_number, email, date_of_birth, Address, password)
+    $sql = "INSERT INTO personal_data (FirstName, LastName, NIC, phone_number, email, dob, Address, password)
             VALUES ('$name', '$lname', '$address', '$nic', '$dob', '$email', '$phonenumber', '$hashedPassword')";
-            $sql2="INSERT INTO users (username, password, usertype) Values('$uname',' $password','p')";
+            $sql2="INSERT INTO user (username, password, usertype) Values('$uname',' $password','p')";
             
     if ($conn->query($sql)&&($conn->query($sql2))) {
         echo "Registration successful!";

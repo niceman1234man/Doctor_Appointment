@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname="docp";
+$dbname="doctor_appointment_loginpage";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password,$dbname);
 // Check connection

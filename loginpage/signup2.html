@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+    <div class="back">
+        <div class="container">
+            <form id="account-details-form" action="signup.php" method="post">
+                <div class="container">
+                    <label for="dob" class="form-label">Date of Birth: </label>
+                    <input type="date" id="dob" name="dob" class="input-text" required>
+
+                    <label for="email" class="form-label">Email: </label>
+                    <input type="email" id="email" name="email" class="input-text" placeholder="Email" required>
+
+                    <label for="phonenumber" class="form-label">Phone Number: </label>
+                    <input type="text" name="phonenumber" class="input-text" placeholder="Phone Number" required>
+
+                    <label for="password" class="form-label">Password: </label>
+                    <input type="password" name="password" class="input-text" placeholder="Password" required>
+
+                    <label for="confirmPassword" class="form-label">Confirm Password: </label>
+                    <input type="password" name="confirmPassword" class="input-text" placeholder="Confirm Password"
+                        required>
+                    <p id="error-message"></p>
+                </div>
+                <a href="signup.html" class="button">back</a>
+                <div class="button-group">
+                    <input type="submit" name="submit" value="signup" class="login-btn btn-primary-soft btn">
+                </div>
+        </div>
+        </form>
+    </div>
+
+    <script src="signup.js"></script>
+</body>
+
+</html>
