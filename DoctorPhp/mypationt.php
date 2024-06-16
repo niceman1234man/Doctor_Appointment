@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,32 +9,36 @@
 
 
 </head>
+
 <body>
     <section class="myApointment" id="myApointment">
         <?php include ("sidBar.php")?>
-            <div >
-            <div class="btnsearchDivePation" > <button class="backImg">
-                <img src="../images/icons/back-iceblue.svg" class="backImg">back</button> 
-                <input type="search" placeholder="search pationt name or email" class="searinputPationt"> 
-            <button class="searPationtbtn">search</button><span class="todaysDate">
-                <h5>todays date</h5> </span></div>
-                <h4>My Patients</h4>
+        <div>
+            <div class="btnsearchDivePation"> <button class="backImg">
+                    <img src="../images/icons/back-iceblue.svg" class="backImg">back</button>
+                <input type="search" placeholder="search pationt name or email" class="searinputPationt">
+                <button class="searPationtbtn">search</button><span class="todaysDate">
+                    <h5>todays date</h5>
+                </span>
+            </div>
+            <h4>My Patients</h4>
 
-            <div  class="inputDate"><label for="Show Details About">Show Details About</label>
-            <select name="patioets" id="pationts">
+            <div class="inputDate"><label for="Show Details About">Show Details About</label>
+                <select name="patioets" id="pationts">
                     <option value="mypationt">My Patients Only</option>
                     <option value="all patients">All Patients</option>
                 </select> <button class="filterbtn">
-                    <img src="../images/icons/filter-iceblue.svg" class="filteimg">Filter</button></div>
+                    <img src="../images/icons/filter-iceblue.svg" class="filteimg">Filter</button>
+            </div>
             <div class="apointTable">
-            <?php
-include("connection.php");
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
+                <?php
+include("../connection.php");
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT *FROM `Patients` WHERE 1";
-$result = $connection->query($sql);
+$sql = "SELECT *FROM patient ";
+$result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     echo "<table>";
@@ -51,17 +55,17 @@ if ($result->num_rows > 0) {
 
     while($row = $result->fetch_assoc()) {
         echo "<tr>";
-        echo "<td>" . $row["Fname"] . "</td>";
-        echo "<td>" . $row["Lname"] . "</td>";
+        echo "<td>" . $row["FirstName"] . "</td>";
+        echo "<td>" . $row["LastName"] . "</td>";
         echo "<td>" . $row["NIC"] . "</td>";
-        echo "<td>" . $row["Telephone"] . "</td>";
-        echo "<td>" . $row["Email"] . "</td>";
-        echo "<td>" . $row["Date of Birth"] . "</td>";
-        echo "<td>" . $row["ID"] . "</td>";
+        echo "<td>" . $row["phone_number"] . "</td>";
+        echo "<td>" . $row["email"] . "</td>";
+        echo "<td>" . $row["date_of_birth"] . "</td>";
+        echo "<td>" . $row["id"] . "</td>";
         echo "<td>
             <div class=\"form-button\">
                 <form action=\"viewPasiont.php\" method=\"post\">
-                    <input type=\"hidden\" name=\"id\" value=\"" . $row["ID"] . "\">
+                    <input type=\"hidden\" name=\"id\" value=\"" . $row["id"] . "\">
                     <button type=\"submit\" class=\"viewbutton\" onclick=\"displayPationtDetail();\"  >
                         <img src=\"../images/icons/view-iceblue.svg\" alt=\"View\" value=\"View\">View
                     </button>
@@ -74,12 +78,13 @@ if ($result->num_rows > 0) {
 } else {
     echo "No results found.";
 }
-$connection->close();
+$conn->close();
 ?>
-              </div>
             </div>
-            </section>
-    
-            <script src="../DoctorJs/index.js"></script>
+        </div>
+    </section>
+
+    <script src="../DoctorJs/index.js"></script>
 </body>
+
 </html>

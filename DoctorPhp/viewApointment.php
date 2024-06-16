@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Appointment</title>
     <link rel="stylesheet" type="text/css" href="../DoctorCss/index.css">
 </head>
+
 <body>
-<?php
-include("connection.php");
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
+    <?php
+include("../connection.php");
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST["Number"];
 
-    $sql = "SELECT * FROM `Appointment` WHERE Number = ?";
+    $sql = "SELECT * FROM `a ppointment` WHERE Number = ?";
     $stmt = $connection->prepare($sql);
     $stmt->bind_param("i", $id);
     $stmt->execute();
@@ -41,4 +43,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $connection->close();
 ?>
 </body>
+
 </html>
