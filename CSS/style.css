@@ -13,14 +13,14 @@ body {
   padding: 1%;
   border-radius: 5px;
   font-size: medium;
-  color: rgb(222, 222, 227);
+  color: rgb(222 222 227);
   border-style: none;
   width: 10%;
   background: blue;
 }
 
 #search-button:hover {
-  background: rgb(168, 168, 180);
+  background: rgb(168 168 180);
   color: white;
   cursor: pointer;
 }
@@ -48,7 +48,7 @@ body {
 .side-bar #logout-button {
   width: 50%;
   padding: 2%;
-  color: rgb(192, 192, 197);
+  color: rgb(192 192 197);
   background: blue;
   border-radius: 5px;
   font-weight: bold;
@@ -56,13 +56,13 @@ body {
 }
 
 .side-bar #logout-button:visited {
-  background: rgb(184, 171, 171);
-  color: rgb(152, 47, 47);
+  background: rgb(184 171 171);
+  color: rgb(152 47 47);
   cursor: pointer;
 }
 
 .side-bar #logout-button:hover {
-  background: rgb(108, 108, 112);
+  background: rgb(108 108 112);
   color: white;
   cursor: pointer;
 }
@@ -91,7 +91,7 @@ body {
 }
 
 .slid-bar-details li:hover {
-  background: rgb(184, 143, 143);
+  background: rgb(184 143 143);
   color: white;
   padding: 5px;
 }
@@ -113,19 +113,20 @@ body {
 }
 
 table {
-  border: 1px solid rgb(209, 206, 206);
+  border: 1px solid rgb(209 206 206);
   padding-top: 0%;
   width: 90%;
   margin-top: 1%;
 }
 
 th {
-  border-bottom: 2px solid rgb(97, 97, 148);
+  border-bottom: 2px solid rgb(97 97 148);
 }
 
 tr {
   text-align: center;
   width: 85%;
+  border-bottom: 1px solid rgb(12 0 0);
 }
 
 .form-button,
@@ -139,7 +140,7 @@ tr {
 
 .show-button {
   width: 90%;
-  background-color: rgb(42, 42, 184);
+  background-color: rgb(42 42 184);
   border-style: none;
   border-radius: 5px;
   color: white;
@@ -147,8 +148,8 @@ tr {
 }
 
 .show-button:hover {
-  background: rgb(133, 133, 144);
-  color: rgb(33, 32, 32);
+  background: rgb(133 133 144);
+  color: rgb(33 32 32);
 }
 
 .main-part-appoint {

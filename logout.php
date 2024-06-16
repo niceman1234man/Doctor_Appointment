@@ -11,6 +11,6 @@
 	session_destroy();
 
 	//redirecting the user to the login page
-	header('Location: login.html');
+	header('Location: loginform.php');
 
  ?>
