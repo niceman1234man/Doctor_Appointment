@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="text" name="Telephone:" class="inpSetAcount" value="<?php echo $row["Telephone"]; ?>" readonly><br>
     <label for=" Address"> Address:</label><br>
     <input type="text" name="Address" class="inpSetAcount" value="<?php echo $row["Address"]; ?>" readonly><br>
-    <button class="btnSetAcount" onclick="hidPationtDetail()">Ok</button><br>
+    <button class="btnSetAcount" ><a href="mypationt.php">ok</a></button><br>
     </div>
 </div>
 <?php

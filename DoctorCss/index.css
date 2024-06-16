@@ -3,6 +3,10 @@
   margin: 2% 2% 0 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -387,6 +391,7 @@ td {
   align-items: center;
 }
 
+.cancelApoin,
 .viewSessionDoc,
 .cancelSessionDoc,
 .Editdoc,
@@ -398,6 +403,8 @@ td {
   margin: 5%;
 }
 
+.cancelApoin input,
+.cancelApoin label,
 .viewPationtPage input,
 .viewPationtPage label,
 .delDoc input,

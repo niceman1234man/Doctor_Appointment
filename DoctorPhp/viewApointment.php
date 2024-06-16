@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View apointment</title>
+    <title>View Appointment</title>
     <link rel="stylesheet" type="text/css" href="../DoctorCss/index.css">
-
 </head>
 <body>
 <?php
@@ -15,9 +14,9 @@ if ($connection->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = $_POST["id"];
+    $id = $_POST["Number"];
 
-    $sql = "SELECT * FROM `Apointmant` WHERE ID = ?";
+    $sql = "SELECT * FROM `Appointment` WHERE Number = ?";
     $stmt = $connection->prepare($sql);
     $stmt->bind_param("i", $id);
     $stmt->execute();
@@ -28,10 +27,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<h2>Appointment Details</h2>";
         echo "Patient Name: " . $row["Patient Name"] . "<br>";
         echo "Telephone: " . $row["Telephone"] . "<br>";
+        echo "Number: " . $row["Number"] . "<br>";
         echo "Session Title: " . $row["Session Title"] . "<br>";
         echo "Session Date & Time: " . $row["Session Date & Time"] . "<br>";
         echo "Appointment Date: " . $row["Appointment Date"] . "<br>";
-        echo "ID: " . $row["ID"] . "<br>";
     } else {
         echo "No appointment found with the provided ID.";
     }
