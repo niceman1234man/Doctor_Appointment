@@ -4,7 +4,7 @@ body {
   margin-top: 2%;
 }
 
-.side-bar {
+.side-bar,.side_bar {
   width: 15%;
   border-right: 1px solid black;
 }
@@ -18,6 +18,13 @@ body {
   width: 10%;
   background: blue;
 }
+#setting{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+
+
+}
 
 #search-button:hover {
   background: rgb(168 168 180);
@@ -25,14 +32,14 @@ body {
   cursor: pointer;
 }
 
-.slid-bar-details {
+.slid-bar-details,.doctor-sidebar {
   list-style-type: none;
   padding: 1%;
   font-size: larger;
   font-weight: bold;
 }
 
-.slid-bar-details a {
+.slid-bar-details a,.doctor-sidebar a {
   padding: 1%;
   text-decoration: none;
 }
@@ -42,6 +49,9 @@ body {
 }
 
 .side-bar #admin-img {
+  width: 20%;
+}
+.side_bar .sidbarUserImg{
   width: 20%;
 }
 
