@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'poppins', sans-serif;
+  font-family: poppins, sans-serif;
 }
 
 .main {
@@ -76,11 +76,11 @@ header {
   font-size: 16px;
   line-height: 1.5;
   text-align: center;
-  color: rgb(4, 4, 16);
+  color: rgb(4 4 16);
 }
 
 .makebtn {
-  background-color: rgb(136, 127, 255);
+  background-color: rgb(136 127 255);
   width: 25%;
   padding: 1%;
   height: 1200%;

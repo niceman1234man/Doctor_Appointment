@@ -115,7 +115,7 @@ h2 {
   text-decoration: underline;
 } */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   background-image: url('./image/signup.avif');
   background-size: cover;
   display: flex;
@@ -126,13 +126,13 @@ body {
 }
 
 .back {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgb(255 255 255 / 90%);
   background-color: transparent;
 
   /* Semi-transparent background */
   padding: 40px;
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgb(0 0 0 / 10%);
   max-width: 400px;
   width: 100%;
   text-align: center;
@@ -159,7 +159,7 @@ h2 {
   margin-bottom: 30px;
   width: 100%;
   padding: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
 }
 
 .input-text input {
@@ -174,7 +174,7 @@ h2 {
 
 .input-text input:focus {
   border-color: #8a4dff;
-  box-shadow: 0 0 5px rgba(138, 77, 255, 0.5);
+  box-shadow: 0 0 5px rgb(138 77 255 / 50%);
 }
 
 .input-text label {

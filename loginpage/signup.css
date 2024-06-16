@@ -11,7 +11,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
   margin-left: 10%;
 }
 
@@ -19,7 +19,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
   margin-top: 190px;
 }
 
@@ -70,7 +70,7 @@ form {
 }
 
 .button-group input {
-  background-color: rgb(126, 126, 234);
+  background-color: rgb(126 126 234);
   border-radius: 20px;
 }
 
