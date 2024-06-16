@@ -28,10 +28,10 @@
              echo $today; ?></p><br>
         <div class="add-new-section">
             <h2>Add new Doctor</h2>
-            <button id="add-new-button">+ Add New</button>
+            <button id="add-new-button"> <a href="addDoctor.php">+ Add New</a></button>
         </div>
         <?php
-        include("../connection.php");
+      
        
         if (isset($_POST['search_term'])) {
             $search_term = $_POST['search_term'];
@@ -99,36 +99,8 @@
    
 ?>
         </table>
-        <div class="add-new-doctors-pop-up ">
-            <form action="add_new_doctor.php" method="post">
-                <div class="pop-up-header">
-                    <h2>Add New Doctor</h2>
-                    <p id="x-sign">&times;</p>
-                </div>
-                <label for="name">Name</label><br>
-                <input type="text" name="name" id="name" placeholder="Name Doctor"><br>
-                <label for="email">Email</label><br>
-                <input type="email" name="email" id="email" placeholder="Email Address "><br>
-                <label for="nic">NIC</label><br>
-                <input type="number" name="nic" id="nic" placeholder="NIC Number "><br>
-                <label for="telephone">Telephone</label><br>
-                <input type="number" name="telephone" id="telephone" placeholder="Telephone Number "><br>
-                <label for="speciality">Speciality</label><br>
-                <select name=" speciality" id="select">
-                    <?php
-                    echo $data2;
-                    ?>
-                </select><br>
-                <label for="password">Password</label><br>
-                <input type="password" name="password" id="password" placeholder="Enter Password "><br>
-                <label for="confirm">Confirm Password</label><br>
-                <input type="password" name="confirm" id="confirm" placeholder="Confirm Password"><br>
-                <input type="submit" value="Add" id="add-button" name="submit">
-                <input type="reset" id="rest-button">
-            </form>
-        </div>
-    </div>
-    <script src="../JS/index.js"></script>
+
+        <script src="../JS/indexyy.js"></script>
 </body>
 
 </html>
