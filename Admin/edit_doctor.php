@@ -35,8 +35,8 @@ if (isset($_POST['id'])) {
         $telephone = $row["telephone"]; // Assuming 'telephone' is a single value in the database
     }
 
-    echo '<div class="">
-        <form action="add_new_doctor.php" method="post">
+    echo '<div class="edit-doctor">
+        <form action="doctor_edit.php" method="post">
             <div class="pop-up-header">
                 <h2>Edit Doctor</h2>
                 <p id="x-sign">&times;</p>
@@ -53,33 +53,16 @@ if (isset($_POST['id'])) {
             <label for="speciality">Speciality</label><br>
             <select name="speciality" id="select">' . $data . '
             </select><br>
+            <input type="hidden" name="id" id="nic" " value="' . $id . '"><br>
             <label for="password">Password</label><br>
             <input type="password" name="password" id="password" placeholder="Enter Password "><br>
             <label for="confirm">Confirm Password</label><br>
             <input type="password" name="confirm" id="confirm" placeholder="Confirm Password"><br>
             <input type="submit" value="Update" id="add-button" name="update">
-            <input type="reset" id="rest-button">
         </form>
     </div>
-    </div>';
-}
-if(isset($_POST["update"])){
+    ';
 
-$name=$_POST["name"];
-$email=$_POST["email"];
-$nic=$_POST["nic"];
-$telephone=$_POST["telephone"];
-$speciality=$_POST["speciality"];
-$password=$_POST["password"];
-$confirm=$_POST["confirm"];
-$sql = "UPDATE doctor SET name='$username', email='$firstname',nic='$nic',telephone='$telephone',speciality='$speciality',password='$password' WHERE id='$id'";
-if($password==$confirm){
-    mysqli_query($conn,$sql);
-    echo " Doctor updated!";
-}else{
-    echo "please insert correct password!";
-}
-header("location: Doctor.php");
 }
 
 ?>
