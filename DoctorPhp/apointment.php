@@ -31,6 +31,7 @@ if ($result->num_rows > 0) {
     echo "<tr>";
     echo "<th>Patient Name</th>";
     echo "<th>Telephone</th>";
+    echo "<th>Number</th>";
     echo "<th>Session Title</th>";
     echo "<th>Session Date & Time</th>";
     echo "<th>Appointment Date</th>";
@@ -40,13 +41,14 @@ if ($result->num_rows > 0) {
         echo "<tr>";
         echo "<td>" . $row["Patient Name"] . "</td>";
         echo "<td>" . $row["Telephone"] . "</td>";
+        echo "<td>" . $row["Number"] . "</td>";
         echo "<td>" . $row["Session Title"] . "</td>";
         echo "<td>" . $row["Session Date & Time"] . "</td>";
         echo "<td>" . $row["Appointment Date"] . "</td>";
         echo "<td class=\"tdforflex\">
             <div class=\"form-button\">
                 <form action=\"DeletApointment.php\" method=\"post\">
-                    <input type=\"hidden\" name=\"id\" value=\"" . $row["ID"] . "\">
+                    <input type=\"hidden\" name=\"id\" value=\"" . $row["Number"] . "\">
                     <button type=\"submit\" class=\"deletebutton\" >
                         <img src=\"../images/icons/delete-iceblue.svg\"  value=\"Delete\">Delete
                     </button>
@@ -54,7 +56,7 @@ if ($result->num_rows > 0) {
             </div>
             <div class=\"form-button\">
                 <form action=\"viewApointment.php\" method=\"post\">
-                    <input type=\"hidden\" name=\"id\" value=\"" . $row["ID"] . "\">
+                    <input type=\"hidden\" name=\"id\" value=\"" . $row["Number"] . "\">
                     <button type=\"submit\" class=\"viewbutton\">
                         <img src=\"../images/icons/view-iceblue.svg\" value=\"View\">View
                     </button>

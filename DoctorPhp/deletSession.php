@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["deleteSession"])) {
     echo "        <input type='hidden' name='deleteSession' value='1'>";
     echo "        <button class='btnDletAcount' type='submit'>Yes</button>";
     echo "    </form>";
-    echo "    <button class='btnDletAcount' onclick='hidCancelSesion()'>No</button><br>";
+    echo "<button class='btnDletAcount' ><a href='session.php'>No</a></button><br>";
     echo "</div>";
     echo "</div>";
 }
