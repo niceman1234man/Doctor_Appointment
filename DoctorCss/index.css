@@ -181,6 +181,7 @@ td {
 
 #myApointment {
   display: flex;
+  width: 100%;
 }
 
 .inputDate {
@@ -269,7 +270,11 @@ td {
 
 .btnsearchDivePation {
   display: flex;
-  margin: 2% 1%;
+  width: 100%;
+}
+
+.block {
+  width: 100%;
 }
 
 .topTitle {
@@ -398,6 +403,8 @@ td {
 .viewDocdetail,
 .viewPationtPage {
   align-items: center;
+  border: 1px solid;
+  background-color: wheat;
   display: flex;
   justify-content: space-around;
   margin: 5%;

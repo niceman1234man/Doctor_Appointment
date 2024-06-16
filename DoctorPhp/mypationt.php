@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Pationt</title>
+    <title>My Patients</title>
     <link rel="stylesheet" type="text/css" href="../DoctorCss/index.css">
-
-
 </head>
 
 <body>
@@ -32,40 +30,41 @@
             </div>
             <div class="apointTable">
                 <?php
-include("../connection.php");
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+include("connection.php");
+if ($connection->connect_error) {
+    die("Connection failed: " . $connection->connect_error);
 }
 
-$sql = "SELECT *FROM patient ";
-$result = $conn->query($sql);
+$sql = "SELECT *FROM `Patients` WHERE 1";
+$result = $connection->query($sql);
 
-if ($result->num_rows > 0) {
-    echo "<table>";
-    echo "<tr>";
-    echo "<th>First Name</th>";
-    echo "<th>Last Name</th>";
-    echo "<th>NIC</th>";
-    echo "<th>Telephone</th>";
-    echo "<th>Email</th>";
-    echo "<th>Date of Birth</th>";
-    echo "<th>ID</th>";
-    echo "<th>Actions</th>";
-    echo "</tr>";
+                    if ($result->num_rows > 0) {
+                        echo "<table>";
+                        echo "<tr>";
+                        echo "<th>PID</th>";
+                        echo "<th>Email</th>";
+                        echo "<th>Name</th>";
+                        echo "<th>Password</th>";
+                        echo "<th>Address</th>";
+                        echo "<th>NIC</th>";
+                        echo "<th>DOB</th>";
+                        echo "<th>Telephone</th>";
+                        echo "<th>Actions</th>";
+                        echo "</tr>";
 
     while($row = $result->fetch_assoc()) {
         echo "<tr>";
-        echo "<td>" . $row["FirstName"] . "</td>";
-        echo "<td>" . $row["LastName"] . "</td>";
+        echo "<td>" . $row["Fname"] . "</td>";
+        echo "<td>" . $row["Lname"] . "</td>";
         echo "<td>" . $row["NIC"] . "</td>";
-        echo "<td>" . $row["phone_number"] . "</td>";
-        echo "<td>" . $row["email"] . "</td>";
-        echo "<td>" . $row["date_of_birth"] . "</td>";
-        echo "<td>" . $row["id"] . "</td>";
+        echo "<td>" . $row["Telephone"] . "</td>";
+        echo "<td>" . $row["Email"] . "</td>";
+        echo "<td>" . $row["Date of Birth"] . "</td>";
+        echo "<td>" . $row["ID"] . "</td>";
         echo "<td>
             <div class=\"form-button\">
                 <form action=\"viewPasiont.php\" method=\"post\">
-                    <input type=\"hidden\" name=\"id\" value=\"" . $row["id"] . "\">
+                    <input type=\"hidden\" name=\"id\" value=\"" . $row["ID"] . "\">
                     <button type=\"submit\" class=\"viewbutton\" onclick=\"displayPationtDetail();\"  >
                         <img src=\"../images/icons/view-iceblue.svg\" alt=\"View\" value=\"View\">View
                     </button>
@@ -78,7 +77,7 @@ if ($result->num_rows > 0) {
 } else {
     echo "No results found.";
 }
-$conn->close();
+$connection->close();
 ?>
             </div>
         </div>
