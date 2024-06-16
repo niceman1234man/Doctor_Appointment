@@ -11,12 +11,10 @@
 <section>
         <?php
 include("connection.php");
-// Check connection
 if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
 }
-// Retrieve data from the Sessions table
-$sql = "SELECT * FROM Sessions";
+$sql = "SELECT * FROM Sessions ";
 $result = $connection->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
