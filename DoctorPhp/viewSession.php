@@ -33,6 +33,8 @@ if ($result->num_rows > 0) {
         echo "    <label for=' Scheduled Time'> Scheduled Time:</label><br>";
         echo "    <input type='text' name='ScheduledTime' class='inpSetAcount' readonly><br>";
         echo "    <label for='total:'> Patients that Already registerd for this session:</label><br>";
+        echo "<button class='btnDletAcount' ><a href='session.php'>Ok</a></button><br>";
+
         echo "</div>";
         echo "<div>";
 
