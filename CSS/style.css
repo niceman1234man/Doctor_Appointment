@@ -176,3 +176,8 @@ tr {
 h3 {
   color: blue;
 }
+
+ #bt1,#b2,#bt3{
+  width: 800px;
+  margin: 2%;
+}

@@ -33,6 +33,8 @@
                     <p id="x-sign">&times;</p>
                 </a>
             </div>
+            <label for="name">User Name</label><br>
+            <input type="text" name="username" id="name" placeholder="User Name"><br>
             <label for="name">Name</label><br>
             <input type="text" name="name" id="name" placeholder="Name Doctor"><br>
             <label for="email">Email</label><br>

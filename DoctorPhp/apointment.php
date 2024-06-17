@@ -9,14 +9,24 @@
 </head>
 
 <body>
-    <section class="myApointment" id="myApointment">
-        <?php include ("sidBar.php")?>
+
+    <?php include ("sidebar.php")?>
+    <div class="main-part">
         <div class="Appointments">
             <div class="topTitle">
                 <div> <button class="backImg"><img src="../images//icons/back-iceblue.svg"
                             class="backImg">back</button><span class="set">Appointment Manager</span> </div>
                 <div class="todaysDate">
-                    <h5>todays date</h5>
+                    <h5>
+                        <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br>
+                            <?php  date_default_timezone_set('Asia/Kolkata');
+
+                             $today = date('Y-m-d');
+                            echo $today;
+                            ?>
+                        </p>
+                    </h5>
+                    </p>
                 </div>
             </div>
             <h3>My Apointment</h3>
@@ -26,7 +36,7 @@
                 <?php
 include("../connection.php");
 if ($conn->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 $sql = "SELECT *FROM appointment ";
 $result = mysqli_query($conn, $sql);
@@ -76,7 +86,8 @@ $conn->close();
 ?>
             </div>
         </div>
-    </section>
+    </div>
+
     <script src="../DoctorJs/index.js"></script>
 
 </body>

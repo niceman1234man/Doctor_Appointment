@@ -17,13 +17,12 @@
 </head>
 
 <body>
-    <section class="doctor_first_section">
-        <?php include ("sidBar.php")?>
+    <?php include ("sidebar.php")?>
+    <div class="main-part">
         <div class="dashbourd" id="dashbourd">
             <!-- //////////////// -->
             <div class="topTitle">
-                <div> <button class="backImg"><img src="../images/icons/back-iceblue.svg"
-                            class="backImg">back</button><span class="set">Dashbourd</span> </div>
+                <div> <span class="set">Dashbourd</span> </div>
                 <div class="todaysDate">
                     <h5>todays date <p><?php date_default_timezone_set('Asia/Kolkata');
              $today=date('Y-m-d');
@@ -42,8 +41,9 @@
             <!-- ////////////////// -->
             <div class="statusUpcomingEvent">
                 <div class="statusDash">
+                    <h4 style="left:25%;position:absolute">status</h4>
                     <table>
-                        <h4>status</h4>
+
                         <tr>
                             <td>
                                 <div><a>All Doctors <img src="../images/icons/doctors-hover.svg" class="statusimg"></a>
@@ -51,7 +51,8 @@
                             </td>
                             <td>
                                 <div> <a> All Patients <img src="../images/icons/patients-hover.svg"
-                                            class="statusimg"></a></div>
+                                            class="statusimg"></a>
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -61,7 +62,8 @@
                             </td>
                             <td>
                                 <div><a>Today Sessions<img src="../images/icons/session-iceblue.svg"
-                                            class="statusimg"></a></div>
+                                            class="statusimg"></a>
+                                </div>
                             </td>
                         </tr>
                     </table>
@@ -71,7 +73,7 @@
                     <?php
 include("../connection.php");
 if ($conn->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 $sql = "SELECT *FROM session ";
 $result = mysqli_query($conn, $sql);
@@ -80,9 +82,9 @@ if (mysqli_num_rows($result) > 0) {
     echo '
     <table >
         <tr>
-            <th>Title</th>
-            <th>Date & Time</th>
-            <th>Max Num</th>
+            <th>Session Title</th>
+            <th>Date </th>
+            <th>Time</th>
         </tr>';
 
     while ($row = mysqli_fetch_assoc($result)) {
@@ -90,8 +92,8 @@ if (mysqli_num_rows($result) > 0) {
         echo '
         <tr>
             <td>' . $row["title"] . '</td>
-            <td>' . $row["date"] .' '.$row["time"] . '</td>
-            <td>' . $row["num"] . '</td>
+            <td>' . $row["date"] .'</td>
+            <td>' .$row["time"] .  '</td>
         </tr>';
     }
     echo '</table>';
@@ -105,9 +107,9 @@ $conn->close();
                 <!-- ////////////// -->
 
             </div>
-    </section>
-    <!-- MY APOINTMENT SECTION -->
-    <script src="../DoctorJs/index.js"></script>
+        </div>
+        <!-- MY APOINTMENT SECTION -->
+        <script src="../DoctorJs/index.js"></script>
 
 </body>
 

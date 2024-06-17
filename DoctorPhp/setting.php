@@ -9,40 +9,45 @@
 </head>
 
 <body>
-    <section class="myApointment" id="myApointment">
-        <?php include ("sidBar.php")?>
+
+    <?php include ("sidebar.php")?>
+    <div class="main-part">
+
+        <h1>Setting</h1>
+
+        <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br>
+            <?php  date_default_timezone_set('Asia/Kolkata');
+
+    $today = date('Y-m-d');
+    echo $today;?>
+        </p>
         <div id="setting">
-            <div>
-                <div> <button class="backImg" onck="DashBourd.php"><img src="../images/icons/back-iceblue.svg"
-                            class="backImg">back</button> <span class="set">Settings</span> </div>
-                <div class="todaysDate">
-                    <h5>todays date</h5>
-                </div>
+
+            <div id="bt1"> <a href="EditDoctorDetail.php">
+                    <button>
+                        <h3><img src="../images/icons/settings-iceblue.svg">Acount setting </h3> <br>edit
+                        you acount detail and change you password
+                    </button>
+                </a></div>
+
+            <div id="bt2"><a href="viewDoctorDetail.php"><button>
+                        <h3 class="seting"><img src="../images/icons/view-iceblue.svg">View Account Details</h3>view
+                        profesional information about you acount
+                    </button>
+                </a></div>
+
+            <div id="bt3"> <a href="deletDoctor.php"><button>
+                        <h3 class="setingdelet"><img src="../images/icons/delete-iceblue.svg" alt="">Delete Acount </h3>
+                        will permanently delete your acount
+                    </button>
+                </a>
             </div>
 
-            <a href="EditDoctorDetail.php">
-                <button>
-                    <h3><img src="../images/icons/settings-iceblue.svg">Acount setting </h3> <br>edit
-                    you acount detail and change you password
-                </button>
-            </a>
-            <a href="viewDoctorDetail.php"><button>
-                    <h3 class="seting"><img src="../images/icons/view-iceblue.svg">View Account Details</h3>view
-                    profesional information about you acount
-                </button>
-            </a>
-            <a href="deletDoctor.php"><button>
-                    <h3 class="setingdelet"><img src="../images/icons/delete-iceblue.svg" alt="">Delete Acount </h3>
-                    will permanently delete your acount
-                </button>
-            </a>
-
         </div>
-    </section>
-    <!-- popUp section -->
-    <section>
+    </div>
 
-    </section>
+    <!-- popUp section -->
+
     <script src="../DoctorJs/index.js"></script>
 </body>
 

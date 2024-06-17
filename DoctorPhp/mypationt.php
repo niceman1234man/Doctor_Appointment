@@ -9,27 +9,34 @@
 </head>
 
 <body>
-    <section class="myApointment" id="myApointment">
-        <?php include ("sidBar.php")?>
-        <div>
-            <div class="btnsearchDivePation"> <button class="backImg">
-                    <img src="../images/icons/back-iceblue.svg" class="backImg">back</button>
-                <input type="search" placeholder="search pationt name or email" class="searinputPationt">
-                <button class="searPationtbtn">search</button><span class="todaysDate">
-                    <h5>todays date</h5>
-                </span>
-            </div>
-            <h4>My Patients</h4>
 
-            <div class="inputDate"><label for="Show Details About">Show Details About</label>
-                <select name="patioets" id="pationts">
-                    <option value="mypationt">My Patients Only</option>
-                    <option value="all patients">All Patients</option>
-                </select> <button class="filterbtn">
-                    <img src="../images/icons/filter-iceblue.svg" class="filteimg">Filter</button>
-            </div>
-            <div class="apointTable">
-                <?php
+    <?php include ("sidebar.php")?>
+    <div class="main-part">
+        <div class="btnsearchDivePation"> <button class="backImg">
+                <img src="../images/icons/back-iceblue.svg" class="backImg">back</button>
+            <input type="search" placeholder="search pationt name or email" class="searinputPationt">
+            <button class="searPationtbtn">search</button><span class="todaysDate">
+                <h5>
+                    <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br>
+                        <?php  date_default_timezone_set('Asia/Kolkata');
+
+            $today = date('Y-m-d');
+            echo $today;?>
+                    </p>
+                </h5>
+            </span>
+        </div>
+        <h4>My Patients</h4>
+
+        <div class="inputDate"><label for="Show Details About">Show Details About</label>
+            <select name="patioets" id="pationts">
+                <option value="mypationt">My Patients Only</option>
+                <option value="all patients">All Patients</option>
+            </select> <button class="filterbtn">
+                <img src="../images/icons/filter-iceblue.svg" class="filteimg">Filter</button>
+        </div>
+        <div class="apointTable">
+            <?php
 include("../connection.php");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -77,9 +84,9 @@ $result = $conn->query($sql);
 }
 $conn->close();
 ?>
-            </div>
         </div>
-    </section>
+    </div>
+
 
     <script src="../DoctorJs/index.js"></script>
 </body>
