@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION["uname"])) {
+    $user = $_SESSION["uname"];
+} else {
+    echo "Session not started or user not logged in.";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,25 +23,26 @@
 // Include the database connection file
 include("../connection.php");
 // Retrieve the data from the database
-$sql = "SELECT `Fname`, `Lname`, `NIC`, `userName`, `Email`, `Telephone`, `Speciality` FROM `Doctor` WHERE `Fname` = 'tsion'";
+$sql = "SELECT * FROM `doctor` where username='$user' ";
 $result = mysqli_query($conn, $sql);
 
 // Check if the query was successful
 if (mysqli_num_rows($result) > 0) {
     // Fetch the data row by row
+
+
     while ($row = mysqli_fetch_assoc($result)) {
-        $fName = $row["Fname"];
-        $lName = $row["Lname"];
-        $nic = $row["NIC"];
-        $userName = $row["userName"];    
-        $email = $row["Email"];
-        $telephone = $row["Telephone"];
-        $speciality = $row["Speciality"];
+        $fName = $row["name"];
+        // $lName = $row["Lname"];
+        $nic = $row["nic"];
+        $userName = $row["username"];    
+        $email = $row["email"];
+        $telephone = $row["telephone"];
+        $speciality = $row["speciality"];
 ?> <div>
             <label for="View Details.">View Details.</label><br>
             <label for="Name:.">Name</label><br>
-            <input type="text" name="name" class="inpSetAcount" readonly
-                value="<?php echo $fName . ' ' . $lName; ?>"><br>
+            <input type="text" name="name" class="inpSetAcount" readonly value="<?php echo $fName ; ?>"><br>
             <label for="Email:">Email:</label><br>
             <input type="email" name="email" class="inpSetAcount" readonly value="<?php echo $email; ?>"><br>
             <label for=" NIC:"> NIC:</label><br>

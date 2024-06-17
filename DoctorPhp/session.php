@@ -9,24 +9,31 @@
 </head>
 
 <body>
-    <section class="myApointment" id="myApointment">
-        <?php include ("sidBar.php")?>
-        <div class="Appointments">
-            <div class="topTitle">
-                <div class="head"> <button class="backImg"><img src="../images//icons/back-iceblue.svg"
-                            class="backImg">back</button> <span class="set">My Sessions</span></div>
-                <div class="todaysDate">
-                    <h5>todays date</h5>
-                </div>
-            </div>
-            <h4>My Sessions</h4>
 
-            <div class="inputDate"> <span class="dateSesLable">Date:</span><input type="date"> <button
-                    class="filterbtn"><img src="../images/icons/filter-iceblue.svg" class="filteimg"> Filter</button>
-            </div>
+    <?php include ("sidebar.php")?>
+    <div class="main-part">
+        <div class="topTitle">
+            <div class="head"> <button class="backImg"><img src="../images//icons/back-iceblue.svg"
+                        class="backImg">back</button> <span class="set">My Sessions</span></div>
+            <div class="todaysDate">
+                <h5>
+                    <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br>
+                        <?php  date_default_timezone_set('Asia/Kolkata');
 
-            <div class="apointTable">
-                <?php
+            $today = date('Y-m-d');
+            echo $today;?>
+                    </p>
+                </h5>
+            </div>
+        </div>
+        <h4>My Sessions</h4>
+
+        <div class="inputDate"> <span class="dateSesLable">Date:</span><input type="date"> <button
+                class="filterbtn"><img src="../images/icons/filter-iceblue.svg" class="filteimg"> Filter</button>
+        </div>
+
+        <div class="apointTable">
+            <?php
 include("../connection.php");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -81,9 +88,9 @@ if (mysqli_num_rows($result) > 0) {
 $conn->close();
 ?>
 
-            </div>
         </div>
-    </section>
+    </div>
+
 
 
     <!-- ////////////////////// -->

@@ -2,6 +2,7 @@
 include("../connection.php");
 
 if (isset($_POST["submit"])){
+    $username = $_POST["username"];
     $name = $_POST["name"];
     $email = $_POST["email"];
     $nic = $_POST["nic"];
@@ -13,15 +14,18 @@ if (isset($_POST["submit"])){
     $err="";
 
     if ($password == $confirm) {
-        $sql = "INSERT INTO doctor (name, email, nic, telephone, speciality, password) 
-                VALUES (?, ?, ?, ?, ?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssssss", $name, $email, $nic, $telephone, $speciality, $password);
+        $sql = "INSERT INTO doctor (username,name, email, nic, telephone, speciality, password) 
+                VALUES (?, ?, ?, ?, ?, ?,?)";
 
-        if ($stmt->execute()) {
+$sql2="INSERT INTO user (username, password, usertype) Values(' $username','  $password','d')";      
+        $stmt = $conn->prepare($sql);
+        
+        $stmt->bind_param("ssssss", $name, $email, $nic, $telephone, $speciality, $password);
+      
+        if ($stmt->execute()&&mysqli_query($conn,$sql2)) {
             $message= "New Doctor Added!";
         } else {
-            $err= "Error: " . $stmt->error;
+            $err= "Error: " . $stmt->error ;
         }
     } else {
         $err= "Please insert correct password!";
