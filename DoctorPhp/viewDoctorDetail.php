@@ -39,7 +39,8 @@ if (mysqli_num_rows($result) > 0) {
         $email = $row["email"];
         $telephone = $row["telephone"];
         $speciality = $row["speciality"];
-?> <div>
+?> 
+<div>
             <label for="View Details.">View Details.</label><br>
             <label for="Name:.">Name</label><br>
             <input type="text" name="name" class="inpSetAcount" readonly value="<?php echo $fName ; ?>"><br>
