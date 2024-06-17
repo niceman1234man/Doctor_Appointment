@@ -29,7 +29,9 @@
         <form action="add_new_doctor.php" method="post">
             <div class="pop-up-header">
                 <h2>Add New Doctor</h2>
-                <a href="Doctors.php"><p id="x-sign">&times;</p></a>
+                <a href="Doctors.php">
+                    <p id="x-sign">&times;</p>
+                </a>
             </div>
             <label for="name">Name</label><br>
             <input type="text" name="name" id="name" placeholder="Name Doctor"><br>
@@ -53,6 +55,7 @@
             <input type="reset" id="rest-button">
         </form>
     </div>
+    <script src="../JS/index.js"></script>
 </body>
 
 </html>
