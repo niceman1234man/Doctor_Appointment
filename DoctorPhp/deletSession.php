@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION["uname"])) {
+    $user = $_SESSION["uname"];
+} else {
+    echo "Session not started or user not logged in.";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["deleteSession"])) {
     echo "        <input type='hidden' name='deleteSession' value='1'>";
     echo "        <button class='btnDletAcount' type='submit'>Yes</button>";
     echo "    </form>";
-    echo "<button class='btnDletAcount' ><a href='session.php'>No</a></button><br>";
+    echo "<a href='session.php'><button class='btnDletAcount' >No</button></a><br>";
     echo "</div>";
     echo "</div>";
 }

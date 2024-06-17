@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Setting</title>
     <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+<link rel="stylesheet" href="../DoctorCss/index.css">
 </head>
 
 <body>
