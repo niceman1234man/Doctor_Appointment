@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION["uname"])) {
+    $user = $_SESSION["uname"];
+} else {
+    echo "Session not started or user not logged in.";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +16,14 @@
 
 </head>
 <body>
-
+                    
                  <div class="delDoc">
-
+                    <div>
                     <label for="Are you sure?">Are you sure?</label><br>
                     <label for="You want to delete this record(Test Doctor).">You want to delete this record(Test Doctor).</label><br>
                     <button class="btnDletAcount">Yes</button>
-                    <button class="btnDletAcount" onclick="hidDelete()">No</button><br>
+                    <a href="setting.php"> <button class="btnDletAcount" > No </button></a><br>
+                    </div>
                 </div>
     
 </body>
