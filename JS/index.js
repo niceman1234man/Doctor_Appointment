@@ -18,7 +18,6 @@ document.getElementById('add-button').addEventListener('click', (event) => {
   });
 });
 
-
 // Get the form and input elements
 const form = document.querySelector('.add-new-doctors form');
 const nameInput = document.getElementById('name');
@@ -28,6 +27,10 @@ const telephoneInput = document.getElementById('telephone');
 const passwordInput = document.getElementById('password');
 const confirmInput = document.getElementById('confirm');
 
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
 // Add event listener to the form submission
 form.addEventListener('submit', (event) => {
   event.preventDefault(); // Prevent the form from submitting
@@ -52,15 +55,18 @@ form.addEventListener('submit', (event) => {
     emailInput.classList.add('is-invalid');
     isValid = false;
   }
-
-  if (nicInput.value.trim() === '' || isNaN(nicInput.value)) {
+  if (nicInput.value.trim() === '' || Number.isNaN(Number(nicInput.value.trim()))) {
     nicInput.classList.add('is-invalid');
     isValid = false;
+  } else {
+    nicInput.classList.remove('is-invalid');
   }
 
-  if (telephoneInput.value.trim() === '' || isNaN(telephoneInput.value)) {
+  if (telephoneInput.value.trim() === '' || Number.isNaN(Number(telephoneInput.value.trim()))) {
     telephoneInput.classList.add('is-invalid');
     isValid = false;
+  } else {
+    telephoneInput.classList.remove('is-invalid');
   }
 
   if (passwordInput.value.trim() === '') {
@@ -80,7 +86,3 @@ form.addEventListener('submit', (event) => {
 });
 
 // Helper function to validate email
-function isValidEmail(email) {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-}
