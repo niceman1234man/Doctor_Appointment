@@ -32,12 +32,13 @@
                             <a href="#">Forget password</a><br>
                         </div>
                         <button type="submit" class="login-btn btn-primary btn" name="login">Login</button><br>
-                        <div class="Login_register">
-                            <a href="login.php" class="hover-link1 non-style-link">Sign Up</a>
-                            <a href="../signup.html" class="sub-class">Don't have an account?</a>
-                        </div>
+
                 </div>
                 </form>
+                <div class="Login_register">
+                    <a href="loginpage/signup.html" class="hover-link1 non-style-link">Sign Up</a>
+                    <a href="loginpage/ignup.html" class="sub-class">Don't have an account?</a>
+                </div>
             </div>
 
         </center>

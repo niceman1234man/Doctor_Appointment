@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,16 @@
     <link rel="stylesheet" type="text/css" href="../DoctorCss/index.css">
 
 </head>
+
 <body>
-<section>
+    <section>
         <?php
-include("connection.php");
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
+include("../connection.php");
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
-$sql = "SELECT * FROM Sessions ";
-$result = $connection->query($sql);
+$sql = "SELECT * FROM session ";
+$result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         // Display the retrieved data
@@ -23,11 +25,11 @@ if ($result->num_rows > 0) {
         echo "<div>";
         echo "    <label for='View Details.'>View Details.</label><br>";
         echo "    <label for='Session Title:'>Session Title:</label><br>";
-        echo "    <input type='text' required name='sessiontitle' class='inpSetAcount' readonly value='" . $row["Title"] . "'><br>";
+        echo "    <input type='text' required name='sessiontitle' class='inpSetAcount' readonly value='" . $row["title"] . "'><br>";
         echo "    <label for='Doctor of this session::'>Doctor of this session:</label><br>";
         echo "    <input type='text' required name='doctor' class='inpSetAcount' readonly><br>";
         echo "    <label for='Scheduled Date'>Scheduled Date:</label><br>";
-        echo "    <input type='text' required name='ScheduledDate' class='inpSetAcount' readonly value='" . $row["Date & Time"] . "'><br>";
+        echo "    <input type='text' required name='ScheduledDate' class='inpSetAcount' readonly value='" . $row["date"] .' '.$row["time"]. "'><br>";
         echo "    <label for=' Scheduled Time'> Scheduled Time:</label><br>";
         echo "    <input type='text' name='ScheduledTime' class='inpSetAcount' readonly><br>";
         echo "    <label for='total:'> Patients that Already registerd for this session:</label><br>";
@@ -39,15 +41,15 @@ if ($result->num_rows > 0) {
         echo "    <table>";
         echo "        <tr><th>Patient ID</th><th>Patient name</th><th>Appointment number</th><th>Patient Telephone</th></tr>";
         // Retrieve data from the Patients table for the current session
-        $sql_patients = "SELECT * FROM Patients";
+        $sql_patients = "SELECT * FROM patient";
         $result_patients = $conn->query($sql_patients);
         if ($result_patients->num_rows > 0) {
             while($row_patients = $result_patients->fetch_assoc()) {
                 echo "        <tr>";
-                echo "            <td>" . $row_patients["ID"] . "</td>";
-                echo "            <td>" . $row_patients["Fname"] . " " . $row_patients["Lname"] . "</td>";
+                echo "            <td>" . $row_patients["id"] . "</td>";
+                echo "            <td>" . $row_patients["FirstName"] . " " . $row_patients["LastName"] . "</td>";
                 echo "            <td></td>";
-                echo "            <td>" . $row_patients["Telephone"] . "</td>";
+                echo "            <td>" . $row_patients["phone_number"] . "</td>";
                 echo "        </tr>";
             }
         }
@@ -60,7 +62,8 @@ if ($result->num_rows > 0) {
     echo "No data found.";
 }
 
-$connection->close();
+$conn->close();
 ?>
 </body>
+
 </html>
