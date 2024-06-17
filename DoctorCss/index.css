@@ -186,11 +186,16 @@ td {
 
 .inputDate {
   display: flex;
+  width: 100%;
   margin: 3%;
   height: 10%;
-  border: 1px;
+  border: 1px solid;
 }
-
+.onMyPationtImputHead{
+  display: block;
+  width: 100%;
+  height: auto;
+}
 .inputDate label {
   width: 30%;
   margin: 1% 1% 1% 10%;
@@ -223,7 +228,11 @@ td {
 .setindbtncontener {
   margin: 0 0 2% 0.5%;
 }
-
+.setting{
+   margin-top: 70px;
+margin-left: 50px;
+width: 100%;
+}
 .setingbtn {
   background-color: white;
   margin: 0.5%;
@@ -395,7 +404,7 @@ td {
   margin: 5% 15%;
   align-items: center;
 }
-
+.delDoc,
 .cancelApoin,
 .viewSessionDoc,
 .cancelSessionDoc,
