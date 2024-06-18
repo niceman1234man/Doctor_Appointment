@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../CSS/doctor.css">
 </head>
+
 <body>
 
     <?php
@@ -31,23 +33,24 @@
             </div>
 
             <label for="name">Session Title</label><br>
-            <input type="text" name="title" id="name" placeholder="Name of This Session"><br>
+            <input type="text" name="title" id="name" placeholder="Name of This Session" required><br>
             <label for="speciality">Select Doctor</label><br>
-            <select name="speciality" id="select" placeholder="Choose doctor name from list">
+            <select name="speciality" id="select" placeholder="Choose doctor name from list" required>
                 <?php
                     echo $data2;
                     ?>
             </select><br>
             <label for="nic">Number of Patients/Appointment Numbers</label><br>
-            <input type="number" name="num" id="nic" placeholder="The Finial Appointment Number"><br>
+            <input type="number" name="num" id="nic" placeholder="The Finial Appointment Number"> required<br>
             <label for="email">Session Date</label><br>
-            <input type="date" name="date" id="email"><br>
+            <input type="date" name="date" id="email"> required<br>
             <label for="telephone">Schedule Time</label><br>
-            <input type="time" name="time" id="telephone"><br>
+            <input type="time" name="time" id="telephone"> required<br>
             <input type="submit" value="Add Session" id="add-button" name="submit">
             <input type="reset" id="rest-button">
         </form>
     </div>
 
 </body>
+
 </html>

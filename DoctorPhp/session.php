@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Session</title>
+    <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" type="text/css" href="../DoctorCss/index.css">
+
 </head>
 
 <body>
@@ -28,8 +30,13 @@
         </div>
         <h4>My Sessions</h4>
 
-        <div class="inputDate"> <span class="dateSesLable">Date:</span><input type="date"> <button
-                class="filterbtn"><img src="../images/icons/filter-iceblue.svg" class="filteimg"> Filter</button>
+        <div class="inputDate">
+            <form action="">
+                <span class="dateSesLable">Date:</span>
+                <input type="date">
+                <button type="submit" class="filterbtn"><img src="../images/icons/filter-iceblue.svg" class="filteimg">
+                    Filter</button>
+            </form>
         </div>
 
         <div class="apointTable">
