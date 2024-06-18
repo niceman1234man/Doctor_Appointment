@@ -15,13 +15,12 @@
     <div class="main-part">
         <div class="Appointments">
             <div class="topTitle">
-                <div> <button class="backImg"><img src="../images//icons/back-iceblue.svg"
-                            class="backImg">back</button><span class="set">Appointment Manager</span> </div>
+                <div><a href="DashBourd.php"> <button class="backImg"><img src="../images//icons/back-iceblue.svg"
+                                class="backImg">back</button></a><span class="set">Appointment Manager</span> </div>
                 <div class="todaysDate">
                     <h5>
                         <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br>
                             <?php  date_default_timezone_set('Asia/Kolkata');
-
                              $today = date('Y-m-d');
                             echo $today;
                             ?>

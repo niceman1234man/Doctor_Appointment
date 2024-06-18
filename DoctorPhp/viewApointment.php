@@ -16,31 +16,33 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = $_POST["Number"];
+    $id = $_POST["id"];
 
-    $sql = "SELECT * FROM `a ppointment` WHERE Number = ?";
-    $stmt = $connection->prepare($sql);
+    $sql = "SELECT * FROM `appointment` WHERE id = ?";
+    $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id);
     $stmt->execute();
     $result = $stmt->get_result();
 
+
+    
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        echo "<h2>Appointment Details</h2>";
-        echo "Patient Name: " . $row["Patient Name"] . "<br>";
-        echo "Telephone: " . $row["Telephone"] . "<br>";
-        echo "Number: " . $row["Number"] . "<br>";
-        echo "Session Title: " . $row["Session Title"] . "<br>";
-        echo "Session Date & Time: " . $row["Session Date & Time"] . "<br>";
-        echo "Appointment Date: " . $row["Appointment Date"] . "<br>";
-    } else {
+       echo  "<div class='view_app'> <h2>Appointment Details</h2>
+        Patient Name: " . $row["name"] . "<br>
+        Number: " . $row["apo_num"] . "<br>
+        Session Title: " . $row["title"] . "<br>
+        Session Date & Time: " .  $row["time"] ." ".  $row["time"]. "<br>
+        Appointment Date: " . $row["apo_date"] . "<br>
+        <a href='apointment.php'><button id='ok'>OK</button></a><div> ";   
+     } else {
         echo "No appointment found with the provided ID.";
     }
 
     $stmt->close();
 }
 
-$connection->close();
+$conn->close();
 ?>
 </body>
 
