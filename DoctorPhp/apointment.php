@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Appointment</title>
     <link rel="stylesheet" type="text/css" href="../DoctorCss/index.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
 </head>
 
 <body>
@@ -30,8 +31,13 @@
                 </div>
             </div>
             <h3>My Apointment</h3>
-            <div class="inputDate"> Date:<input type="date"> <button class="filterbtn"><img
-                        src="../images/icons/filter-iceblue.svg" class="filteimg"> Filter</button></div>
+            <form action="">
+                <div class="inputDate"> Date:<input type="date">
+                    <button type="submit" class="filterbtn"><img src="../images/icons/filter-iceblue.svg"
+                            class="filteimg">
+                        Filter</button>
+                </div>
+            </form>
             <div class="apointTable">
                 <?php
 include("../connection.php");

@@ -67,7 +67,7 @@
                 $search_date = $_POST['search_date'];
             
                 // Construct the SQL query to search for sessions
-                $list2 = "SELECT * FROM session WHERE title LIKE '%$search_title%' AND date = '$search_date'";
+                $list2 = "SELECT * FROM session WHERE title LIKE '%$search_title%' OR date = '$search_date'";
                 $result = mysqli_query($conn, $list2);
             }else{
                 echo 'please inset all ';

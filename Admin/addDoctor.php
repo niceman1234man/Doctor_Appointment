@@ -34,25 +34,25 @@
                 </a>
             </div>
             <label for="name">User Name</label><br>
-            <input type="text" name="username" id="name" placeholder="User Name"><br>
+            <input type="text" name="username" id="name" placeholder="User Name" required><br>
             <label for="name">Name</label><br>
-            <input type="text" name="name" id="name" placeholder="Name Doctor"><br>
+            <input type="text" name="name" id="name" placeholder="Name Doctor"> required<br>
             <label for="email">Email</label><br>
-            <input type="email" name="email" id="email" placeholder="Email Address "><br>
+            <input type="email" name="email" id="email" placeholder="Email Address "> required<br>
             <label for="nic">NIC</label><br>
-            <input type="number" name="nic" id="nic" placeholder="NIC Number "><br>
+            <input type="number" name="nic" id="nic" placeholder="NIC Number "> required<br>
             <label for="telephone">Telephone</label><br>
-            <input type="number" name="telephone" id="telephone" placeholder="Telephone Number "><br>
+            <input type="number" name="telephone" id="telephone" placeholder="Telephone Number " required><br>
             <label for="speciality">Speciality</label><br>
-            <select name=" speciality" id="select">
+            <select name=" speciality" id="select" required>
                 <?php
                     echo $data2;
                     ?>
             </select><br>
             <label for="password">Password</label><br>
-            <input type="password" name="password" id="password" placeholder="Enter Password "><br>
+            <input type="password" name="password" id="password" placeholder="Enter Password "> required<br>
             <label for="confirm">Confirm Password</label><br>
-            <input type="password" name="confirm" id="confirm" placeholder="Confirm Password"><br>
+            <input type="password" name="confirm" id="confirm" placeholder="Confirm Password"> required<br>
             <input type="submit" value="Add" id="add-button" name="submit">
             <input type="reset" id="rest-button">
         </form>

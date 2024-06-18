@@ -142,6 +142,23 @@ tr {
   border-bottom: 1px solid rgb(12 0 0);
 }
 
+td {
+  border-bottom: 1px solid #ddd;
+  height: 50px;
+  vertical-align: bottom;
+}
+
+tr:nth-child(even) {
+  background-color: #badbcd;
+}
+tr:nth-child(odd) {
+  background-color: #baaeae;
+}
+tr:hover {
+  background-color: coral;
+  cursor: pointer;
+  
+}
 .form-button,
 .schedule-form-button {
   display: flex;

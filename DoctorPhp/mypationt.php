@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Patients</title>
     <link rel="stylesheet" type="text/css" href="../DoctorCss/index.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
 </head>
 
 <body>
 
     <?php include ("sidebar.php")?>
     <div class="main-part">
-        <div class="btnsearchDivePation"> <button class="backImg">
-                <img src="../images/icons/back-iceblue.svg" class="backImg">back</button>
+        <div class="btnsearchDivePation"><a href="DashBourd.php"> <button class="backImg">
+                    <img src="../images/icons/back-iceblue.svg" class="backImg">back</button></a>
             <input type="search" placeholder="search pationt name or email" class="searinputPationt">
             <button class="searPationtbtn">search</button><span class="todaysDate">
                 <h5>
@@ -28,12 +29,15 @@
         </div>
         <h4>My Patients</h4>
 
-        <div class="inputDate"><label for="Show Details About">Show Details About</label>
-            <select name="patioets" id="pationts">
-                <option value="mypationt">My Patients Only</option>
-                <option value="all patients">All Patients</option>
-            </select> <button class="filterbtn">
-                <img src="../images/icons/filter-iceblue.svg" class="filteimg">Filter</button>
+        <div class="inputDate">
+            <form action="">
+                <label for="Show Details About">Show Details About</label>
+                <select name="patioets" id="pationts">
+                    <option value="mypationt">My Patients Only</option>
+                    <option value="all patients">All Patients</option>
+                </select> <button type="submit" class="filterbtn">
+                    <img src="../images/icons/filter-iceblue.svg" class="filteimg">Filter</button>
+            </form>
         </div>
         <div class="apointTable">
             <?php
