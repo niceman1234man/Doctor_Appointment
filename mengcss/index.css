@@ -419,7 +419,13 @@ td {
   flex-wrap: nowrap;
 }
 
-.previos,
+.previos{
+  width: 10%;
+  height: 30px;
+  background-color: #5aa6ee;
+  font-size: large;
+
+}
 .next {
   width: 10%;
   height: 30px;
