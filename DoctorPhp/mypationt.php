@@ -15,8 +15,13 @@
     <div class="main-part">
         <div class="btnsearchDivePation"><a href="DashBourd.php"> <button class="backImg">
                     <img src="../images/icons/back-iceblue.svg" class="backImg">back</button></a>
-            <input type="search" placeholder="search pationt name or email" class="searinputPationt">
-            <button class="searPationtbtn">search</button><span class="todaysDate">
+            <form action="mypationt.php" method="post">
+                <input type="search" name="search_term" placeholder="search pationt name or email"
+                    class="searinputPationt">
+                <button type="submit" name="search" class="searPationtbtn">search</button>
+            </form>
+            <span class="todaysDate">
+
                 <h5>
                     <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br>
                         <?php  date_default_timezone_set('Asia/Kolkata');
@@ -45,9 +50,15 @@ include("../connection.php");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-$sql = "SELECT *FROM `patient` WHERE 1";
+if (isset($_POST['search'])) {
+    $search_term = $_POST['search_term'];
+    $list1 = "SELECT * FROM patient WHERE FirstName LIKE '%$search_term%' OR email LIKE '%$search_term%'";
+    $result = mysqli_query($conn, $list1);
+} else {
+  
+$sql = "SELECT *FROM patient";
 $result = $conn->query($sql);
+}
 
                     if ($result->num_rows > 0) {
                         echo "<table>";

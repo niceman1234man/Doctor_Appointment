@@ -12,11 +12,12 @@
 <body>
     <section>
         <?php
+        $id=$_POST["id"];
 include("../connection.php");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$sql = "SELECT * FROM session ";
+$sql = "SELECT * FROM session where id='$id'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
@@ -54,7 +55,7 @@ if ($result->num_rows > 0) {
             }
         }
         echo "    </table>";
-        echo "    <button class='btnSetAcount' onclick='hidSession()'>Ok</button><br>";
+        echo "    <button class='btnDletAcount' ><a href='session.php'>Ok</a></button><br>";
         echo "</div>";
         echo "</div>";
     }

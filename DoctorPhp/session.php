@@ -15,8 +15,11 @@
     <?php include ("sidebar.php")?>
     <div class="main-part">
         <div class="topTitle">
-            <div class="head"> <button class="backImg"><img src="../images//icons/back-iceblue.svg"
-                        class="backImg">back</button> <span class="set">My Sessions</span></div>
+            <div class="head">
+                <a href="DashBourd.php"><button class="backImg"><img src="../images//icons/back-iceblue.svg"
+                            class="backImg">back</button></a> <span class="set">My
+                    Sessions</span>
+            </div>
             <div class="todaysDate">
                 <h5>
                     <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br>
