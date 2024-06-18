@@ -357,6 +357,7 @@ td {
   flex-wrap: nowrap;
 }
 
+ 
 .viewPationtPage {
   background-color: rgb(18, 194, 238);
   padding-top: 2%;
@@ -369,6 +370,13 @@ td {
     opacity 20ms ease-in-out 10ms,
     transform 220ms ease-in-out 10ms;
   box-shadow: 10px 10px 10px 300px white;
+  
+.previos,.next {
+  width: 10%;
+  height: 30px;
+  background-color: #5aa6ee;
+  font-size: large;
+ 
 }
 
 .butonPa {
