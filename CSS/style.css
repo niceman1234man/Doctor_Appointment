@@ -151,14 +151,16 @@ td {
 tr:nth-child(even) {
   background-color: #badbcd;
 }
+
 tr:nth-child(odd) {
   background-color: #baaeae;
 }
+
 tr:hover {
   background-color: coral;
   cursor: pointer;
-  
 }
+
 .form-button,
 .schedule-form-button {
   display: flex;
