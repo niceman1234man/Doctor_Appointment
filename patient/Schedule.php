@@ -37,12 +37,11 @@
 
 
         <?php
-        include("connection.php");
+      include("../connection.php");
         try {
-         
-          
+           
             
-            $sqlquery = "SELECT * FROM schedule";
+            $sqlquery = "SELECT * FROM session";
             $result = mysqli_query($conn, $sqlquery);
            
         
@@ -55,8 +54,8 @@
                     echo "<li>
                     <h2>" . $row["title"] . "</h2>
                     <p>" . $row["fname"] . " " . $row["lname"] . "</p>
-                    <p>" . $row["schedule_date"] . "</p>
-                    <p>" . $row["startTime"] . "</p>
+                    <p>" . $row["date"] . "</p>
+                    <p>" . $row["time"] . "</p>
 
                     <a href='try.php?id=" . $row["id"] . "'><button class='booknowBtn' >Book Now</button></a>
                 </li>";
@@ -83,7 +82,7 @@
 </div>    
 
 
-<!--<script src="Schedule.js"></script>-->
+ 
 
 </body>
 </html>
