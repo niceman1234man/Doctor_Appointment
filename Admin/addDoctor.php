@@ -34,9 +34,9 @@
                 </a>
             </div>
             <label for="name">User Name</label><br>
-            <input type="text" name="username" id="name" placeholder="User Name" required><br>
+            <input type="text" name="username" id="name" placeholder="User Name" required pattern="^[a-zA-Z\s]+$"><br>
             <label for="name">Name</label><br>
-            <input type="text" name="name" id="name" placeholder="Name Doctor" required> <br>
+            <input type="text" name="name" id="name" placeholder="Name Doctor" required>pattern="^[a-zA-Z\s]+$" <br>
             <label for="email">Email</label><br>
             <input type="email" name="email" id="email" placeholder="Email Address " required> <br>
             <label for="nic">NIC</label><br>
@@ -56,7 +56,8 @@
             <input type="submit" value="Add" id="add-button" name="submit">
             <input type="reset" id="rest-button">
         </form>
-        <div id="cancelbtn"><a href="Doctors.php"><button>Cancel</button></a></div>
+        <div id="cancelbtn" style="display: inline-block; margin-left: 10px;"><a
+                href="Doctors.php"><button>Cancel</button></a></div>
     </div>
     <script src="../JS/index.js"></script>
 </body>

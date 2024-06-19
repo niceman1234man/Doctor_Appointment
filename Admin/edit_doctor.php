@@ -60,6 +60,7 @@ if (isset($_POST['id'])) {
             <input type="password" name="confirm" id="confirm" placeholder="Confirm Password"  required><br>
             <input type="submit" value="Update" id="add-button" name="update">
         </form>
+       <div id="cancelbt"><a href="Doctors.php"><button>Cancel</button></a></div> 
     </div>
     ';
 
