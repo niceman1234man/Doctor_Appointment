@@ -39,16 +39,15 @@ if (mysqli_num_rows($result) > 0) {
         $email = $row["email"];
         $telephone = $row["telephone"];
         $speciality = $row["speciality"];
-?> <div>
-            <label for="View Details.">View Details.</label><br>
+?> 
+<div>            <label for="View Details.">View Details.</label><br>
             <label for="Name:.">Name</label><br>
             <input type="text" name="name" class="inpSetAcount" readonly value="<?php echo $fName ; ?>"><br>
             <label for="Email:">Email:</label><br>
             <input type="email" name="email" class="inpSetAcount" readonly value="<?php echo $email; ?>"><br>
             <label for=" NIC:"> NIC:</label><br>
             <input type="text" name="NIC" class="inpSetAcount" readonly value="<?php echo $nic; ?>"><br>
-        </div>
-        <div>
+        
             <label for="Name">User Name: </label><br>
             <input type="text" required name="userName" class="inpSetAcount" value="<?php echo $userName; ?>"><br>
             <label for="Telephone:"> Telephone:</label><br>

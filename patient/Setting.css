@@ -21,7 +21,7 @@
 }
 
 .backbtn:hover {
-  background-color: rgb(64 64 138);
+  background-color: rgb(64, 64, 138);
 }
 
 .h01 {
@@ -44,7 +44,7 @@
   list-style-type: none;
   width: 800px;
   height: 100px;
-  background-color: rgb(21 210 210);
+  background-color: rgb(21, 210, 210);
   text-align: center;
   border: none;
   border-radius: 10px;
@@ -53,5 +53,5 @@
 }
 
 .order li:hover {
-  background-color: rgb(88 135 135);
+  background-color: rgb(88, 135, 135);
 }

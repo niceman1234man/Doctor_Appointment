@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking</title>
     <link rel="stylesheet" href="Book.css">
 </head>
-
 <body>
+           
+ 
     <div class="whole">
         <div>
         <?php
@@ -19,28 +19,33 @@
             <div class="head">
                 <button class="backbtn">← Back</button>
                 <h1 class="h01">MY Bookings history</h1>
-                <h4 class="currentDate">currentDate <br><?php date_default_timezone_set('Asia/Kolkata');
+                 
+                <p class="currentDate">Today's date <img src="../img/calendar.svg" alt=""><br>
+            <?php date_default_timezone_set('Asia/Kolkata');
              $today=date('Y-m-d');
-              echo $today;?> </p>
-                </h4>
-
+              echo $today;?> </p><br>
             </div>
-            <div class="TopAjust">
+            <div class="TopAjust" >
                 <h3>My Bookings(num)</h3>
                 <div class="innerDiv">
                     Date: <input class="text" type="date">
                     <button class="filterBtn">Filter</button>
                 </div>
             </div>
-            
+        
+         <div class="rowMaker" >
             <?php
    include("connection.php");
-    if (isset($_GET['id'])) {
-    // Retrieve the form data
-    $id = $_GET['id'];
+    
+    if(isset($_GET["id"])){
+        $id = $_GET['id'];
+    
+       
+    try{
 
-    session_start();
-    if (isset($_SESSION["value"])) {
+        $id = $_GET['id'];
+        session_start();
+   
         $value = $_SESSION["value"];
           
   
@@ -51,51 +56,60 @@
             
 
             $current_date = date('Y-m-d');  
-            $sqlinsert = "INSERT INTO Book (datenow, docName, title, schedule_date, startTime, numappoint)
-             VALUES ('$current_date', '$name', '$title', '$schedule_date', '$start', '$value')";
+            $sqlinsert = "INSERT INTO Book (datenow, docName, title, schedule_date, startTime, numappoint,scheduleid)
+             VALUES ('$current_date', '$name', '$title', '$schedule_date', '$start', '$value','$id')";
             $query = mysqli_query($conn, $sqlinsert);
 
 
             $qura = "UPDATE appointment SET appoinid = '$value' WHERE scheduleid = '$id'";
             mysqli_query($conn,$qura);
 
+               //<a href='dataBase.php?value=" . $row["numappoint"] . "," . $row["scheduleid"] . "'>
+         
+    }
+    catch(mysqli_sql_exception $e){
+        echo"Error on Booking";
 
-             if( ($query)) {
+    }
+
+}
 
                 $sql = "SELECT * FROM Book";
                 $result = mysqli_query($conn, $sql);
 
                 // Display the data
-               echo" <div class=\"rowMaker >";
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<div class=\"book\">
-                        <p>" . $row["datenow"] . "</p>
-                        <h2>" . $row["title"] . "</h2>
-                        <p>Appointment Number:</p>
-                        <p>" . $row["numappoint"] . "</p>
-                        <p>" . $row["docName"] . "</p>
-                        <p>" . $row["schedule_date"] . "</p>
-                        <p>" . $row["startTime"] . "</p>
-                        <button>Cancel Booking</button>
-                    </div>";
-                }
-                "</div>";
-                
-            }
+               
+                 
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<div class=\"book\">
+                            <p>" . $row["datenow"] . "</p>
+                            <h2>" . $row["title"] . "</h2>
+                            <p>Appointment Number:</p>
+                            <p>" . $row["numappoint"] . "</p>
+                            <p>" . $row["docName"] . "</p>
+                            <p>" . $row["schedule_date"] . "</p>
+                            <p>" . $row["startTime"] . "</p>
+                            <button onclick=\"deletefun('" . $row["numappoint"] . "', '" . $row["scheduleid"] . "')\">Cancel Booking</button>
+                        </div>";
+                    }
+                    echo"<div id=\"wow\" class=\"popUp\"></div>";
             
-            else  {
-                echo "Error on entering data on Book";
-            }
-        }
-    }  
+            
+  mysqli_close($conn);       
+       
 ?>
-         
-   
-  </div>
- </div>
-        
-        
-         
-</body>
 
+</div>
+         
+  </div> 
+  </div>
+
+
+
+     
+               
+ 
+ </div>
+  <script src="Book.js"></script>
+</body>
 </html>

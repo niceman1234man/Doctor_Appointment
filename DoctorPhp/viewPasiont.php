@@ -37,8 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="Email:">Email:</label><br>
             <input type="email" required name="email" class="inpSetAcount" value="<?php echo $row["email"]; ?>"
                 readonly><br>
-        </div>
-        <div>
+    
             <label for=" NIC:"> NIC:</label><br>
             <input type="text" name="NIC" class="inpSetAcount" value="<?php echo $row["NIC"]; ?>" readonly><br>
             <label for="Telephone:"> Telephone:</label><br>
@@ -46,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 readonly><br>
             <!-- <label for=" Address"> Address:</label><br>
             <input type="text" name="Address" class="inpSetAcount" value="<?php //echo $row["Address"]; ?>" readonly><br> -->
-            <button class="btnSetAcount"><a href="mypationt.php">ok</a></button><br>
+            <a href="mypationt.php"><button class="btnSetAcount">ok</button></a><br>
         </div>
     </div>
     <?php

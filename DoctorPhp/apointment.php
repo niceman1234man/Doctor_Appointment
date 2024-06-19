@@ -30,13 +30,7 @@
                 </div>
             </div>
             <h3>My Apointment</h3>
-            <form action="">
-                <div class="inputDate"> Date:<input type="date">
-                    <button type="submit" class="filterbtn"><img src="../images/icons/filter-iceblue.svg"
-                            class="filteimg">
-                        Filter</button>
-                </div>
-            </form>
+
             <div class="apointTable">
                 <?php
 include("../connection.php");
