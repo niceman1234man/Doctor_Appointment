@@ -17,7 +17,7 @@ if (isset($_POST['id'])) {
     } else {
         // Display confirmation dialog
         echo '<center>
-        <div style="height: 40%; width: 20%; position: absolute; top: 30%; left: 40%;border: 1px solid black;border-radius: 5px;">
+        <div style="height: 40%; width: 20%; position: absolute; top: 30%; left: 40%;border: 1px solid black;border-radius: 5px;box-shadow:10px 10px 10px 10px blue;">
             <h1>Are you sure you want to delete this session?</h1>
             <form method="post">
                 <input type="hidden" name="id" value="'.$id.'">

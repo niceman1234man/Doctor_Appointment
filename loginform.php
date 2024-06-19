@@ -15,33 +15,28 @@
                 <h2>LOGIN</h2>
                 <div class="input-text">
                     <form action="login.php" method="post">
-                        <span class="icon"></span>
-                        <label>User Name</label>
-                        <input type="text" id="email" name="uname" required />
-
-
-                        <div class="input-text">
-                            <span class="icon"></span>
-                            <label>Password</label>
-                            <input type="password" id="password" name="password" required />
-                        </div>
-
-                        <div class="remeber_forget">
-                            <input type="checkbox">
-                            <label>Remember me</label>
-                            <a href="#">Forget password</a><br>
-                        </div>
-                        <button type="submit" class="login-btn btn-primary btn" name="login">Login</button><br>
-
+                        <label for="uname" class="form-label">User Name: </label>
+                        <input type="text" name="uname" class="input-text" placeholder="User Name" required>
+                        <label for="password" class="form-label">Password: </label>
+                        <input type="password" name="password" class="input-text" placeholder="Password" required>
                 </div>
+                <input type="submit" value="LOGIN" class="login-btn btn-primary-soft btn">
                 </form>
-                <div class="Login_register">
-                    <a href="loginpage/signup.html" class="hover-link1 non-style-link">Sign Up</a>
-                    <a href="loginpage/ignup.html" class="sub-class">Don't have an account?</a>
-                </div>
-            </div>
+                <br>
 
-        </center>
+                </form>
+            </div>
+            <div class="Login_register">
+                <a href="loginpage/signup.html" class="hover-link1 non-style-link">Sign Up</a>
+
+                <a href="loginpage/signup.html" class="sub-class">Don't have an account?</a>
+
+
+            </div>
+            </form>
+    </div>
+
+    </center>
     </div>
 </body>
 

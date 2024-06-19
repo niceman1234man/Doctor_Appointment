@@ -108,7 +108,7 @@ body {
 }
 
 .slid-bar-details li:hover {
-  background: rgb(184 143 143);
+  background: rgb(201, 198, 198);
   color: white;
   padding: 5px;
 }
@@ -165,7 +165,7 @@ tr:nth-child(odd) {
 }
 
 tr:hover {
-  background-color: rgb(101, 200, 135);
+  background-color: rgb(215, 220, 216);
   cursor: pointer;
 }
 

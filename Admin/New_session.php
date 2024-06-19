@@ -1,6 +1,35 @@
 <?php
 $err="";
 $message="";
+
+function validateTime($time) {
+    // Convert the input time to a DateTime object
+    $selectedTime = new DateTime($time);
+
+    // Get the current time
+    $currentTime = new DateTime();
+
+    // Check if the selected time is on or after the current time
+    if ($selectedTime >= $currentTime) {
+        return true; // Time is valid
+    } else {
+        return false; // Time is in the past
+    }
+}
+function validateDate($date) {
+    // Convert the input date to a DateTime object
+    $selectedDate = new DateTime($date);
+
+    // Get the current date
+    $today = new DateTime();
+
+    // Check if the selected date is on or after the current date
+    if ($selectedDate >= $today) {
+        return true; // Date is valid
+    } else {
+        return false; // Date is in the past
+    }
+}
 include("../connection.php");
 if(isset($_POST["submit"])){
 $title=$_POST["title"];
@@ -9,16 +38,26 @@ $num=$_POST["num"];
 $time=$_POST["time"];
 $speciality=$_POST["speciality"];
 
-$sql = "INSERT INTO session (title, dname, num, date, time) 
-VALUES (?, ?, ?, ?, ?)";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("sssss", $title, $speciality, $num, $date,$time);
-
-if ($stmt->execute()) {
-$message= "New Session Added!";
-} else {
-$err= "Error: " . $stmt->error;
+    if (validateDate($date)&& validateTime($time)) {
+        // Date is valid, proceed with form processing
+        $sql = "INSERT INTO session (title, dname, num, date, time) 
+        VALUES (?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sssss", $title, $speciality, $num, $date,$time);
+        
+        if ($stmt->execute()) {
+        $message= "New Session Added!";
+        } else {
+        $err= "Error: " . $stmt->error;
+        }
+    } else {
+        // Date is in the past, display an error message
+        $err= "Please select  after the current date and time.";
+    }
 }
+
+
+
 
 echo '<center>
       <div style="height: 30%; width: 20%; position:
@@ -32,5 +71,5 @@ echo '<center>
     </div>
 
     </center>';
-}
+
 ?>

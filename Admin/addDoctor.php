@@ -36,13 +36,14 @@
             <label for="name">User Name</label><br>
             <input type="text" name="username" id="name" placeholder="User Name" required pattern="^[a-zA-Z\s]+$"><br>
             <label for="name">Name</label><br>
-            <input type="text" name="name" id="name" placeholder="Name Doctor" required>pattern="^[a-zA-Z\s]+$" <br>
+            <input type="text" name="name" id="name" placeholder="Name Doctor" required pattern="^[a-zA-Z\s]+$"> <br>
             <label for="email">Email</label><br>
             <input type="email" name="email" id="email" placeholder="Email Address " required> <br>
             <label for="nic">NIC</label><br>
             <input type="number" name="nic" id="nic" placeholder="NIC Number " required> <br>
             <label for="telephone">Telephone</label><br>
-            <input type="number" name="telephone" id="telephone" placeholder="Telephone Number " required><br>
+            <input type="number" name="telephone" id="telephone" placeholder=" e.g +251987564321 "
+                pattern="\+[0-9]{1,3}[ ]{1}[0-9]{3}[ ]{1}[0-9]{3}[ ]{1}[0-9]{4}" required><br>
             <label for="speciality">Speciality</label><br>
             <select name=" speciality" id="select" required>
                 <?php

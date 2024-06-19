@@ -11,8 +11,11 @@ if(isset($_POST["update"])){
   $password=$_POST["password"];
   $confirm=$_POST["confirm"];
   $id=$_POST["id"];
-  $sql = "UPDATE doctor SET name='$name', email='$email',nic='$nic',telephone='$telephone',speciality='$speciality',password='$password' WHERE id='$id'";
   if($password==$confirm){
+  $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+  
+  $sql = "UPDATE doctor SET name='$name', email='$email',nic='$nic',telephone='$telephone',speciality='$speciality',password='$hashedPassword' WHERE id='$id'";
+
       mysqli_query($conn,$sql);
       $message= $name."<br> Doctor updated!";
   }else{

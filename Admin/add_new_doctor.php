@@ -10,14 +10,17 @@ if (isset($_POST["submit"])){
     $speciality = $_POST["speciality"];
     $password = $_POST["password"];
     $confirm = $_POST["confirm"];
+    
     $message="";
     $err="";
 
     if ($password == $confirm) {
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $sql = "INSERT INTO doctor (username,name, email, nic, telephone, speciality, password) 
                 VALUES (?, ?, ?, ?, ?, ?,?)";
 
-$sql2="INSERT INTO user (username, password, usertype) Values(' $username','  $password','d')";      
+$sql2="INSERT INTO user (username, password, usertype) Values(' $username','          $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+','d')";      
         $stmt = $conn->prepare($sql);
         
         $stmt->bind_param("ssssss", $name, $email, $nic, $telephone, $speciality, $password);

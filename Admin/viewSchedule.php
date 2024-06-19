@@ -36,15 +36,8 @@ if (isset($_POST["id"])) {
             <p>Doctor of This Session: ' . $spec . '</p>
             <p>Scheduled Date: ' . $d . '</p>
             <p>Scheduled Time: ' . $t . '</p>
-            <h4>Patients That Already Registered for this session (1/50)</h4>
-            <table>
-                <tr>
-                    <th>Patient ID</th>
-                    <th>Patient Name</th>
-                    <th>Appointment Number</th>
-                    <th>Patient Telephone</th>
-                </tr>
-            </table>
+             <a href="Schedule.php"><button id="ok"  style="padding:2%;background:blue;color:white;">OK</button></a>
+           
         </div>';
     } else {
         echo "No session found with the given ID.";

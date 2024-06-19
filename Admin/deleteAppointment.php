@@ -17,13 +17,13 @@ if (isset($_POST['id'])) {
     } else {
         // Display confirmation dialog
         echo '<center>
-        <div style="height: 40%; width: 20%; position: absolute; top: 30%; left: 40%;border: 1px solid black;border-radius: 5px;">
+        <div style="height: 40%; width: 20%; position: absolute; top: 30%; left: 40%;border: 1px solid black;border-radius: 5px;box-shadow:10px 10px 10px 10px blue;">
             <h1>Are you sure you want to delete this Appointment?</h1>
             <form method="post">
                 <input type="hidden" name="id" value="'.$id.'">
                 <input type="hidden" name="confirm" value="1">
-                <button style="text-decoration-style: none; padding: 2%; border-radius: 5%;background-color: rgb(102, 102, 156); color: white;">Confirm</button>
-                <a href="Appointment.php" style="text-decoration-style: none; padding: 2%; border-radius: 5%;background-color: rgb(102, 102, 156); color: white;">Cancel</a>
+                <button style="text-decoration-style: none; padding: 2%; border-radius: 5px;background-color: rgb(102, 102, 156); color: white;">Confirm</button>
+                <a href="Appointment.php" style="text-decoration-style: none; padding: 2%; border-radius: 5px;background-color: rgb(102, 102, 156); color: white;">Cancel</a>
             </form>
         </div>
         </center>';
