@@ -79,6 +79,7 @@ if(mysqli_num_rows($result) > 0) {
         $d = $row["date"];
         $t = $row["time"];
         $apo_date=$row["apo_date"];
+        $id=$row["id"];
         $data .= '<tr>
             <td>' .  $name . '</td>
             <td>' .  $num . '</td>
@@ -87,8 +88,13 @@ if(mysqli_num_rows($result) > 0) {
              <td>' .  $title . '</td>
               <td>' .   $apo_date . '</td>
             <td>
-                
-                <button><img src="../img/icons/delete-iceblue.svg" alt="">Cancel</button>
+                <div class="schedule-form-button">
+            <form action="deleteAppointment.php" method="post" style="display:flex;">
+        <input type="hidden" name="id" value="'. $id .'">
+        <button type="submit" class="delete-button">
+            <img src="../img/icons/delete-iceblue.svg" alt="Remove" value="Remove">
+        </button>
+        </form>
             </td>
         </tr>';
     }

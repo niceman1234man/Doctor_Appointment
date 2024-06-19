@@ -14,7 +14,7 @@ if(isset($_POST["update"])){
   $sql = "UPDATE doctor SET name='$name', email='$email',nic='$nic',telephone='$telephone',speciality='$speciality',password='$password' WHERE id='$id'";
   if($password==$confirm){
       mysqli_query($conn,$sql);
-      $message= " Doctor updated!";
+      $message= $name."<br> Doctor updated!";
   }else{
       $err="please insert correct password!";
   }
@@ -22,7 +22,7 @@ if(isset($_POST["update"])){
         <div style="height: 30%; width: 20%; position:
          absolute; top: 30%; 
         left: 40%;border: 1px solid black;
-        border-radius: 5px;
+        border-radius: 5px;  box-shadow: 10px 10px 10px  rgb(60 24 202);
         ">
          <h1>'.   $message . $err .'</h1> 
          <button  style="text-decoration-style: none; padding: 2%; border-radius: 5%;background-color: rgb(102, 102, 156); color: white;">  <a href="Doctors.php">CLOSE</a></button>
