@@ -45,23 +45,23 @@
                     <h4 style="left:25%;position:absolute">status</h4>
                     <table>
 
-                        <tr>
-                            <td>
+                        <tr >
+                            <td  class="status">
                                 <div><a>All Doctors <img src="../images/icons/doctors-hover.svg" class="statusimg"></a>
                                 </div>
                             </td>
-                            <td>
+                            <td class="status">
                                 <div> <a> All Patients <img src="../images/icons/patients-hover.svg"
                                             class="statusimg"></a>
                                 </div>
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td  class="status">
                                 <div><a>NewBooking <img src="../images/icons/book-hover.svg" class="statusimg"></a>
                                 </div>
                             </td>
-                            <td>
+                            <td  class="status">
                                 <div><a>Today Sessions<img src="../images/icons/session-iceblue.svg"
                                             class="statusimg"></a>
                                 </div>
