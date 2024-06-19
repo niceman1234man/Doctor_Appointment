@@ -265,7 +265,7 @@ td {
 }
 
 .btnsearchDivePation {
-  display: flex;
+  display: block;
   width: 100%;
 }
 
@@ -333,8 +333,7 @@ td {
 
 .Appointments,
 .table,
-.apointTable,
-.inputDate {
+.apointTable {
   display: block;
   width: 100%;
   flex-wrap: nowrap;
@@ -467,4 +466,8 @@ td {
   background: hsl(210, 35%, 65%);
   left: 50%;
   border-radius: 5px;
+}
+
+.mypation_search {
+  width: 80%;
 }
