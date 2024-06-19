@@ -102,15 +102,18 @@ body {
   border-radius: 5px;
   display: inline;
 }
-.slid-bar-details a:visited{
+
+.slid-bar-details a:visited {
   color: black;
 }
+
 .slid-bar-details a:hover {
   background: rgb(184 143 143);
   color: white;
   padding: 5px;
 }
-.slid-bar-details a:active{
+
+.slid-bar-details a:active {
   background: rgb(113, 206, 164);
 }
 
@@ -158,7 +161,7 @@ tr:nth-child(even) {
 }
 
 tr:nth-child(odd) {
-  background-color:rgb(246, 243, 243)
+  background-color: rgb(246, 243, 243);
 }
 
 tr:hover {
