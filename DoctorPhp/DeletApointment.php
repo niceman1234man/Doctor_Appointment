@@ -1,69 +1,42 @@
 <?php
-include("connection.php");
+include("../connection.php");
+$message = "";
+$err = "";
 
-if (isset($_POST['btnDletAcount']) && isset($_POST['confirm']) && $_POST['confirm'] == 'yes') {
-    $appointmentNumber = $_POST['appointmentNumber'];
+if (isset($_POST['id'])) {
+    $id = $_POST['id'];
 
-    $query = "DELETE FROM `Apointmant` WHERE `Number` = ?";
-    $statement = $connection->prepare($query);
-    $statement->bind_param("s", $appointmentNumber);
-
-    if ($statement->execute()) {
-        echo "Record deleted successfully.";
-    } else {
-        echo "Error deleting record: " . $statement->error;
-    }
-    $statement->close();
-} else {
-    $appointmentNumber = isset($_POST['appointmentNumber']) ? $_POST['appointmentNumber'] : "";
-
-    $query = "SELECT `Patient name`, `Number`, `Session Title`, `Session Date & Time`, `Appointment Date` 
-             FROM `Apointmant` 
-             WHERE `Number` = ?";
-    $statement = $connection->prepare($query);
-    $statement->bind_param("s", $appointmentNumber);
-
-    if ($statement->execute()) {
-        $result = $statement->get_result();
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            echo "Patient Name: " . $row["Patient name"] . "<br>";
-            echo "Appointment Number: " . $row["Number"] . "<br>";
-            echo "Session Title: " . $row["Session Title"] . "<br>";
-            echo "Session Date & Time: " . $row["Session Date & Time"] . "<br>";
-            echo "Appointment Date: " . $row["Appointment Date"] . "<br>";
+    // Add confirmation dialog
+    if(isset($_POST['confirm'])) {
+        $delete_query = "DELETE FROM appointment WHERE id = '$id'";
+        if (mysqli_query($conn, $delete_query)) {
+            $message = "Session deleted successfully";
         } else {
-            echo "No records found.";
+            $err = "Error deleting session: " . mysqli_error($conn);
         }
     } else {
-        echo "Error retrieving record: " . $statement->error;
-    }
-    $statement->close();
-}
-
-$connection->close();
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delep Apointment</title>
-    <link rel="stylesheet" type="text/css" href="../DoctorCss/index.css">
-</head>
-<body>
-    <section>
-        <div class="cancelApoin">
-            <div>
-            <label for="Are you sure?">Are you sure?</label><br>
-            <label for="You want to delete this record(Test Doctor).">You want to delete this record.</label><br>
-            <label for="Appointment number">Appointment number</label>
-            <input type="text" name="appointmentNumber" value="<?php echo $appointmentNumber; ?>" readonly><br>
-            <button class="btnDletAcount" name="confirm" value="yes">Yes</button>
-            <button class="btnDletAcount" ><a href="apointment.php">No</a></button><br>
-            </div>
+        // Display confirmation dialog
+        echo '<center>
+        <div style="height: 40%; width: 20%; position: absolute; top: 30%; left: 40%;border: 1px solid black;border-radius: 5px;">
+            <h1>Are you sure you want to delete this Appointment?</h1>
+            <form method="post">
+                <input type="hidden" name="id" value="'.$id.'">
+                <input type="hidden" name="confirm" value="1">
+                <button style="text-decoration-style: none; padding: 2%; border-radius: 5%;background-color: rgb(102, 102, 156); color: white;">Confirm</button>
+                <a href="apointment.php" style="text-decoration-style: none; padding: 2%; border-radius: 5%;background-color: rgb(102, 102, 156); color: white;">Cancel</a>
+            </form>
         </div>
-    </section>
-</body>
-</html>
+        </center>';
+        return;
+    }
+
+    echo '<center>
+    <div style="height: 40%; width: 30%; position: absolute; top: 30%; left: 40%;border: 1px solid black;border-radius: 5px;">
+        <h1>'.$message.$err.'</h1>
+        <button style="text-decoration-style: none; padding: 2%; border-radius: 5%;background-color: rgb(102, 102, 156); color: white;"><a href="apointment.php">CLOSE</a></button>
+    </div>
+    </center>';
+} else {
+    echo "Session ID not provided.";
+}
+?>
