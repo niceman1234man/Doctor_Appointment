@@ -1,4 +1,4 @@
-(function () {
+(function name() {
   document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('account-details-form');
     const emailInput = document.getElementById('email');

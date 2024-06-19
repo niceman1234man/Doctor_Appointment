@@ -19,8 +19,10 @@
    ?>
     <div class="main-part">
         <img src="../img/search.svg" alt="search" id="search-img">
-        <input type="search" placeholder="search Doctor Name or Email" id="search">
-        <button id="search-button">search</button>
+        <form action="Doctors.php" method="post">
+            <input type="search" placeholder="Search Doctor Name or Email" id="search" name="search_term">
+            <input type="submit" name="search" id="search-button" value="Search">
+        </form>
         <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br>
             <?php date_default_timezone_set('Asia/Kolkata');
              $today=date('Y-m-d');
@@ -55,19 +57,13 @@
                         <th>Appointment Number</th>
                         <th>Patient Name </th>
                         <th>Doctor</th>
-                        <th>Session</th>
+                        <th>Session Title</th>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>4</td>
-                        <td>5</td>
 
-                    </tr>
                 </table>
 
-                <form action=""><input type="submit" value="Show all Appointments" class="show-button" name="show_app">
-                </form>
+                <a href="Appointment.php"><button class="show-button" name="show_sess">Show all
+                        Appointments</button></a>
 
             </div>
             <div class="main-part-session">
@@ -81,14 +77,10 @@
                         <th>Schedule Date&time</th>
                     </tr>
                     <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>4</td>
-
 
                     </tr>
                 </table>
-                <button class="show-button" name="show_sess">Show all Sesssions</button>
+                <a href="Schedule.php"><button class="show-button" name="show_sess">Show all Sesssions</button></a>
             </div>
         </div>
     </div>

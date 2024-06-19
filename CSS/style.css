@@ -4,7 +4,8 @@ body {
   margin-top: 2%;
 }
 
-.side-bar {
+.side-bar,
+.side_bar {
   width: 15%;
   border-right: 1px solid black;
 }
@@ -25,14 +26,16 @@ body {
   cursor: pointer;
 }
 
-.slid-bar-details {
+.slid-bar-details,
+.doctor-sidebar {
   list-style-type: none;
   padding: 1%;
   font-size: larger;
   font-weight: bold;
 }
 
-.slid-bar-details a {
+.slid-bar-details a,
+.doctor-sidebar a {
   padding: 1%;
   text-decoration: none;
 }
@@ -42,6 +45,10 @@ body {
 }
 
 .side-bar #admin-img {
+  width: 20%;
+}
+
+.side_bar .sidbarUserImg {
   width: 20%;
 }
 
@@ -90,10 +97,18 @@ body {
   display: inline;
 }
 
+.slid-bar-details li:visited {
+  color: black;
+}
+
 .slid-bar-details li:hover {
   background: rgb(184 143 143);
-  color: white;
+  color: #2e20f3;
   padding: 5px;
+}
+
+.slid-bar-details li:active {
+  background: rgb(113, 206, 164);
 }
 
 .main-part #search {
@@ -129,6 +144,30 @@ tr {
   border-bottom: 1px solid rgb(12 0 0);
 }
 
+td {
+  border-bottom: 1px solid #ddd;
+  height: 50px;
+  vertical-align: bottom;
+}
+
+tr:nth-child(even) {
+  background-color: #f4f8f6e2;
+}
+
+tr:nth-child(odd) {
+  background-color: rgb(246, 243, 243);
+}
+
+tr:hover {
+  cursor: pointer;
+}
+
+.status:hover {
+  background-color: rgb(101, 200, 135);
+  color: #0a78df;
+  font-size: large;
+}
+
 .form-button,
 .schedule-form-button {
   display: flex;
@@ -162,4 +201,33 @@ tr {
 
 h3 {
   color: blue;
+}
+
+#bt1,
+#b2,
+#bt3 {
+  width: 800px;
+  margin: 2%;
+}
+
+.top_title_setting {
+  display: flex;
+  justify-content: space-between;
+}
+
+.settingbtn {
+  margin-top: 1%;
+  margin-left: 1%;
+  width: 100%;
+}
+
+.setingbtn {
+  background-color: white;
+  margin: 0.5%;
+  border-radius: 10px;
+  width: 80%;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: medium;
 }

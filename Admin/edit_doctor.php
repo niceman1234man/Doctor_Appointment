@@ -39,27 +39,28 @@ if (isset($_POST['id'])) {
         <form action="doctor_edit.php" method="post">
             <div class="pop-up-header">
                 <h2>Edit Doctor</h2>
-                <p id="x-sign">&times;</p>
+                <p id="x-sign"></p>
             </div>
             <label for="name">Name</label><br>
-            <input type="text" name="name" id="name" placeholder="Name Doctor" value="' . $name . '"><br>
+            <input type="text" name="name" id="name" placeholder="Name Doctor" value="' . $name . '"  required><br>
             <label for="email">Email</label><br>
-            <input type="email" name="email" id="email" placeholder="Email Address " value="' . $email . '"><br>
+            <input type="email" name="email" id="email" placeholder="Email Address " value="' . $email . '"  required><br>
             <label for="nic">NIC</label><br>
-            <input type="number" name="nic" id="nic" placeholder="NIC Number " value="' . $nic . '"><br>
+            <input type="number" name="nic" id="nic" placeholder="NIC Number " value="' . $nic . '"  required><br>
             <label for="telephone">Telephone</label><br>
             <input type="number" name="telephone" value="' . $telephone . '" id="telephone"
-                placeholder="Telephone Number "><br>
+                placeholder="Telephone Number "  required><br>
             <label for="speciality">Speciality</label><br>
-            <select name="speciality" id="select">' . $data . '
+            <select name="speciality" id="select"  required>' . $data . '
             </select><br>
             <input type="hidden" name="id" id="nic" " value="' . $id . '"><br>
             <label for="password">Password</label><br>
-            <input type="password" name="password" id="password" placeholder="Enter Password "><br>
+            <input type="password" name="password" id="password" placeholder="Enter Password "  required><br>
             <label for="confirm">Confirm Password</label><br>
-            <input type="password" name="confirm" id="confirm" placeholder="Confirm Password"><br>
+            <input type="password" name="confirm" id="confirm" placeholder="Confirm Password"  required><br>
             <input type="submit" value="Update" id="add-button" name="update">
         </form>
+       <div id="cancelbt"><a href="Doctors.php"><button>Cancel</button></a></div> 
     </div>
     ';
 

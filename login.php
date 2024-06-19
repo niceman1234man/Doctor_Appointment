@@ -16,7 +16,7 @@ include("connection.php");
             header("Location:patient/Home.php");
             exit; 
         }else if($row["usertype"] == 'd'){
-            header("Location:Doctorphp/DashBourd.php");
+            header("Location:DoctorPhp/DashBourd.php");
             exit;
         }else if($row["usertype"] == 'a'){
             header("Location: Admin/admin.php");

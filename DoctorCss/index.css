@@ -186,9 +186,16 @@ td {
 
 .inputDate {
   display: flex;
+  width: 100%;
   margin: 3%;
   height: 10%;
-  border: 1px;
+  border: 1px solid;
+}
+
+.onMyPationtImputHead {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .inputDate label {
@@ -222,17 +229,6 @@ td {
 
 .setindbtncontener {
   margin: 0 0 2% 0.5%;
-}
-
-.setingbtn {
-  background-color: white;
-  margin: 0.5%;
-  border-radius: 10px;
-  width: 80%;
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: medium;
 }
 
 .setingbtn:hover {
@@ -269,7 +265,7 @@ td {
 }
 
 .btnsearchDivePation {
-  display: flex;
+  display: block;
   width: 100%;
 }
 
@@ -337,13 +333,14 @@ td {
 
 .Appointments,
 .table,
-.apointTable,
-.inputDate {
+.apointTable {
   display: block;
   width: 100%;
   flex-wrap: nowrap;
 }
 
+/*
+>>>>>>> d9379da791fbcc2bc966df0a1989fd31d57377ef
 .viewPationtPage {
   background-color: rgb(18, 194, 238);
   padding-top: 2%;
@@ -356,8 +353,13 @@ td {
     opacity 20ms ease-in-out 10ms,
     transform 220ms ease-in-out 10ms;
   box-shadow: 10px 10px 10px 300px white;
+.previos,.next {
+  width: 10%;
+  height: 30px;
+  background-color: #5aa6ee;
+  font-size: large;
 }
-
+} */
 .butonPa {
   margin: 5%;
   width: 5px;
@@ -396,18 +398,30 @@ td {
   align-items: center;
 }
 
+.delDoc,
 .cancelApoin,
 .viewSessionDoc,
 .cancelSessionDoc,
 .Editdoc,
 .viewDocdetail,
 .viewPationtPage {
-  align-items: center;
+  /*
   border: 1px solid;
   background-color: wheat;
+  */
+  margin: 5%;
+  width: 80%;
+  height: 50%;
+  left: 40%;
+  font-weight: bold;
+  line-height: 25px;
+  top: 30%;
+  border: 1px solid black;
+  box-shadow: 10px 10px 10px 20px rgb(175, 163, 186);
+  padding: 5%;
+  border-radius: 5px;
   display: flex;
   justify-content: space-around;
-  margin: 5%;
 }
 
 .cancelApoin input,
@@ -429,4 +443,31 @@ td {
   margin: 1%;
   width: 100%;
   height: 30px;
+}
+
+.view_app {
+  width: 40%;
+  height: 50%;
+  position: absolute;
+  left: 30%;
+  font-weight: bold;
+  line-height: 25px;
+  top: 20%;
+  border: 1px solid black;
+  box-shadow: 10px 10px 10px 20px rgb(175, 163, 186);
+  padding: 5%;
+  border-radius: 5px;
+}
+
+.view_app #ok {
+  padding: 2%;
+  position: absolute;
+  top: 80%;
+  background: hsl(210, 35%, 65%);
+  left: 50%;
+  border-radius: 5px;
+}
+
+.mypation_search {
+  width: 80%;
 }

@@ -35,6 +35,7 @@ left: 50%; */
 .schedule-detail {
   width: 40%;
   position: absolute;
+  height: 70%;
   padding-bottom: 2%;
   background: white;
   margin-left: 20%;
@@ -43,7 +44,7 @@ left: 50%; */
   font-size: large;
   font-weight: bold;
   border: 1px solid rgb(16 4 4);
-  box-shadow: 10px 10px 10px 10px rgb(60 24 202);
+  box-shadow: 10px 10px 10px  rgb(60 24 202);
   border-radius: 5px;
   top: 20%;
 }
@@ -167,4 +168,29 @@ h2 {
   position: absolute;
   border: 1px solid black;
   border-radius: 5%;
+}
+
+/* #cancelbtn {
+  position: absolute;
+  right: 10%;
+  bottom: 3%;
+  padding: 2%;
+  padding: 3%;
+
+} */
+#cancelbt button {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  padding: 2%;
+  color: brown;
+  border-radius: 5px;
+  font-size: large;
+  border-style: none;
+  background: rgb(103, 103, 164);
+}
+
+.view-button {
+  width: 100%;
+  height: 100%;
 }

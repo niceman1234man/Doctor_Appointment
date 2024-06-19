@@ -1,44 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Appointment</title>
+    <title>View session</title>
     <link rel="stylesheet" type="text/css" href="../DoctorCss/index.css">
+
 </head>
+
 <body>
-<?php
-include("connection.php");
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
+    <section>
+        <?php
+        $id=$_POST["id"];
+include("../connection.php");
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+$sql = "SELECT * FROM 	appointment where id='$id'";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        // Display the retrieved data
+        echo "<div class='viewSessionDoc'>";
+        echo "<div>";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = $_POST["Number"];
-
-    $sql = "SELECT * FROM `Appointment` WHERE Number = ?";
-    $stmt = $connection->prepare($sql);
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        echo "<h2>Appointment Details</h2>";
-        echo "Patient Name: " . $row["Patient Name"] . "<br>";
-        echo "Telephone: " . $row["Telephone"] . "<br>";
-        echo "Number: " . $row["Number"] . "<br>";
-        echo "Session Title: " . $row["Session Title"] . "<br>";
-        echo "Session Date & Time: " . $row["Session Date & Time"] . "<br>";
-        echo "Appointment Date: " . $row["Appointment Date"] . "<br>";
-    } else {
-        echo "No appointment found with the provided ID.";
+        echo "<table>";
+        echo "<tr><th>ID</th><th>Patient Name</th><th>Number </th><th>Doctor Name</th><th>Title</th><th>Appointment Date</th><th>Appointment Time</th></tr>";
+        // Retrieve data from the Patients table for the current session
+        $sql_Apointment = "SELECT * FROM appointment";
+        $result_Apointment = $conn->query($sql_Apointment);
+        if ($result_Apointment->num_rows > 0) {
+            while($row_Apointment = $result_Apointment->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $row_Apointment["id"]."</td>";
+                echo "<td>" . $row_Apointment["name"] ."</td>";
+                echo "<td>" . $row_Apointment["apo_num"]."</td>";
+                echo "<td>" . $row_Apointment["doc_name"] ."</td>";
+                echo "<td>" . $row_Apointment["title"] . "</td>";
+                echo "<td>" . $row_Apointment["date"] . "</td>";
+                echo "<td>" . $row_Apointment["time"] . "</td>";
+                echo "</tr>";
+            }
+        }
+        echo "    </table>";
+        echo "    <a href='apointment.php'><button class='btnDletAcount' >Ok</button></a><br>";
+        echo "</div>";
+        echo "</div>";
     }
-
-    $stmt->close();
+} else {
+    echo "No data found.";
 }
 
-$connection->close();
+$conn->close();
 ?>
 </body>
+
 </html>
