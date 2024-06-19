@@ -7,8 +7,6 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 70px;
-
-  /* margin-top: 5%; */
   flex-direction: column;
 }
 
@@ -23,10 +21,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  /* margin-top: 10%; */
-
-  /* Center content horizontally */
 }
 
 .button {
@@ -38,10 +32,6 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-
-  /* margin-right: 10px; */
-
-  /* Add margin between elements */
 }
 
 button:hover {
@@ -50,8 +40,6 @@ button:hover {
 
 form {
   width: 100%;
-
-  /* Ensure form takes full width */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,10 +88,6 @@ form {
   width: 50%;
   display: inline-block;
   justify-content: space-between;
-
-  /* margin-top: 20px; */
-
-  /* margin-bottom: 10%; */
 }
 
 .login-btn {
