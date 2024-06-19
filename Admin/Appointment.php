@@ -15,12 +15,16 @@
    include("../connection.php");
    $list2 = "select * from appointment";
    $result = mysqli_query($conn, $list2);
-        $list3 ="select name from doctor";
-        $resultd= mysqli_query($conn, $list3);
+       
    ?>
 
     <div class="main-part">
         <h1>Appointment Manager</h1>
+        <img src="../img/search.svg" alt="search" id="search-img">
+        <form action="Appointment.php" method="post">
+            <input type="search" placeholder="Search Doctor Name " id="search" name="search_term">
+            <input type="submit" name="search" id="search-button" value="Search">
+        </form>
 
         <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br>
             <?php  date_default_timezone_set('Asia/Kolkata');
@@ -32,21 +36,6 @@
 
         <p>All Appointments( <?php echo mysqli_num_rows($result)?>) </p>
         <div class="input-sections">
-
-            <form action=""> Date:<input type="date" name="date" id="date">
-                Doctor: <select name="doctor" id="doctor">
-                    <?php
-             while($row=mysqli_fetch_assoc($resultd)){
-                $data2 =$row["name"] ;
-                echo '
-                <option value="">'. $data2 . '</option>
-                ';
-             }
-                ?>
-                </select>
-                <button type="submit" name="search"><img src="../img/icons/filter-iceblue.svg" alt="" id="filter">
-                    Filter</button>
-            </form>
         </div>
         <table>
             <tr>
@@ -59,15 +48,16 @@
                 <th>Events</th>
             </tr>
             <?php
-             if (isset($_POST['search'])) {
-                $search_term = $_POST['search'];
-                $date=$_POST["date"];
-                 $list1 = "SELECT * FROM appointment WHERE name LIKE '%$search_term%' OR date LIKE '%$date%'";
-                $result = mysqli_query($conn, $list2);
+
+            if (isset($_POST['search'])) {
+                $search_term = $_POST['search_term'];
+                $list1 = "SELECT * FROM appointment WHERE doc_name LIKE '%$search_term%' ";
+                $result = mysqli_query($conn, $list1);
             } else {
-                $list2 = "select * from appointment";
-                $result = mysqli_query($conn, $list2);
+                $list1 = "SELECT * FROM appointment";
+                $result = mysqli_query($conn, $list1);
             }
+
      
 if(mysqli_num_rows($result) > 0) {
     $data = '';
@@ -89,12 +79,12 @@ if(mysqli_num_rows($result) > 0) {
               <td>' .   $apo_date . '</td>
             <td>
                 <div class="schedule-form-button">
-            <form action="deleteAppointment.php" method="post" style="display:flex;">
-        <input type="hidden" name="id" value="'. $id .'">
-        <button type="submit" class="delete-button">
-            <img src="../img/icons/delete-iceblue.svg" alt="Remove" value="Remove">
-        </button>
-        </form>
+        <form  action="deleteAppointment.php" method="post" style="display:flex;">
+        <input type="hidden"  name="id" value="' .$id . '">
+     <button type="submit" class="view-button">
+        <img src="../img/icons/delete-iceblue.svg" alt="View" value="View">remove
+      </button>
+      </form>
             </td>
         </tr>';
     }

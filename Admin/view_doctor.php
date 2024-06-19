@@ -25,10 +25,9 @@
             $id = $row["id"];
 
             echo ' <div class="doctor-detail">
-            <a href="Doctors.php">
-                <p id="xd-sign">&times;</p>
-            </a>
-        <h2>View Detail</h2>
+            
+        <h2>View Detail</h2><br><br><br>
+
         <p>ID :' . $id . '</p>
         <p>Name :' . $name . '</p>
         <p>Email :' . $email . '</p>

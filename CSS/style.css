@@ -97,17 +97,17 @@ body {
   display: inline;
 }
 
-.slid-bar-details a:visited {
+.slid-bar-details li:visited {
   color: black;
 }
 
-.slid-bar-details a:hover {
+.slid-bar-details li:hover {
   background: rgb(184 143 143);
   color: #2e20f3;
   padding: 5px;
 }
 
-.slid-bar-details a:active {
+.slid-bar-details li:active {
   background: rgb(113, 206, 164);
 }
 

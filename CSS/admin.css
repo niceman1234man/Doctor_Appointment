@@ -3,16 +3,20 @@
   justify-content: space-around;
 }
 
-#add-new-button a {
-  width: 80%;
+#add-new-button {
+  width: 30%;
   height: 20%;
   margin-top: 2%;
-  background: rgb(49 49 141);
+  background: rgb(198, 198, 216);
   border-radius: 5px;
-  color: white;
+  color: rgb(226, 24, 24);
   cursor: pointer;
   border-style: none;
   padding: 1%;
   font-size: large;
   font-weight: bold;
+}
+
+#add-new-button a {
+  text-decoration: none;
 }

@@ -31,7 +31,7 @@ if (isset($_POST["id"])) {
             <a href="Schedule.php">
                 <p id="xs-sign">&times;</p>
             </a>
-            <h2>View Detail</h2>
+            <h2>View Detail</h2><br><br><br>
             <p>Session Title: ' . $title . '</p>
             <p>Doctor of This Session: ' . $spec . '</p>
             <p>Scheduled Date: ' . $d . '</p>

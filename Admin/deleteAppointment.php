@@ -18,7 +18,7 @@ if (isset($_POST['id'])) {
         // Display confirmation dialog
         echo '<center>
         <div style="height: 40%; width: 20%; position: absolute; top: 30%; left: 40%;border: 1px solid black;border-radius: 5px;">
-            <h1>Are you sure you want to delete this session?</h1>
+            <h1>Are you sure you want to delete this Appointment?</h1>
             <form method="post">
                 <input type="hidden" name="id" value="'.$id.'">
                 <input type="hidden" name="confirm" value="1">

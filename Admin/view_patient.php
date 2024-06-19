@@ -31,7 +31,7 @@ if (isset($_POST["id"])) {
             <a href="Patients.php">
                 <p id="xp-sign">&times;</p>
             </a>
-            <h2>View Detail</h2>
+            <h2>View Detail</h2><br><br><br>
             <p>Patient ID:' . $id . '</p>
             <p>Name :' . $name . ' ' . $lname . '</p>
             <p>Email :' . $email . '</p>

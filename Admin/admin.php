@@ -19,8 +19,10 @@
    ?>
     <div class="main-part">
         <img src="../img/search.svg" alt="search" id="search-img">
-        <input type="search" placeholder="search Doctor Name or Email" id="search">
-        <button id="search-button">search</button>
+        <form action="Doctors.php" method="post">
+            <input type="search" placeholder="Search Doctor Name or Email" id="search" name="search_term">
+            <input type="submit" name="search" id="search-button" value="Search">
+        </form>
         <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br>
             <?php date_default_timezone_set('Asia/Kolkata');
              $today=date('Y-m-d');
