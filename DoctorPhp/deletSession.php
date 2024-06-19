@@ -1,60 +1,42 @@
 <?php
-session_start();
-if (isset($_SESSION["uname"])) {
-    $user = $_SESSION["uname"];
-} else {
-    echo "Session not started or user not logged in.";
-}
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delet session</title>
-    <link rel="stylesheet" type="text/css" href="../DoctorCss/index.css">
+include("../connection.php");
+$message = "";
+$err = "";
 
-</head>
-<body>
-<?php
-include("connection.php");
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
-}
+if (isset($_POST['id'])) {
+    $id = $_POST['id'];
 
-// Check if the delete button was clicked
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["deleteSession"])) {
-    $sessionTitle = $_POST["sessionTitle"];
-    $scheduledDate = $_POST["scheduledDate"];
-
-    // Prepare and execute the delete query
-    $statement = $connection->prepare("DELETE FROM Sessions WHERE Title = ? AND `Date & Time` = ?");
-    $statement->bind_param("ss", $sessionTitle, $scheduledDate);
-
-    if ($statement->execute()) {
-        echo "Session deleted successfully!";
+    // Add confirmation dialog
+    if(isset($_POST['confirm'])) {
+        $delete_query = "DELETE FROM session WHERE id = '$id'";
+        if (mysqli_query($conn, $delete_query)) {
+            $message = "Session deleted successfully";
+        } else {
+            $err = "Error deleting session: " . mysqli_error($conn);
+        }
     } else {
-        echo "Error deleting session: " . $statement->error;
+        // Display confirmation dialog
+        echo '<center>
+        <div style="height: 40%; width: 20%; position: absolute; top: 30%; left: 40%;border: 1px solid black;border-radius: 5px;">
+            <h1>Are you sure you want to delete this session?</h1>
+            <form method="post">
+                <input type="hidden" name="id" value="'.$id.'">
+                <input type="hidden" name="confirm" value="1">
+                <button style="text-decoration-style: none; padding: 2%; border-radius: 5%;background-color: rgb(102, 102, 156); color: white;">Confirm</button>
+                <a href="session.php" style="text-decoration-style: none; padding: 2%; border-radius: 5%;background-color: rgb(102, 102, 156); color: white;">Cancel</a>
+            </form>
+        </div>
+        </center>';
+        return;
     }
-    $statement->close();
+
+    echo '<center>
+    <div style="height: 40%; width: 30%; position: absolute; top: 30%; left: 40%;border: 1px solid black;border-radius: 5px;">
+        <h1>'.$message.$err.'</h1>
+        <button style="text-decoration-style: none; padding: 2%; border-radius: 5%;background-color: rgb(102, 102, 156); color: white;"><a href="session.php">CLOSE</a></button>
+    </div>
+    </center>';
 } else {
-    $sessionTitle = $_GET["sessionTitle"];
-    $scheduledDate = $_GET["scheduledDate"];
-    echo "<div class='cancelSessionDoc'>";
-    echo "<div>";
-    echo "    <label for='Are you sure?'>Are you sure?</label><br>";
-    echo "    <label for='You want to delete this record(Test Doctor).'>You want to delete this record.</label><br>";
-    echo "    <label for='Patient Name:'>Session Title</label><input type='text' name='sessionTitle' readonly value='$sessionTitle'><br>";
-    echo "    <label for='Appointment number'>Sheduled Date & Time</label><input type='text' name='scheduledDate' readonly value='$scheduledDate'><br>";
-    echo "    <form method='post' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "'>";
-    echo "        <input type='hidden' name='deleteSession' value='1'>";
-    echo "        <button class='btnDletAcount' type='submit'>Yes</button>";
-    echo "    </form>";
-    echo "<a href='session.php'><button class='btnDletAcount' >No</button></a><br>";
-    echo "</div>";
-    echo "</div>";
+    echo "Session ID not provided.";
 }
-$connection->close();
 ?>
-</body>
-</html>
