@@ -27,8 +27,8 @@
         <div class="TopAjust"> 
    <div class="appointPopUp">
        <?php
- 
-     include("connection.php");
+      
+ include("../connection.php");
      
   session_start();
 
@@ -37,7 +37,7 @@
     $id = $_GET['id'];
     
     try {
-        $sqlquery = "SELECT * FROM schedule WHERE id='$id'";
+        $sqlquery = "SELECT * FROM session WHERE id='$id'";
         $result = mysqli_query($conn, $sqlquery);
     
 
@@ -48,18 +48,18 @@
                     <p>" . $row["fname"] . " " . $row["lname"] . "</p>
                     <p>" . $row["email"] . "</p>
                     <p>" . $row["title"] . "</p>
-                    <p>" . $row["schedule_date"] . "</p>
-                    <p>" . $row["startTime"] . "</p>
+                    <p>" . $row["date"] . "</p>
+                    <p>" . $row["time"] . "</p>
                 </div>";
-                $x = $row["schedule_date"];
+                $x = $row["date"];
             
             
 
             $_SESSION["docName"] = $row["fname"] . " " . $row["lname"];
             $_SESSION["docemail"] = $row["email"];
             $_SESSION["doctitle"] = $row["title"];
-            $_SESSION["docschedule"] = $row["schedule_date"];
-            $_SESSION["docstart"] = $row["startTime"];
+            $_SESSION["docschedule"] = $row["date"];
+            $_SESSION["docstart"] = $row["time"];
 
             }
 
@@ -77,13 +77,11 @@
  
 
 
-
-
  try {
-    $cpyschedule = "SELECT id FROM schedule";
+    $cpyschedule = "SELECT id FROM session";
     $executsche = mysqli_query($conn, $cpyschedule);
 
-    $cpyappoint = "SELECT scheduleid FROM appointment";
+    $cpyappoint = "SELECT scheduleid FROM book";
     $executappoint = mysqli_query($conn, $cpyappoint);
 
     $numOfRowsappoint = mysqli_num_rows($executappoint);
@@ -92,7 +90,7 @@
     if ($numOfRowsappoint < $numOfRowschedule) {
         while ($row = mysqli_fetch_assoc($executsche)) {
             $id1 = $row['id'];
-            $query11 = "INSERT INTO appointment (scheduleid) VALUES ('$id1')";
+            $query11 = "INSERT INTO book (scheduleid) VALUES ('$id1')";
             $executQuery11 = mysqli_query($conn, $query11);
             if (!$executQuery11) {
                 echo "Error inserting data: " . mysqli_error($conn);
@@ -106,18 +104,18 @@
  
   
     
-$retrieve = "SELECT appoinid FROM appointment WHERE scheduleid = " . $id;
+$retrieve = "SELECT apo_num FROM book WHERE scheduleid = " . $id;
 $result2 = mysqli_query($conn, $retrieve);
 $row2 = mysqli_fetch_assoc($result2);  
     
 
-    if ($row2["appoinid"] == null) {
-        $sqllast = "INSERT INTO appointment (appoinid) VALUES ('0')";
+    if ($row2["apo_num"] == null) {
+        $sqllast = "INSERT INTO book (apo_num) VALUES ('0')";
         mysqli_query($conn, $sqllast);
     }
     
        
-     $value = $row2["appoinid"] + 1;
+     $value = $row2["apo_num"] + 1;
      $_SESSION["value"]=$value;
         echo "<div class=\"columMaker\">
             <div class=\"ketero\">

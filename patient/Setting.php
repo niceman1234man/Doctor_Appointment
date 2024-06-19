@@ -25,9 +25,9 @@
 
 
             <div class="setting">
-          <ul class="order">
-            <li class="EditAccount"> <h2>Account Settings</h2> 
-              Edit your account  Details & Change password</li>
+          <ul class="order"> 
+           <a href="../DoctorPhp/EditDoctorDetail.php">  <li  class="EditAccount"> <h2>Account Settings</h2> 
+              Edit your account  Details & Change password</li></a>
               
               <li class="ViewAccount"> <h2>View Account </h2> 
              View personal information About Your Account</li>
@@ -43,5 +43,9 @@
         </div>
 
       </div>
+
+
+       
+      
 </body>
 </html>

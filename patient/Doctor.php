@@ -7,14 +7,16 @@
     <link rel="stylesheet" href="Doctor.css">
 </head>
 <body>
-    <div class="whole">
+    <div class="whole" id="all">
         <div>
+          
             <?php
             include("patient.html")
             ?>
         </div>
-
-
+        <div class="viewpop" id="viewPopup">
+  <h3>Patient Appointment Web</h3>
+   
         <div class="doctor_All">
             <div class="head">
             <button class="backbtn">← Back</button>
@@ -36,22 +38,58 @@
                     <th>Email</th>
                     <th>Spectiality</th>
                     <th>Event</th>
-                </tr>
-                <tr>
-                    <td>Zulkif</td>
-                    <td>e@gmail.com</td>
-                    <td>Professor</td>
-                    <td> <button>View</button>
-                    <button>Session</button>
+                </tr> 
+                 
+                <?php 
+                session_start();
+                include("../connection.php");
+         $sql ="select * from doctor ";
+        $result=mysqli_query($conn,$sql);
+                while($row = mysqli_fetch_assoc($result)){
+                 $id=$row["id"];
+                  echo'<tr>
+                    <td>'.$row["name"].'</td>
+                    <td>'.$row["email"].'</td>
+                    <td>'.$row["speciality"].'</td>
+                    <td>
+                     <form action="DoctorView.php" method="post" style="display:flex;">
+          <input type="hidden"  name="id" value="' .$id . '">
+         <button type="submit" class="view-button" name="edit">
+        <img src="../img/icons/edit-iceblue.svg" alt="View" value="View">view
+          </button>
+       </form>
                     </td>
-                </tr>
+                </tr>"';
+             
+        }
+                
+            
+              
+      
+                
+                
+                
+                
+                ?>
             </table>
 
          </div>
          </div>
 
-        </div>
+ 
 
     </div>
+        
+
+    </div>
+   
+
+    <?php
+   
+
+   
+         //<script src="Doctor.js"></script>    
+    ?>
+    
 </body>
 </html>
