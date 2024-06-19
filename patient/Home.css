@@ -13,7 +13,7 @@
 
 .patient_text {
   padding-left: 30px;
-  background-color: hsl(160deg 43% 63% / 82.7%);
+  background-color: hsla(160, 43%, 63%, 0.827);
   border-radius: 10px;
   background-image: url("pic/b3.jpg");
 }
@@ -23,7 +23,7 @@
   height: 40px;
   border-radius: 5px;
   padding-left: 15px;
-  border-color: rgb(85 85 212);
+  border-color: rgb(85, 85, 212);
 }
 
 .btn {
@@ -36,12 +36,16 @@
 }
 
 .btn:hover {
-  background-color: rgb(20 20 108);
+  background-color: rgb(20, 20, 108);
 }
 
 .Status-container {
   display: grid;
-  grid-template: "one two" 1fr "three four" 1fr / 1fr 1fr; /* Two equal-width columns */ /* Two equal-height rows */
+  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+  grid-template-rows: 1fr 1fr; /* Two equal-height rows */
+  grid-template-areas:
+    "one two"
+    "three four";
 }
 
 .stat1 {
@@ -66,7 +70,7 @@
   font-weight: bold;
   border-radius: 5px;
   margin: 5px;
-  border: 1px solid rgb(69 59 59);
+  border: 1px solid rgb(69, 59, 59);
   background-color: white;
 }
 
@@ -85,5 +89,5 @@
 }
 
 .table tr {
-  background-color: rgb(197 197 197);
+  background-color: rgb(197, 197, 197);
 }
