@@ -1,12 +1,13 @@
-<!DOCTYPE html>
 <?php
 session_start();
 if (isset($_SESSION["uname"])) {
     $user = $_SESSION["uname"];
 } else {
     echo "Session not started or user not logged in.";
-}
-?><html lang="en">
+    exit;
+}?>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">

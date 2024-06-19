@@ -1,11 +1,11 @@
-<!-- <?php
-// session_start();
-// if (isset($_SESSION["uname"])) {
-//     $user = $_SESSION["uname"];
-// } else {
-//     echo "Session not started or user not logged in.";
-// }
-?> -->
+<?php
+session_start();
+if (isset($_SESSION["uname"])) {
+    $user = $_SESSION["uname"];
+} else {
+    echo "Session not started or user not logged in.";
+    exit;
+}?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,22 +47,46 @@
 
                         <tr >
                             <td  class="status">
-                                <div><a>All Doctors <img src="../images/icons/doctors-hover.svg" class="statusimg"></a>
+                                <?php
+                                include("../connection.php");
+                                $sql="select * FROM doctor ";
+                                if($result=mysqli_query($conn,$sql)){
+                                 $numd=   mysqli_num_rows($result);
+
+                                }
+                                $sql2="select * FROM patient ";
+                                if($result2=mysqli_query($conn,$sql2)){
+                                 $nump=   mysqli_num_rows($result2);
+
+                                }
+                                $sql3="select * FROM session ";
+                                if($result3=mysqli_query($conn,$sql3)){
+                                 $nums=   mysqli_num_rows($result3);
+
+                                }
+                                $sql4="select * FROM appointment ";
+                                if($result4=mysqli_query($conn,$sql4)){
+                                 $numa=   mysqli_num_rows($result4);
+
+                                }
+
+                                ?>
+                                <div><a>All Doctors <?php echo   $numd?><img src="../images/icons/doctors-hover.svg" class="statusimg"></a>
                                 </div>
                             </td>
                             <td class="status">
-                                <div> <a> All Patients <img src="../images/icons/patients-hover.svg"
+                                <div> <a> All Patients <?php echo   $nump?><img src="../images/icons/patients-hover.svg"
                                             class="statusimg"></a>
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td  class="status">
-                                <div><a>NewBooking <img src="../images/icons/book-hover.svg" class="statusimg"></a>
+                                <div><a>NewBooking <?php echo   $numa?><img src="../images/icons/book-hover.svg" class="statusimg"></a>
                                 </div>
                             </td>
                             <td  class="status">
-                                <div><a>Today Sessions<img src="../images/icons/session-iceblue.svg"
+                                <div><a>Today Sessions <?php echo   $nums?><img src="../images/icons/session-iceblue.svg"
                                             class="statusimg"></a>
                                 </div>
                             </td>
