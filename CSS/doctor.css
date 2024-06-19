@@ -43,7 +43,7 @@ left: 50%; */
   font-size: large;
   font-weight: bold;
   border: 1px solid rgb(16 4 4);
-  box-shadow: 10px 10px 10px 10px rgb(60 24 202);
+  box-shadow: 10px 10px 10px  rgb(60 24 202);
   border-radius: 5px;
   top: 20%;
 }
@@ -80,6 +80,7 @@ left: 50%; */
 label,
 #select {
   padding: 1.5%;
+  width: 50%;
   width: 50%;
   margin: 1%;
   border-radius: 5px;
@@ -167,4 +168,12 @@ h2 {
   position: absolute;
   border: 1px solid black;
   border-radius: 5%;
+}
+
+#cancelbtn {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  padding: 2%;
+  float: right;
 }
