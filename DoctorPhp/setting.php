@@ -34,8 +34,8 @@
 
             <div id="bt2">
                 <a href="viewDoctorDetail.php">  
-                     <button class="settingbtn">
-                        <h3 class="seting"><img src="../images/icons/view-iceblue.svg">View Account Details</h3>view
+                <button class="settingbtn">
+                <h3 class="seting"><img src="../images/icons/view-iceblue.svg">View Account Details</h3>view
                         profesional information about you acount
                     </button> </a>
             </div>
