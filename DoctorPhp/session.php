@@ -33,15 +33,6 @@
         </div>
         <h4>My Sessions</h4>
 
-        <div class="inputDate">
-            <form action="">
-                <span class="dateSesLable">Date:</span>
-                <input type="date">
-                <button type="submit" class="filterbtn"><img src="../images/icons/filter-iceblue.svg" class="filteimg">
-                    Filter</button>
-            </form>
-        </div>
-
         <div class="apointTable">
             <?php
 include("../connection.php");
