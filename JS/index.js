@@ -7,43 +7,82 @@ document.getElementById('add-new-button').onclick = () => {
 document.getElementById('add-button').addEventListener('click', (event) => {
   event.preventDefault(); // Prevent the default form submission
 
-  // Gather the form data
-  const formData = new FormData(document.querySelector('form'));
-
-  // Use AJAX to send the form data to the server
-  fetch('New_session.php', {
-    method: 'POST',
-    body: formData,
-  })
-    .then((response) => {
-      // Handle the response from the server
-      if (response.ok) {
-        // Display a success message or update the page
-
-        // Hide the popup
-        document.querySelector('.add-new-doctors-pop-up').classList.remove('active');
-      } else {
-        // Display an error message
-
-      }
-    });
-});
-// document.querySelector('#add-new-button').addEventListener('click', () => {
-
-// });
-document.querySelector('#x-sign').addEventListener('click', () => {
   document.querySelector('.add-new-doctors-pop-up').classList.remove('active');
-});
-const date = new Date();
-const day = date.getDate();
-const month = date.getMonth();
-const year = date.getFullYear();
-document.getElementById('today-date').append(`${day}/${month}/${year}`);
-// document.querySelector('#today-date').appendChild(datee);
-document.getElementById('add-button').addEventListener('click', () => {
-  document.getElementById('name').focus();
+
+  document.querySelector('#x-sign').addEventListener('click', () => {
+    document.querySelector('.add-new-doctors-pop-up').classList.remove('active');
+  });
+
+  document.querySelector('.view-button').addEventListener('click', () => {
+    document.querySelector('.schedule-detail-pop-up').classList.add('active');
+  });
 });
 
-// Get all the "View" buttons
+// Get the form and input elements
+const form = document.querySelector('.add-new-doctors form');
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const nicInput = document.getElementById('nic');
+const telephoneInput = document.getElementById('telephone');
+const passwordInput = document.getElementById('password');
+const confirmInput = document.getElementById('confirm');
 
-// Add a click event listener to each "View" button
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+// Add event listener to the form submission
+form.addEventListener('submit', (event) => {
+  event.preventDefault(); // Prevent the form from submitting
+
+  // Reset the error messages
+  nameInput.classList.remove('is-invalid');
+  emailInput.classList.remove('is-invalid');
+  nicInput.classList.remove('is-invalid');
+  telephoneInput.classList.remove('is-invalid');
+  passwordInput.classList.remove('is-invalid');
+  confirmInput.classList.remove('is-invalid');
+
+  // Perform validation checks
+  let isValid = true;
+
+  if (nameInput.value.trim() === '') {
+    nameInput.classList.add('is-invalid');
+    isValid = false;
+  }
+
+  if (!isValidEmail(emailInput.value)) {
+    emailInput.classList.add('is-invalid');
+    isValid = false;
+  }
+  if (nicInput.value.trim() === '' || Number.isNaN(Number(nicInput.value.trim()))) {
+    nicInput.classList.add('is-invalid');
+    isValid = false;
+  } else {
+    nicInput.classList.remove('is-invalid');
+  }
+
+  if (telephoneInput.value.trim() === '' || Number.isNaN(Number(telephoneInput.value.trim()))) {
+    telephoneInput.classList.add('is-invalid');
+    isValid = false;
+  } else {
+    telephoneInput.classList.remove('is-invalid');
+  }
+
+  if (passwordInput.value.trim() === '') {
+    passwordInput.classList.add('is-invalid');
+    isValid = false;
+  }
+
+  if (confirmInput.value.trim() === '' || confirmInput.value !== passwordInput.value) {
+    confirmInput.classList.add('is-invalid');
+    isValid = false;
+  }
+
+  if (isValid) {
+    // Submit the form if all validations pass
+    form.submit();
+  }
+});
+
+// Helper function to validate email

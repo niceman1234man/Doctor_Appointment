@@ -1,0 +1,57 @@
+.whole {
+  display: flex;
+}
+
+.Setting_part {
+  margin-left: 30px;
+}
+
+.head {
+  display: flex;
+}
+
+.backbtn {
+  width: 100px;
+  height: 45px;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.backbtn:hover {
+  background-color: rgb(64 64 138);
+}
+
+.h01 {
+  margin-left: 50px;
+}
+
+.currentDate {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+}
+
+.setting {
+  margin-top: 70px;
+  margin-left: 50px;
+  width: 100%;
+}
+
+.order li {
+  list-style-type: none;
+  width: 800px;
+  height: 100px;
+  background-color: rgb(21 210 210);
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.order li:hover {
+  background-color: rgb(88 135 135);
+}

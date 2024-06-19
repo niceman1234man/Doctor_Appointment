@@ -24,10 +24,12 @@
     <div class="main-part">
         <h1>Schedule Manager</h1>
 
-        <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br></p>
+        <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br><?php date_default_timezone_set('Asia/Kolkata'); 
+            $today=date('Y-m-d');
+             echo $today; ?></p><br>
         <div class="add-new-section">
             <h2>Schedule A Session</h2>
-            <button id="add-new-button">+ Add Session</button>
+            <button id="add-new-button"><a href="addSession.php">+ Add Session</a></button>
         </div>
         <p>All Sessions( <?php echo mysqli_num_rows($result)?>)</p>
         <div class="input-sections">
@@ -65,7 +67,7 @@
                 $search_date = $_POST['search_date'];
             
                 // Construct the SQL query to search for sessions
-                $list2 = "SELECT * FROM session WHERE title LIKE '%$search_title%' AND date = '$search_date'";
+                $list2 = "SELECT * FROM session WHERE title LIKE '%$search_title%' OR date = '$search_date'";
                 $result = mysqli_query($conn, $list2);
             }else{
                 echo 'please inset all ';
@@ -115,33 +117,8 @@
     }
     ?>
         </table>
-        <div class="add-new-doctors-pop-up">
-            <form action="New_session.php" method="post">
-                <div class="pop-up-header">
-                    <h2>Add New Session</h2>
-                    <p id="x-sign">&times;</p>
-                </div>
 
-                <label for="name">Session Title</label><br>
-                <input type="text" name="title" id="name" placeholder="Name of This Session"><br>
-                <label for="speciality">Select Doctor</label><br>
-                <select name="speciality" id="select" placeholder="Choose doctor name from list">
-                    <option value="abebe">abeb</option>
-                    <option value="degu">adu</option>
-                    <option value="baby"> bela</option>
-                </select><br>
-                <label for="nic">Number of Patients/Appointment Numbers</label><br>
-                <input type="number" name="num" id="nic" placeholder="The Finial Appointment Number"><br>
-                <label for="email">Session Date</label><br>
-                <input type="date" name="date" id="email"><br>
-                <label for="telephone">Schedule Time</label><br>
-                <input type="time" name="time" id="telephone"><br>
-                <input type="submit" value="Place This Session" id="add-button" name="submit">
-                <input type="reset" id="rest-button">
-            </form>
-        </div>
-
-        <script src="../JS/index.js"></script>
+        <!-- <script src="../JS/index.js"></script> -->
 </body>
 
 </html>

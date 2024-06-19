@@ -13,8 +13,8 @@
     <?php
    include("sidebar.php");
    include("../connection.php");
-     $list2 = "select * from appointment";
-        $result = mysqli_query($conn, $list2);
+   $list2 = "select * from appointment";
+   $result = mysqli_query($conn, $list2);
         $list3 ="select name from doctor";
         $resultd= mysqli_query($conn, $list3);
    ?>
@@ -32,9 +32,10 @@
 
         <p>All Appointments( <?php echo mysqli_num_rows($result)?>) </p>
         <div class="input-sections">
-            Date:<input type="date" name="date" id="date">
-            Doctor: <select name="doctor" id="doctor">
-                <?php
+
+            <form action=""> Date:<input type="date" name="date" id="date">
+                Doctor: <select name="doctor" id="doctor">
+                    <?php
              while($row=mysqli_fetch_assoc($resultd)){
                 $data2 =$row["name"] ;
                 echo '
@@ -42,9 +43,10 @@
                 ';
              }
                 ?>
-            </select>
-            <button><img src="../img/icons/filter-iceblue.svg" alt="" id="filter"> Filter</button>
-
+                </select>
+                <button type="submit" name="search"><img src="../img/icons/filter-iceblue.svg" alt="" id="filter">
+                    Filter</button>
+            </form>
         </div>
         <table>
             <tr>
@@ -57,6 +59,15 @@
                 <th>Events</th>
             </tr>
             <?php
+             if (isset($_POST['search'])) {
+                $search_term = $_POST['search'];
+                $date=$_POST["date"];
+                 $list1 = "SELECT * FROM appointment WHERE name LIKE '%$search_term%' OR date LIKE '%$date%'";
+                $result = mysqli_query($conn, $list2);
+            } else {
+                $list2 = "select * from appointment";
+                $result = mysqli_query($conn, $list2);
+            }
      
 if(mysqli_num_rows($result) > 0) {
     $data = '';
@@ -68,6 +79,7 @@ if(mysqli_num_rows($result) > 0) {
         $d = $row["date"];
         $t = $row["time"];
         $apo_date=$row["apo_date"];
+        $id=$row["id"];
         $data .= '<tr>
             <td>' .  $name . '</td>
             <td>' .  $num . '</td>
@@ -76,8 +88,13 @@ if(mysqli_num_rows($result) > 0) {
              <td>' .  $title . '</td>
               <td>' .   $apo_date . '</td>
             <td>
-                
-                <button><img src="../img/icons/delete-iceblue.svg" alt="">Cancel</button>
+                <div class="schedule-form-button">
+            <form action="deleteAppointment.php" method="post" style="display:flex;">
+        <input type="hidden" name="id" value="'. $id .'">
+        <button type="submit" class="delete-button">
+            <img src="../img/icons/delete-iceblue.svg" alt="Remove" value="Remove">
+        </button>
+        </form>
             </td>
         </tr>';
     }

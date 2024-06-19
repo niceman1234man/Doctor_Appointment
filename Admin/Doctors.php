@@ -28,10 +28,10 @@
              echo $today; ?></p><br>
         <div class="add-new-section">
             <h2>Add new Doctor</h2>
-            <button id="add-new-button">+ Add New</button>
+            <button id="add-new-button"> <a href="addDoctor.php">+ Add New</a></button>
         </div>
         <?php
-        include("../connection.php");
+      
        
         if (isset($_POST['search_term'])) {
             $search_term = $_POST['search_term'];
@@ -47,6 +47,7 @@
         <?php
   if(mysqli_num_rows($result) > 0) {
     $data = '';
+    $data2 = '';
     echo '
         <table>
             <tr>
@@ -60,12 +61,21 @@
         $name = $row["name"];
         $email = $row["email"];
         $spec = $row["speciality"];
+        
         $id=$row["id"];
+        $data2 .= '<option value="'. $spec .'">'. $spec .'</option>';
         $data .= '<tr>
             <td>' . $name . '</td>
             <td>' . $email . '</td>
             <td>' . $spec . '</td>
             <td>
+             <div class="form-button">
+                <form action="edit_doctor.php" method="post" style="display:flex;">
+          <input type="hidden"  name="id" value="' .$id . '">
+         <button type="submit" class="view-button" name="edit">
+        <img src="../img/icons/edit-iceblue.svg" alt="View" value="View">Edit
+          </button>
+       </form>
             <div class="form-button">
                 <form action="view_doctor.php" method="post" style="display:flex;">
           <input type="hidden"  name="id" value="' .$id . '">
@@ -76,7 +86,7 @@
 
     <form action="delete_doctor.php" method="post">
     <input type="hidden" name="id" value="' .$id . '">
-    <button type="submit">
+    <button type="submit" id="delete">
         <img src="../img/icons/delete-iceblue.svg" alt="Remove" value="Remove">
     </button>
 </form>
@@ -89,36 +99,8 @@
    
 ?>
         </table>
-        <div class="add-new-doctors-pop-up ">
-            <form action="add_new_doctor.php" method="post">
-                <div class="pop-up-header">
-                    <h2>Add New Doctor</h2>
-                    <p id="x-sign">&times;</p>
-                </div>
-                <label for="name">Name</label><br>
-                <input type="text" name="name" id="name" placeholder="Name Doctor"><br>
-                <label for="email">Email</label><br>
-                <input type="email" name="email" id="email" placeholder="Email Address "><br>
-                <label for="nic">NIC</label><br>
-                <input type="number" name="nic" id="nic" placeholder="NIC Number "><br>
-                <label for="telephone">Telephone</label><br>
-                <input type="number" name="telephone" id="telephone" placeholder="Telephone Number "><br>
-                <label for="speciality">Speciality</label><br>
-                <select name=" speciality" id="select">
-                    <option value="nurse">nurse</option>
-                    <option value="anstesia">Anstesia</option>
-                    <option value="padio">Padio</option>
-                </select><br>
-                <label for="password">Password</label><br>
-                <input type="password" name="password" id="password" placeholder="Enter Password "><br>
-                <label for="confirm">Confirm Password</label><br>
-                <input type="password" name="confirm" id="confirm" placeholder="Confirm Password"><br>
-                <input type="submit" value="Add" id="add-button" name="submit">
-                <input type="reset" id="rest-button">
-            </form>
-        </div>
-    </div>
-    <script src="../JS/index.js"></script>
+
+        <script src="../JS/indexyy.js"></script>
 </body>
 
 </html>

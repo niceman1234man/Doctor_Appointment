@@ -55,19 +55,13 @@
                         <th>Appointment Number</th>
                         <th>Patient Name </th>
                         <th>Doctor</th>
-                        <th>Session</th>
+                        <th>Session Title</th>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>4</td>
-                        <td>5</td>
 
-                    </tr>
                 </table>
 
-                <form action=""><input type="submit" value="Show all Appointments" class="show-button" name="show_app">
-                </form>
+                <a href="Appointment.php"><button class="show-button" name="show_sess">Show all
+                        Appointments</button></a>
 
             </div>
             <div class="main-part-session">
@@ -81,14 +75,10 @@
                         <th>Schedule Date&time</th>
                     </tr>
                     <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>4</td>
-
 
                     </tr>
                 </table>
-                <button class="show-button" name="show_sess">Show all Sesssions</button>
+                <a href="Schedule.php"><button class="show-button" name="show_sess">Show all Sesssions</button></a>
             </div>
         </div>
     </div>

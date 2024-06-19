@@ -3,11 +3,11 @@
   justify-content: space-around;
 }
 
-#add-new-button {
-  width: 20%;
+#add-new-button a {
+  width: 80%;
   height: 20%;
   margin-top: 2%;
-  background: blue;
+  background: rgb(49 49 141);
   border-radius: 5px;
   color: white;
   cursor: pointer;
