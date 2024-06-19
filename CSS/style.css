@@ -103,10 +103,18 @@ body {
   display: inline;
 }
 
-.slid-bar-details li:hover {
+.slid-bar-details a:visited {
+  color: black;
+}
+
+.slid-bar-details a:hover {
   background: rgb(184 143 143);
   color: white;
   padding: 5px;
+}
+
+.slid-bar-details a:active {
+  background: rgb(113, 206, 164);
 }
 
 .main-part #search {
@@ -149,15 +157,15 @@ td {
 }
 
 tr:nth-child(even) {
-  background-color: #badbcd;
+  background-color: #f4f8f6e2;
 }
 
 tr:nth-child(odd) {
-  background-color: #baaeae;
+  background-color: rgb(246, 243, 243);
 }
 
 tr:hover {
-  background-color: coral;
+  background-color: rgb(101, 200, 135);
   cursor: pointer;
 }
 

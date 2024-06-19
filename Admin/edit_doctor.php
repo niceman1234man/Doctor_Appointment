@@ -39,7 +39,7 @@ if (isset($_POST['id'])) {
         <form action="doctor_edit.php" method="post">
             <div class="pop-up-header">
                 <h2>Edit Doctor</h2>
-                <p id="x-sign">&times;</p>
+                <p id="x-sign"></p>
             </div>
             <label for="name">Name</label><br>
             <input type="text" name="name" id="name" placeholder="Name Doctor" value="' . $name . '"  required><br>
