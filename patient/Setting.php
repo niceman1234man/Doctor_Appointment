@@ -17,7 +17,10 @@
         <div class="head">
                 <button class="backbtn">← Back</button>
                 <h1 class="h01">Setting</h1>
-                <h4 class="currentDate">currentDate</h4>
+                <p class="currentDate">Today's date <img src="../img/calendar.svg" alt=""><br>
+            <?php date_default_timezone_set('Asia/Kolkata');
+             $today=date('Y-m-d');
+              echo $today;?> </p><br>
             </div>
 
 
