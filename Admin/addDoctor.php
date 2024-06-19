@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION["uname"])) {
+    $user = $_SESSION["uname"];
+} else {
+   header("Location: ../loginform.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
