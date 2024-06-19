@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION["uname"])) {
+    $user = $_SESSION["uname"];
+} else {
+   header("Location: ../loginform.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,7 +89,7 @@ if(mysqli_num_rows($result) > 0) {
                 <div class="schedule-form-button">
         <form  action="deleteAppointment.php" method="post" style="display:flex;">
         <input type="hidden"  name="id" value="' .$id . '">
-     <button type="submit" class="view-button">
+     <button type="submit" class="view-button" style="text-decoration-style: none; padding: 2%; border-radius: 5px;background-color:brown; color: black;">
         <img src="../img/icons/delete-iceblue.svg" alt="View" value="View">remove
       </button>
       </form>

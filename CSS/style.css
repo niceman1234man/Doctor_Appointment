@@ -20,6 +20,12 @@ body {
   background: blue;
 }
 
+#setting {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
 #search-button:hover {
   background: rgb(168 168 180);
   color: white;
@@ -102,8 +108,8 @@ body {
 }
 
 .slid-bar-details li:hover {
-  background: rgb(184 143 143);
-  color: #2e20f3;
+  background: rgb(201, 198, 198);
+  color: white;
   padding: 5px;
 }
 
@@ -159,13 +165,8 @@ tr:nth-child(odd) {
 }
 
 tr:hover {
+  background-color: rgb(215, 220, 216);
   cursor: pointer;
-}
-
-.status:hover {
-  background-color: rgb(101, 200, 135);
-  color: #0a78df;
-  font-size: large;
 }
 
 .form-button,
@@ -208,26 +209,4 @@ h3 {
 #bt3 {
   width: 800px;
   margin: 2%;
-}
-
-.top_title_setting {
-  display: flex;
-  justify-content: space-between;
-}
-
-.settingbtn {
-  margin-top: 1%;
-  margin-left: 1%;
-  width: 100%;
-}
-
-.setingbtn {
-  background-color: white;
-  margin: 0.5%;
-  border-radius: 10px;
-  width: 80%;
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: medium;
 }

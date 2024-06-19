@@ -28,10 +28,9 @@
             <input type="search" placeholder="Search Doctor Name " id="search" name="search_term">
             <input type="submit" name="search" id="search-button" value="Search">
         </form>
-
         <p id="today-date">Today's date <img src="../img/calendar.svg" alt=""><br><?php date_default_timezone_set('Asia/Kolkata'); 
-            $today=date('Y-m-d');
-             echo $today; ?></p><br>
+        $today=date('Y-m-d');
+         echo $today; ?></p><br>
         <div class="add-new-section">
             <h2>Schedule A Session</h2>
             <button id="add-new-button"><a href="addSession.php">+ Add Session</a></button>
@@ -40,65 +39,103 @@
         <div class="input-sections">
         </div>
         <?php echo '
-        <table>
-            <tr>
-                <th>Session Title</th>
-                <th>Doctor</th>
-                <th>Schedule date&time</th>
-                <th>Max num Booked</th>
-                <th>Events</th>
-            </tr>';
-           
+    <table>
+        <tr>
+            <th>Session Title</th>
+            <th>Doctor</th>
+            <th>Schedule date&time</th>
+            <th>Max num Booked</th>
+            <th>Events</th>
+        </tr>';
+       
 
-            if (isset($_POST['search'])) {
-                $search_term = $_POST['search_term'];
-                $list1 = "SELECT * FROM session WHERE dname LIKE '%$search_term%' ";
-                $result = mysqli_query($conn, $list1);
+        if (isset($_POST['search'])) {
+            $search_term = $_POST['search_term'];
+            $list1 = "SELECT * FROM session WHERE dname LIKE '%$search_term%' ";
+            $result = mysqli_query($conn, $list1);
+            if(mysqli_num_rows($result) > 0) {
+                $data = '';
+                while($row = mysqli_fetch_assoc($result)) {
+                    $title = $row["title"];
+                    $spec = $row["dname"];
+                    $mnum = $row["num"];
+                    $d = $row["date"];
+                    $t = $row["time"];
+                    $id=$row["id"];
+
+                    $data .= '<tr>
+                        <td>' . $title . '</td>
+                        <td>' . $spec . '</td>
+                        <td>' . $d . " ". $t .'</td>
+                        <td>' . $mnum . '</td>
+                        <td>
+                            <div class="schedule-form-button">
+                                <form action="viewSchedule.php" method="post" style="display:flex;marigin-right: 5px;">
+                                    <input type="hidden" name="id" value="'. $id .'">
+                                    <button type="submit" class="view-button" style="background-color:green;">
+                                        <img src="../img/icons/view-iceblue.svg" alt="View" value="View">View
+                                    </button>
+                                </form>
+                              
+                                <form action="deleteSchedule.php"  method="post" style="display:flex;marigin-right: 5px;">
+                                    <input type="hidden" name="id" value="'. $id .'">
+                                    <button type="submit" class="view-button"  style="margin-left:5px ;background-color:brown;" >
+                                        <img src="../img/icons/delete-iceblue.svg" alt="View" value="View">Delete
+                                    </button>
+                                </form>
+                        </div>
+                        </div>
+                        </td>
+                        </tr>';
+                }
+                echo $data;
             } else {
-                $list1 = "SELECT * FROM session";
-                $result = mysqli_query($conn, $list1);
+                echo "<tr><td colspan='5'style='border: 2px solid red; color: red; padding: 1rem;'>No search results found.</td></tr>";
             }
+        } else {
+            $list1 = "SELECT * FROM session";
+            $result = mysqli_query($conn, $list1);
+            if(mysqli_num_rows($result) > 0) {
+                $data = '';
+                while($row = mysqli_fetch_assoc($result)) {
+                    $title = $row["title"];
+                    $spec = $row["dname"];
+                    $mnum = $row["num"];
+                    $d = $row["date"];
+                    $t = $row["time"];
+                    $id=$row["id"];
 
-            
-            
-        if(mysqli_num_rows($result) > 0) {
-        $data = '';
-        while($row = mysqli_fetch_assoc($result)) {
-        $title = $row["title"];
-        $spec = $row["dname"];
-        $mnum = $row["num"];
-        $d = $row["date"];
-        $t = $row["time"];
-        $id=$row["id"];
-
-        $data .= '<tr>
-            <td>' . $title . '</td>
-            <td>' . $spec . '</td>
-            <td>' . $d . " ". $t .'</td>
-            <td>' . $mnum . '</td>
-            <td>
-                <div class="schedule-form-button">
-                    <form action="viewSchedule.php" method="post" style="display:flex;marigin-right: 5px;">
-                        <input type="hidden" name="id" value="'. $id .'">
-                        <button type="submit" class="view-button">
-                            <img src="../img/icons/view-iceblue.svg" alt="View" value="View">View
-                        </button>
-                    </form>
-                  
-                    <form action="deleteSchedule.php"  method="post" style="display:flex;marigin-right: 5px;">
-                        <input type="hidden" name="id" value="'. $id .'">
-                        <button type="submit" class="view-button" style"background:red;margin-left:1%">
-                            <img src="../img/icons/delete-iceblue.svg" alt="View" value="View">Delete
-                        </button>
-                    </form>
-    </div>
-    </div>
-    </td>
-    </tr>';
-    }
-    echo $data;
-    }
-    ?>
+                    $data .= '<tr>
+                        <td>' . $title . '</td>
+                        <td>' . $spec . '</td>
+                        <td>' . $d . " ". $t .'</td>
+                        <td>' . $mnum . '</td>
+                        <td>
+                            <div class="schedule-form-button">
+                                <form action="viewSchedule.php" method="post" style="display:flex;marigin-right: 5px;">
+                                    <input type="hidden" name="id" value="'. $id .'">
+                                    <button type="submit" class="view-button" style="background-color:green;">
+                                        <img src="../img/icons/view-iceblue.svg" alt="View" value="View">View
+                                    </button>
+                                </form>
+                              
+                                <form action="deleteSchedule.php"  method="post" style="display:flex;marigin-right: 5px;">
+                                    <input type="hidden" name="id" value="'. $id .'">
+                                    <button type="submit" class="view-button"  style="margin-left:5px ;background-color:brown;" >
+                                        <img src="../img/icons/delete-iceblue.svg" alt="View" value="View">Delete
+                                    </button>
+                                </form>
+                        </div>
+                        </div>
+                        </td>
+                        </tr>';
+                }
+                echo $data;
+            } else {
+                echo "<tr><td colspan='5'>No sessions found.</td></tr>";
+            }
+        }
+?>
         </table>
 
         <!-- <script src="../JS/index.js"></script> -->

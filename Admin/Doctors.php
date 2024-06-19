@@ -71,14 +71,14 @@
                             
                              <form action="view_doctor.php" method="post" style="display:flex;">
                              <input type="hidden"  name="id" value="' .$id . '">
-                          <button type="submit" class="view-button">
+                          <button type="submit" class="view-button" style="background-color:green;">
                            <img src="../img/icons/view-iceblue.svg" alt="View" value="View">View
                            </button>
                            </form>
      
                            <form action="delete_doctor.php" method="post" style="display:flex;">
                             <input type="hidden"  name="id" value="' .$id . '">
-                         <button type="submit" class="view-button">
+                         <button type="submit" class="view-button"  style="background-color:brown;">
                             <img src="../img/icons/delete-iceblue.svg" alt="View" value="View">remove
                           </button>
                           </form>
@@ -126,19 +126,19 @@
                                 </button>
                                 </form>
                                
-                                <form action="view_doctor.php" method="post" style="display:flex;">
-                                <input type="hidden"  name="id" value="' .$id . '">
-                             <button type="submit" class="view-button">
-                              <img src="../img/icons/view-iceblue.svg" alt="View" value="View">View
-                              </button>
-                              </form>
-        
-                              <form action="delete_doctor.php" method="post" style="display:flex;">
-                               <input type="hidden"  name="id" value="' .$id . '">
-                            <button type="submit" class="view-button">
-                               <img src="../img/icons/delete-iceblue.svg" alt="View" value="View">remove
-                             </button>
-                             </form>
+                                 <form action="view_doctor.php" method="post" style="display:flex;">
+                             <input type="hidden"  name="id" value="' .$id . '">
+                          <button type="submit" class="view-button" style="background-color:green;">
+                           <img src="../img/icons/view-iceblue.svg" alt="View" value="View">View
+                           </button>
+                           </form>
+     
+                           <form action="delete_doctor.php" method="post" style="display:flex;">
+                            <input type="hidden"  name="id" value="' .$id . '">
+                         <button type="submit" class="view-button"  style="background-color:brown;">
+                            <img src="../img/icons/delete-iceblue.svg" alt="View" value="View">remove
+                          </button>
+                          </form>
                 </div>
                          </td>
                      </tr>';

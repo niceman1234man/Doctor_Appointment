@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION["uname"])) {
+    $user = $_SESSION["uname"];
+} else {
+   header("Location: ../loginform.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,11 +37,12 @@
         <form action="New_session.php" method="post">
             <div class="pop-up-header">
                 <h2>Add New Session</h2>
-                <p id="x-sign">&times;</p>
+                <p id="x-sign"></p>
             </div>
 
             <label for="name">Session Title</label><br>
-            <input type="text" name="title" id="name" placeholder="Name of This Session" required><br>
+            <input type="text" name="title" id="name" placeholder="Name of This Session" pattern="^[a-zA-Z\s]+$"
+                required><br>
             <label for="speciality">Select Doctor</label><br>
             <select name="speciality" id="select" placeholder="Choose doctor name from list" required>
                 <?php
@@ -49,6 +58,10 @@
             <input type="submit" value="Add Session" id="add-button" name="submit">
             <input type="reset" id="rest-button">
         </form>
+        <div id="cancelbtn" style="position:absolute;top:1%;right:1%;padding:2%"><a href="Schedule.php"><button
+                    style="padding:15%;background:brown;color:white">Cancel</button></a>
+        </div>
+    </div>
     </div>
 
 </body>

@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-image: url('./image/signup.avif');
+  background-image: url('/loginpage/image/signup.avif');
   background-size: cover;
   display: flex;
   justify-content: center;

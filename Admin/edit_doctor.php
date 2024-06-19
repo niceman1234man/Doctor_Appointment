@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION["uname"])) {
+    $user = $_SESSION["uname"];
+} else {
+   header("Location: ../loginform.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,14 +50,15 @@ if (isset($_POST['id'])) {
                 <p id="x-sign"></p>
             </div>
             <label for="name">Name</label><br>
-            <input type="text" name="name" id="name" placeholder="Name Doctor" value="' . $name . '"  required><br>
+            <input type="text" name="name" id="name" placeholder="Name Doctor" value="' . $name . '" pattern="^[a-zA-Z\s]+$" required><br>
             <label for="email">Email</label><br>
             <input type="email" name="email" id="email" placeholder="Email Address " value="' . $email . '"  required><br>
             <label for="nic">NIC</label><br>
             <input type="number" name="nic" id="nic" placeholder="NIC Number " value="' . $nic . '"  required><br>
             <label for="telephone">Telephone</label><br>
             <input type="number" name="telephone" value="' . $telephone . '" id="telephone"
-                placeholder="Telephone Number "  required><br>
+               placeholder=" e.g +251987564321 "
+                pattern="\+[0-9]{1,3}[ ]{1}[0-9]{3}[ ]{1}[0-9]{3}[ ]{1}[0-9]{4}"  required><br>
             <label for="speciality">Speciality</label><br>
             <select name="speciality" id="select"  required>' . $data . '
             </select><br>

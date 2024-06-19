@@ -76,7 +76,7 @@ if(mysqli_num_rows($result) > 0) {
             <td>
           <form action="view_patient.php" method="post" style="display:flex;">
     <input type="hidden" name="id" value="'. $id .'">
-    <button type="submit" class="view-button">
+    <button type="submit" class="view-button" style=" padding: 2%;background-color:green;">
         <img src="../img/icons/view-iceblue.svg" alt="View" value="View">View
     </button>
 </form>
