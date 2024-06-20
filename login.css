@@ -1,0 +1,149 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('/loginpage/image/signup.avif');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.back {
+  background-color: rgb(255 255 255 / 90%);
+  background-color: transparent;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 10%);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.form_box_login {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+.input-text {
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  width: 100%;
+  padding: 8px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+}
+
+.input-text input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-text input:focus {
+  border-color: #8a4dff;
+  box-shadow: 0 0 5px rgb(138 77 255 / 50%);
+}
+
+.input-text label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: #aaa;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.remeber_forget label {
+  display: flex;
+  align-items: center;
+  color: #555;
+}
+
+.input-text input:focus+label,
+.input-text input:valid+label {
+  top: 5px;
+  left: 15px;
+  font-size: 12px;
+  color: #8a4dff;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #aaa;
+}
+
+.remeber_forget {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.remeber_forget input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.remeber_forget a {
+  color: #8a4dff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.Login_register a {
+  color: #8a4dff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.remeber_forget a:hover {
+  color: #6d5bba;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #8a4dff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #6d5bba;
+}
+
+.Login_register {
+  margin-top: 20px;
+}
+
+.Login_register a:hover {
+  color: #050409;
+  text-decoration: none;
+}
+
+.Login_register p {
+  color: #f5f3f7;
+  margin-top: 10px;
+}
