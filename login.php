@@ -14,7 +14,7 @@ include("connection.php");
         echo $row["username"] .  $row["usertype"]. $row["password"];
         if($row["usertype"] == 'p'){
             header("Location:patient/Home.php");
-            exit; // Important to stop the script execution after redirection
+            exit; 
         }else if($row["usertype"] == 'd'){
             header("Location:Doctorphp/DashBourd.php");
             exit;
