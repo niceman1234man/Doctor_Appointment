@@ -1,7 +1,4 @@
 
-
-
-
 .whole {
   display: flex;
 }
@@ -86,7 +83,9 @@
 .table tr {
   text-align: center;
 }
-.session,.view{
+
+.session,
+.view {
   background-color: rgb(5, 56, 5);
   color: white;
   cursor: pointer;
@@ -95,36 +94,37 @@
   margin: 15px;
   border-radius: 5px;
   border: none;
-
 }
 
-.session:hover,.view:hover{
+.session:hover,
+.view:hover {
   background-color: blue;
 }
 
- 
-.whole_blure{
+
+.whole_blure {
   filter: blur(5px);
 }
-.viewPopup{
+
+.viewPopup {
   background-color: rgb(119, 5, 5);
   color: white;
   width: 350px;
   text-align: center;
   border-radius: 10px;
   box-shadow: 2px 2px;
-  
   display: none;
-  position:  absolute;
+  position: absolute;
   top: 50%;
   left: 50%;
 }
-.visible{
-  transform: translate(-50%,-50%) scale(1);
-  display: inline-block
 
+.visible {
+  transform: translate(-50%, -50%) scale(1);
+  display: inline-block;
 }
-.viewPopup button{
+
+.viewPopup button {
   background-color: rgb(6, 47, 6);
   color: white;
   width: 100px;
@@ -134,6 +134,7 @@
   font-size: 25px;
   font-weight: bold;
 }
-.viewPopup button:hover{
+
+.viewPopup button:hover {
   background-color: blue;
 }
