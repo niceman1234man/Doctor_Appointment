@@ -70,11 +70,10 @@ $result = $conn->query($sql);
         echo "<tr>";
         echo "<td>" . $row["FirstName"] ." ". $row["LastName"] .  "</td>";
         echo "<td>" . $row["email"] . "</td>";
-        echo "<td>Addis Ababa</td>";
+        echo "<td>" . $row["Address"] . "</td>";
         echo "<td>" . $row["NIC"] . "</td>";
         echo "<td>" . $row["date_of_birth"] . "</td>";
-        echo "<td>" . $row["phone_number"] . "</td>";
-      
+        echo "<td>" . $row["phone_number"] . "</td>";      
         echo "<td>
             <div class=\"form-button\">
                 <form action=\"viewPasiont.php\" method=\"post\">
