@@ -34,7 +34,6 @@ function isValidEmail(email) {
 // Add event listener to the form submission
 form.addEventListener('submit', (event) => {
   event.preventDefault(); // Prevent the form from submitting
-
   // Reset the error messages
   nameInput.classList.remove('is-invalid');
   emailInput.classList.remove('is-invalid');
@@ -61,14 +60,12 @@ form.addEventListener('submit', (event) => {
   } else {
     nicInput.classList.remove('is-invalid');
   }
-
   if (telephoneInput.value.trim() === '' || Number.isNaN(Number(telephoneInput.value.trim()))) {
     telephoneInput.classList.add('is-invalid');
     isValid = false;
   } else {
     telephoneInput.classList.remove('is-invalid');
   }
-
   if (passwordInput.value.trim() === '') {
     passwordInput.classList.add('is-invalid');
     isValid = false;
